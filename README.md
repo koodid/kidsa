@@ -1,7 +1,8 @@
 # kidsa
 
-Marge Seppo
-Toom Lõhmus
-Mats Kivistik
+Veebirakenduse arendajad:
+* Marge Seppo
+* Toom Lõhmus
+* Mats Kivistik
 
 WIKI
