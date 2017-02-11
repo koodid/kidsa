@@ -5,4 +5,4 @@ Veebirakenduse arendajad:
 * Toom Lõhmus
 * Mats Kivistik
 
-WIKI
+[WIKI](https://github.com/koodid/kidsa/wiki)
