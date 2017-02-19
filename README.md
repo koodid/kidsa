@@ -7,6 +7,6 @@ Veebirakenduse arendajad:
 * Toom Lõhmus
 * Mats Kivistik
 
-### Arendusprotsess: [WIKI](https://github.com/koodid/kidsa/wiki/Projekti-edenemine-ja-lisamaterjalid)
+Arendusprotsess: [WIKI](https://github.com/koodid/kidsa/wiki/Projekti-edenemine-ja-lisamaterjalid)
 
 Idee autorid: Mario Luik, Riko Raam, Alar Kitsik.
