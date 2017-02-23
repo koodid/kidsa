@@ -3,7 +3,8 @@ class Blog extends CI_Controller {
 
         public function index()
         {
-                echo 'class Blog -> Hello World!';
+				$title['title'] = 'Veebirakendus blog';
+                $this->load->view('navbar', $title);
         }
 		
 		public function comments()

@@ -20,6 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$title['title'] = 'Veebirakendus title';
+        $this->load->view('navbar', $title);
 		$this->load->view('welcome_message');
 	}
 }
