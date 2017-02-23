@@ -1087,6 +1087,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  padding-top: 80px;
 }
 input,
 button,
@@ -6655,3 +6656,16 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+/*
+* For navbar-fixed-top and narrow window to move body down
+*
+body {
+  padding-top: 80px;
+}
+@media (max-width: 767px) {
+  body {
+    padding-top: 300px;
+  }
+}
+*/

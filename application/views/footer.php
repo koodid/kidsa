@@ -1,5 +1,12 @@
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong>
-        seconds. <?php echo (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?>
-    </p>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">&copy; Copyright 2017</p>
+    </div>
+</footer>
+
 </body>
 </html>
