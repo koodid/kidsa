@@ -32,9 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <form class="navbar-form navbar-left">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search"
-                           data-toggle="tooltip" data-placement="bottom" title="Do you know what children are talking about a certain topic? Insert the topic and search for it.">
+                           data-toggle="tooltip" data-placement="bottom"
+                           title="Do you know what are the children talking about love, life or politics? Insert the topic and search for it.">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit" data-toggle="tooltip" title="Click to search">
+                        <button class="btn btn-default" type="submit" title="Click to Search">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
