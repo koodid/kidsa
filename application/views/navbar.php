@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/tooltip.js"></script>
@@ -43,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" title="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="#" title="Sign Up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/signup" title="Sign Up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             </ul>
         </div>
     </div>
