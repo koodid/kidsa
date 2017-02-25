@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" title="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="#" title="Sign Up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/signup" title="Sign Up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             </ul>
         </div>
     </div>
