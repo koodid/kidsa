@@ -1,4 +1,4 @@
-﻿# https://docs.expressionengine.com/latest/urls/remove_index.php.html
+# https://docs.expressionengine.com/latest/urls/remove_index.php.html
 <IfModule mod_rewrite.c>
         RewriteEngine On
         RewriteBase /
