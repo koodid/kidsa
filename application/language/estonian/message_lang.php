@@ -8,3 +8,4 @@ $lang["msg_search_tooltip_long"] = "Soovid teada, mida lapsed räägivad elust, 
 $lang["msg_search_tooltip"] = "Otsimiseks kliki";
 $lang["msg_estonian"] = "eesti keeles";
 $lang["msg_english"] = "inglise keeles";
+$lang["msg_language"] = "Vali keel ...";

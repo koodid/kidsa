@@ -60,16 +60,6 @@ function echoActiveClassIfRequestMatches($requestUri)
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
-                       data-toggle="tooltip" data-placement="auto"
-                       title="<?php echo lang("msg_english"); ?>">English</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
-                       data-toggle="tooltip" data-placement="auto"
-                       title="<?php echo lang("msg_estonian"); ?>">Eesti</a>
-                </li>
                 <li><a href="#" data-toggle="tooltip" data-placement="auto"
                        title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
                         <?php echo lang("msg_login"); ?></a></li>
@@ -79,6 +69,17 @@ function echoActiveClassIfRequestMatches($requestUri)
                         <span class="glyphicon glyphicon-user"></span>
                         <?php echo lang("msg_signup"); ?>
                     </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo lang("msg_language"); ?><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                               data-toggle="tooltip" data-placement="auto"
+                               title="<?php echo lang("msg_english"); ?>">English </a></li>
+                        <li><a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                               data-toggle="tooltip" data-placement="auto"
+                               title="<?php echo lang("msg_estonian"); ?>">Eesti</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

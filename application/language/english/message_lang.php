@@ -8,3 +8,4 @@ $lang["msg_search_tooltip_long"] = "Do you know what are the children talking ab
 $lang["msg_search_tooltip"] = "Click to Search";
 $lang["msg_estonian"] = "Estonian";
 $lang["msg_english"] = "English";
+$lang["msg_language"] = "Choose Language ...";
