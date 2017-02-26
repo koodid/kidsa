@@ -48,11 +48,11 @@ function echoActiveClassIfRequestMatches($requestUri)
             <form class="navbar-form navbar-left">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="<?php echo lang("msg_search"); ?>"
-                           data-toggle="tooltip" data-placement="auto"
+                           data-toggle="tooltip" data-placement="auto bottom"
                            title="<?php echo lang("msg_search_tooltip_long"); ?>">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"
-                                data-toggle="tooltip" data-placement="auto"
+                                data-toggle="tooltip" data-placement="auto bottom"
                                 title="<?php echo lang("msg_search_tooltip"); ?>">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
@@ -60,11 +60,11 @@ function echoActiveClassIfRequestMatches($requestUri)
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="tooltip" data-placement="auto"
+                <li><a href="#" data-toggle="tooltip" data-placement="auto bottom"
                        title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
                         <?php echo lang("msg_login"); ?></a></li>
                 <li <?php echoActiveClassIfRequestMatches("signup") ?>>
-                    <a href="/signup" data-toggle="tooltip" data-placement="auto"
+                    <a href="/signup" data-toggle="tooltip" data-placement="auto bottom"
                        title="<?php echo lang("msg_signup"); ?>">
                         <span class="glyphicon glyphicon-user"></span>
                         <?php echo lang("msg_signup"); ?>
@@ -74,10 +74,10 @@ function echoActiveClassIfRequestMatches($requestUri)
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo lang("msg_language"); ?><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
-                               data-toggle="tooltip" data-placement="auto"
+                               data-toggle="tooltip" data-placement="auto bottom"
                                title="<?php echo lang("msg_english"); ?>">English </a></li>
                         <li><a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
-                               data-toggle="tooltip" data-placement="auto"
+                               data-toggle="tooltip" data-placement="auto bottom"
                                title="<?php echo lang("msg_estonian"); ?>">Eesti</a></li>
                     </ul>
                 </li>
