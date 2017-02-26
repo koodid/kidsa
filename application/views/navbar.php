@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a
-                            href="/"><?php echo lang("mag_home", $this->session->userdata('site_lang')); ?></a></li>
+                            href="/"><?php echo lang("mag_home"); ?></a></li>
                 <li><a href="/about">About</a></li>
             </ul>
             <form class="navbar-form navbar-left">
