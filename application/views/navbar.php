@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/custom.css">
+    <link rel="shortcut icon" href="/images/faviconG.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/tooltip.js"></script>
@@ -54,7 +55,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
                 <li><a href="#" title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
                         <?php echo lang("msg_login"); ?></a></li>
-                <li><a href="/signup" title="<?php echo lang("msg_signup"); ?>"><span class="glyphicon glyphicon-user"></span>
+                <li><a href="/
+                signup" title="<?php echo lang("msg_signup"); ?>"><span class="glyphicon glyphicon-user"></span>
                         <?php echo lang("msg_signup"); ?></a></li>
             </ul>
         </div>
