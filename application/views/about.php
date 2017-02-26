@@ -9,17 +9,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <div class="col-sm-9">
+
             <h1>About KIDSA</h1>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra malesuada mauris,
-                in ullamcorper sapien pulvinar ac. Vivamus sagittis vulputate congue. Maecenas fringilla
-                vitae odio ac porttitor. In hac habitasse platea dictumst. Nam pellentesque nec diam a maximus.
-                Nam sit amet lorem egestas, tincidunt augue a, tempus nunc. Mauris sed aliquam magna. </p>
+            <p>Has your child ever said to you something really wise or something really hilarious?
+                Or you would like to know how the children understand the world around us?</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra malesuada mauris,
-                in ullamcorper sapien pulvinar ac. Vivamus sagittis vulputate congue. Maecenas fringilla
-                vitae odio ac porttitor. In hac habitasse platea dictumst. Nam pellentesque nec diam a maximus.
-                Nam sit amet lorem egestas, tincidunt augue a, tempus nunc. Mauris sed aliquam magna. </p>
+            <p>KIDSA is the place to write down, store, share and read all these wise and funny quotes.</p>
+            <br>
+            <br>
+
+            <blockquote class="blockquote-reverse">
+                <p class="mb-0">
+                    “Grown-ups never understand anything by themselves, and it is tiresome for children to be always
+                    and forever explaining things to them.”</p>
+                <footer class="blockquote-footer"> Antoine de Saint-Exupéry, The Little Prince</footer>
+            </blockquote>
+            
         </div>
     </div>
 </div>
