@@ -1,6 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+
+function echoActiveClassIfRequestMatches($requestUri)
+{
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri)
+        echo 'class="active"';
+}
+
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title><?php echo $title ?></title>
@@ -8,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/custom.css">
-    <link rel="shortcut icon" href="/images/faviconG.ico" />
+    <link rel="shortcut icon" href="/images/faviconG.ico"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/tooltip.js"></script>
@@ -28,9 +38,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a
-                            href="/"><?php echo lang("msg_home"); ?></a></li>
-                <li><a href="/about"><?php echo lang("msg_about"); ?></a></li>
+                <li <?php echoActiveClassIfRequestMatches("") ?>>
+                    <a href="/"><?php echo lang("msg_home"); ?></a>
+                </li>
+                <li <?php echoActiveClassIfRequestMatches("about") ?>>
+                    <a href="/about"><?php echo lang("msg_about"); ?></a>
+                </li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="input-group">
@@ -53,11 +66,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
                        title="<?php echo lang("msg_estonian"); ?>">Eesti</a>
                 </li>
-                <li><a href="#" title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
+                <li><a href="#" title="<?php echo lang("msg_login"); ?>"><span
+                                class="glyphicon glyphicon-log-in"></span>
                         <?php echo lang("msg_login"); ?></a></li>
-                <li><a href="/
-                signup" title="<?php echo lang("msg_signup"); ?>"><span class="glyphicon glyphicon-user"></span>
-                        <?php echo lang("msg_signup"); ?></a></li>
+                <li <?php echoActiveClassIfRequestMatches("signup") ?>>
+                    <a href="/signup" title="<?php echo lang("msg_signup"); ?>">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <?php echo lang("msg_signup"); ?>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
