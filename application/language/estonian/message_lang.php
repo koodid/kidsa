@@ -1,2 +1,2 @@
 <?php
-$lang["mag_home"] = "Kodu";
+$lang["msg_home"] = "Kodu";
