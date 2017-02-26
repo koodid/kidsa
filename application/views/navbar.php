@@ -29,15 +29,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul class="nav navbar-nav">
                 <li class="active"><a
                             href="/"><?php echo lang("msg_home"); ?></a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/about"><?php echo lang("msg_about"); ?></a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search"
+                    <input type="text" class="form-control" placeholder="<?php echo lang("msg_search"); ?>"
                            data-toggle="tooltip" data-placement="bottom"
-                           title="Do you know what are the children talking about love, life or politics? Insert the topic and search for it.">
+                           title="<?php echo lang("msg_search_tooltip_long"); ?>">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit" title="Click to Search">
+                        <button class="btn btn-default" type="submit" title="<?php echo lang("msg_search_tooltip"); ?>">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
@@ -45,13 +45,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo $_SERVER['REQUEST_URI']; ?>">English</a>
+                    <a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                       title="<?php echo lang("msg_english"); ?>">English</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>">Estonian</a>
+                    <a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                       title="<?php echo lang("msg_estonian"); ?>">Eesti</a>
                 </li>
-                <li><a href="#" title="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="/signup" title="Sign Up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#" title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
+                        <?php echo lang("msg_login"); ?></a></li>
+                <li><a href="/signup" title="<?php echo lang("msg_signup"); ?>"><span class="glyphicon glyphicon-user"></span>
+                        <?php echo lang("msg_signup"); ?></a></li>
             </ul>
         </div>
     </div>
