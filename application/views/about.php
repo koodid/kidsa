@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav">
-            <img src="/images/children-p.jpg" class="img-responsive" alt="Children" width=100% height=100%>
+            <img src="/images/children-p.jpg" class="img-responsive" alt="Children">
         </div>
 
         <div class="col-sm-9">
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     and forever explaining things to them.”</p>
                 <footer class="blockquote-footer"> Antoine de Saint-Exupéry, The Little Prince</footer>
             </blockquote>
-            
+
         </div>
     </div>
 </div>
