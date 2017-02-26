@@ -38,7 +38,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            data-toggle="tooltip" data-placement="bottom"
                            title="<?php echo lang("msg_search_tooltip_long"); ?>">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit" title="<?php echo lang("msg_search_tooltip"); ?>">
+                        <button class="btn btn-default" type="submit"
+                                data-toggle="tooltip" data-placement="bottom"
+                                title="<?php echo lang("msg_search_tooltip"); ?>">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
@@ -47,16 +49,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                       data-toggle="tooltip" data-placement="bottom"
                        title="<?php echo lang("msg_english"); ?>">English</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                       data-toggle="tooltip" data-placement="bottom"
                        title="<?php echo lang("msg_estonian"); ?>">Eesti</a>
                 </li>
-                <li><a href="#" title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
+                <li><a href="#" data-toggle="tooltip" data-placement="bottom"
+                       title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
                         <?php echo lang("msg_login"); ?></a></li>
-                <li><a href="/
-                signup" title="<?php echo lang("msg_signup"); ?>"><span class="glyphicon glyphicon-user"></span>
+                <li><a href="/signup" data-toggle="tooltip" data-placement="bottom"
+                       title="<?php echo lang("msg_signup"); ?>"><span class="glyphicon glyphicon-user"></span>
                         <?php echo lang("msg_signup"); ?></a></li>
             </ul>
         </div>
