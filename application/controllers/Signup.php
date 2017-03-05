@@ -5,19 +5,20 @@ class Signup extends CI_Controller
     public function index()
     {
         $title['title'] = 'Sign up';
+        $title['extra_scripts'] = array("/js/signup.js");
         $this->load->view('navbar', $title);
         $this->load->view('signup');
         $this->load->view('footer');
-        
     }
+
     function create_new_user()
     {
         $this->load->model('Register_model');
         $this->Register_model->create_new_user();
-        
-        
+
+
         //as i dont know where to load now, then ill just redirrect for now..
         redirect();
-        
+
     }
 }
