@@ -49,7 +49,7 @@ function echoActiveClassIfRequestMatches($requestUri)
                     <a href="/"><?php echo lang("msg_home"); ?></a>
                 </li>
                 <li <?php echoActiveClassIfRequestMatches("about") ?>>
-                    <a href="/about"><?php echo lang("msg_about"); ?></a>
+                    <a href="about"><?php echo lang("msg_about"); ?></a>
                 </li>
             </ul>
             <form class="navbar-form navbar-left">
@@ -67,11 +67,11 @@ function echoActiveClassIfRequestMatches($requestUri)
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="tooltip" data-placement="auto bottom"
+                <li><a href="login" data-toggle="tooltip" data-placement="auto bottom"
                        title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
                         <?php echo lang("msg_login"); ?></a></li>
                 <li <?php echoActiveClassIfRequestMatches("signup") ?>>
-                    <a href="/signup" data-toggle="tooltip" data-placement="auto bottom"
+                    <a href="signup" data-toggle="tooltip" data-placement="auto bottom"
                        title="<?php echo lang("msg_signup"); ?>">
                         <span class="glyphicon glyphicon-user"></span>
                         <?php echo lang("msg_signup"); ?>

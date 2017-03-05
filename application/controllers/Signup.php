@@ -18,7 +18,7 @@ class Signup extends CI_Controller
 
 
         //as i dont know where to load now, then ill just redirrect for now..
-        redirect();
+        redirect("/login");
 
     }
 }
