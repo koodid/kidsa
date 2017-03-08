@@ -1,4 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+require_once __DIR__ . '/../libraries/Facebook/autoload.php';
+file_exists(__DIR__ . '/../config/secret_config.php') AND require_once __DIR__ . '/../config/secret_config.php';
 
 class Login extends CI_Controller
 {
@@ -11,6 +13,7 @@ class Login extends CI_Controller
 
     function index()
     {
+
         //This method will have the credentials validation
         $this->load->library('form_validation');
 
@@ -20,8 +23,24 @@ class Login extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             //Field validation failed.  User redirected to login page
             $title['title'] = 'Login';
+
+            if (!defined("FACEBOOK_APP_SECRET")) {
+                echo "FACEBOOK_APP_SECRET must be defined to use facebook";
+            } else {
+                $fb = new Facebook\Facebook([
+                    'app_id' => FACEBOOK_APP_ID,
+                    'app_secret' => FACEBOOK_APP_SECRET,
+                    'default_graph_version' => 'v2.5',
+                    'pseudo_random_string_generator' => 'openssl',
+                ]);
+                $helper = $fb->getRedirectLoginHelper();
+                $permissions = ['email']; // optional
+                $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback', $permissions);
+
+                $title['fb_link'] = $loginUrl;
+            }
             $this->load->view('navbar', $title);
-            $this->load->view('login_view');
+            $this->load->view('login_view', $title);
             $this->load->view('footer');
         } else {
             //Go to private area
@@ -36,16 +55,15 @@ class Login extends CI_Controller
         $username = $this->input->post('username');
 
         //query the database
-        $result = $this->user->login($username, $password);
+        $row = $this->user->login($username, $password);
 
-        if ($result) {
-            foreach ($result as $row) {
-                $sess_array = array(
-                    'id' => $row->id,
-                    'username' => $row->username
-                );
-                $this->session->set_userdata('logged_in', $sess_array);
-            }
+        if ($row) {
+            $sess_array = array(
+                'id' => $row->id,
+                'username' => $row->username,
+                'name' => $row->name
+            );
+            $this->session->set_userdata('logged_in', $sess_array);
             return TRUE;
         } else {
             $this->form_validation->set_message('check_database', 'Invalid username or password');

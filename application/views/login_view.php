@@ -8,3 +8,10 @@
 <input type="password" size="20" id="password" name="password"/>
 <br/>
 <input type="submit" value="Login"/>
+<?php
+echo form_close();
+
+if (isset($fb_link)) {
+    echo "<a href='$fb_link'>Sign in with Facebook</a>";
+}
+?>
