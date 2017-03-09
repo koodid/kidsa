@@ -4,6 +4,14 @@ class Signup extends CI_Controller
 {
     public function index()
     {
+        if ($this->session->userdata('logged_in')) {
+            if (isset($_GET['uri'])) {
+                redirect(base_url() . trim($_GET['uri'], "/"));
+            } else {
+                redirect('home');
+            }
+        }
+
         $title['title'] = 'Sign up';
         $title['extra_scripts'] = array("/js/signup.js");
         $this->load->view('navbar', $title);

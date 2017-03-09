@@ -37,7 +37,6 @@ Class User extends CI_Model
                     'name' => $row->name
                 );
                 $this->session->set_userdata('logged_in', $sess_array);
-                redirect("home");
                 return TRUE;
             }
         } else {

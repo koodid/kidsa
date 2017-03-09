@@ -13,6 +13,13 @@ class Login extends CI_Controller
 
     function index()
     {
+        if ($this->session->userdata('logged_in')) {
+            if (isset($_GET['uri'])) {
+                redirect(base_url() . trim($_GET['uri'], "/"));
+            } else {
+                redirect('home');
+            }
+        }
 
         //This method will have the credentials validation
         $this->load->library('form_validation');
@@ -35,8 +42,11 @@ class Login extends CI_Controller
                 ]);
                 $helper = $fb->getRedirectLoginHelper();
                 $permissions = ['email']; // optional
-                $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback', $permissions);
-
+                if (isset($_GET['uri'])) {
+                    $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback/fb_login_callback' . $_GET['uri'].'/', $permissions);
+                } else {
+                    $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback/fb_login_callback', $permissions);
+                }
                 $title['fb_link'] = $loginUrl;
             }
             $this->load->view('navbar', $title);
@@ -44,7 +54,12 @@ class Login extends CI_Controller
             $this->load->view('footer');
         } else {
             //Go to private area
-            redirect('home', 'refresh');
+            if ($this->input->post('uri')) {
+                // go to where user wanted
+                redirect(base_url() . urlencode(trim($this->input->post('uri'), "/")));
+            } else {
+                redirect('home');
+            }
         }
 
     }

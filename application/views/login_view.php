@@ -7,6 +7,7 @@
 <label for="password">Password:</label>
 <input type="password" size="20" id="password" name="password"/>
 <br/>
+<input type="hidden" name="uri" value="<?php if (isset($_GET['uri'])) echo $_GET['uri']; ?>">
 <input type="submit" value="Login"/>
 <?php
 echo form_close();

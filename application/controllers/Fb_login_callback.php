@@ -1,6 +1,5 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
-//require_once __DIR__ . '/../../php-graph-sdk-5.0.0/src/Facebook/autoload.php';
 require_once __DIR__ . '/../libraries/Facebook/autoload.php';
 require_once __DIR__ . '/../config/secret_config.php';
 
@@ -12,7 +11,7 @@ class Fb_login_callback extends CI_Controller
         $this->load->model('user');
     }
 
-    public function index()
+    public function fb_login_callback($uri = '')
     {
         $fb = new Facebook\Facebook([
             'app_id' => FACEBOOK_APP_ID,
@@ -72,7 +71,14 @@ class Fb_login_callback extends CI_Controller
 
 
             $this->load->model('Register_model');
-            $this->user->authenticate_fb_user($userNode->getId(), $userNode->getName(), $userNode->getField("email"));
+            if ($this->user->authenticate_fb_user($userNode->getId(), $userNode->getName(), $userNode->getField("email"))) {
+                if ($uri === '') {
+                    redirect('home');
+                } else {
+                    redirect($uri);
+                }
+            }
         }
+        // TODO test else if auth rejected
     }
 }

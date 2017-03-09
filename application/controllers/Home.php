@@ -22,7 +22,7 @@ class Home extends CI_Controller
             $this->load->view('footer');
         } else {
             //If no session, redirect to login page
-            redirect('login', 'refresh');
+            redirect('login?uri=' . urlencode($_SERVER['REQUEST_URI']));
         }
     }
 
@@ -30,7 +30,7 @@ class Home extends CI_Controller
     {
         $this->session->unset_userdata('logged_in');
         session_destroy();
-        redirect('home', 'refresh');
+        redirect('home');
     }
 
 }
