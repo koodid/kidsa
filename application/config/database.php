@@ -73,12 +73,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+// TODO database password should not be public
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'kidsa_user',
+	'username' => 'kidsacsut_kidsacsut',
 	'password' => 'kidsa123',
-	'database' => 'kidsadb',
+	'database' => 'kidsacsut_kidsadb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
