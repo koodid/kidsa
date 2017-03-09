@@ -15,7 +15,8 @@ class Register_model extends CI_Model
         $password = password_hash($this->input->post("password"), PASSWORD_DEFAULT);
         $email = $this->db->escape($this->input->post("email"));
 
-        $sql = "CALL addNewUser($name, $username, '$password', $email)";
+        //$sql = "CALL addNewUser($name, $username, '$password', $email)";
+        $sql = "INSERT INTO users (Username, Password, Email) VALUES ($username, '$password', $email)";
         $this->db->query($sql);
     }
 
@@ -26,7 +27,9 @@ class Register_model extends CI_Model
         $password = "";
         $email = $this->db->escape($email);
 
-        $sql = "CALL addNewUser($name, $username, '$password', $email)";
+        //$sql = "CALL addNewUser($name, $username, '$password', $email)";'
+        $sql = "INSERT INTO users (Name, Username, Password, Email) VALUES ($name, $username, '$password', $email)";
+        
         $this->db->query($sql);
     }
 }
