@@ -29,7 +29,7 @@ class Register_model extends CI_Model
 
         //$sql = "CALL addNewUser($name, $username, '$password', $email)";'
         $sql = "INSERT INTO users (Name, Username, Password, Email) VALUES ($name, $username, '$password', $email)";
-        
+
         $this->db->query($sql);
     }
 }

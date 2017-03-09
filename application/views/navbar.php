@@ -68,10 +68,9 @@ function echoActiveClassIfRequestMatches($requestUri)
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if ($this->session->userdata('logged_in')){
+                if ($this->session->userdata('logged_in')) {
                     $this->load->view('navbar_authenticated.php');
-                }
-                else{
+                } else {
                     $this->load->view('navbar_unauthenticated.php');
                 }
                 ?>
