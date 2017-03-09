@@ -2,6 +2,12 @@
 
 Class User extends CI_Model
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+    }
+
     function login($username, $password)
     {
         // TODO Rakendus ei teosta SELECT päringuid mittekonstantsetel tabelitel (vaadete kasutamine andmete pärimiseks)
@@ -40,9 +46,8 @@ Class User extends CI_Model
                 return TRUE;
             }
         } else {
-            $this->load->model('register_model');
-            $this->Register_model->create_fb_user($fb_id, $name, $email);
-            redirect("login");
+            $this->register_model->create_fb_user($fb_id, $name, $email);
+            $this->authenticate_fb_user($fb_id, $name, $email);
             return TRUE;
         }
         return false;
