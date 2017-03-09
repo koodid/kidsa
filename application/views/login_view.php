@@ -13,6 +13,6 @@
 echo form_close();
 
 if (isset($fb_link)) {
-    echo "<a href='$fb_link'>Sign in with Facebook</a>";
+    echo "<a class=\"btn btn-social btn-facebook\" href='$fb_link'><span class=\"fa fa-facebook\"></span>Sign in with Facebook</a>";
 }
 ?>
