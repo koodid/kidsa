@@ -82,11 +82,11 @@ function echoActiveClassIfRequestMatches($requestUri)
                                 class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                            <a href="<?php echo base_url(); ?>langswitch/switchLanguage/english?uri=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>"
                                data-toggle="tooltip" data-placement="auto bottom"
                                title="<?php echo lang("msg_english"); ?>">English </a></li>
                         <li>
-                            <a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                            <a href="<?php echo base_url(); ?>langswitch/switchLanguage/estonian?uri=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>"
                                data-toggle="tooltip" data-placement="auto bottom"
                                title="<?php echo lang("msg_estonian"); ?>">Eesti</a></li>
                     </ul>
