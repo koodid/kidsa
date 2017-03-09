@@ -9,3 +9,4 @@ $lang["msg_search_tooltip"] = "Click to Search";
 $lang["msg_estonian"] = "Estonian";
 $lang["msg_english"] = "English";
 $lang["msg_language"] = "Choose Language ...";
+$lang["msg_logout"] = "Logout";

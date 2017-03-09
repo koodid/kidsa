@@ -67,16 +67,14 @@ function echoActiveClassIfRequestMatches($requestUri)
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login" data-toggle="tooltip" data-placement="auto bottom"
-                       title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
-                        <?php echo lang("msg_login"); ?></a></li>
-                <li <?php echoActiveClassIfRequestMatches("signup") ?>>
-                    <a href="signup" data-toggle="tooltip" data-placement="auto bottom"
-                       title="<?php echo lang("msg_signup"); ?>">
-                        <span class="glyphicon glyphicon-user"></span>
-                        <?php echo lang("msg_signup"); ?>
-                    </a>
-                </li>
+                <?php
+                if ($this->session->userdata('logged_in')){
+                    $this->load->view('navbar_authenticated.php');
+                }
+                else{
+                    $this->load->view('navbar_unauthenticated.php');
+                }
+                ?>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo lang("msg_language"); ?><span
                                 class="caret"></span></a>
