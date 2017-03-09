@@ -37,6 +37,9 @@ class Fb_login_callback extends CI_Controller
         if (isset($accessToken)) {
             // Logged in!
             $_SESSION['facebook_access_token'] = (string)$accessToken;
+            $helper = $fb->getRedirectLoginHelper();
+            $_SESSION['facebook_logout_link'] = $helper->getLogoutUrl($accessToken, base_url() . "login");
+
 
             // OAuth 2.0 client handler
             $oAuth2Client = $fb->getOAuth2Client();

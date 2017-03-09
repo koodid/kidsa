@@ -29,8 +29,16 @@ class Home extends CI_Controller
     function logout()
     {
         $this->session->unset_userdata('logged_in');
-        session_destroy();
-        redirect('home');
+        if ($_SESSION['facebook_access_token']) {
+            $url = $_SESSION['facebook_logout_link'];
+            $_SESSION['facebook_logout_link'] = '';
+            $_SESSION['facebook_access_token'] = '';
+            session_destroy();
+            redirect($url);
+        } else {
+            session_destroy();
+            redirect("login");
+        }
     }
 
 }
