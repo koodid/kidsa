@@ -10,21 +10,17 @@ class Register_model extends CI_Model
 
     public function create_new_user()
     {
-        $username = $this->db->escape($this->input->post("username"));
+        $username = $this->input->post("username");
         $password = password_hash($this->input->post("password"), PASSWORD_DEFAULT);
-        $email = $this->db->escape($this->input->post("email"));
+        $email = $this->input->post("email");
 
-        $sql = "CALL createNewUser($username, '$password', $email)";
-        $this->db->query($sql);
+        $sql = "CALL createNewUser(?,?,?)";
+        $this->db->query($sql, array('username' => $username, 'password' => $password, 'email' => $email));
     }
 
     public function create_fb_user($fb_id, $name, $email)
     {
-        $name = $this->db->escape($name);
-        $username = $this->db->escape($fb_id);
-        $email = $this->db->escape($email);
-        
-        $sql = "CALL createNewFBuser($name, $username, $email)";
-        $this->db->query($sql);
+        $sql = "CALL createNewFBuser(?,?,?)";
+        $this->db->query($sql, array('name' => $name, 'username' => $fb_id, 'email' => $email));
     }
 }
