@@ -19,7 +19,8 @@ function echoUriIfNotSelf($self)
 }
 
 ?>
-<li><a href="<?php echoUriIfNotSelf('login'); ?>" data-toggle="tooltip" data-placement="auto bottom"
+<li <?php echoActiveClassIfRequestMatches("login") ?>>
+    <a href="<?php echoUriIfNotSelf('login'); ?>" data-toggle="tooltip" data-placement="auto bottom"
        title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
         <?php echo lang("msg_login"); ?></a></li>
 <li <?php echoActiveClassIfRequestMatches("signup") ?>>
