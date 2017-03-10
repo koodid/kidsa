@@ -7,14 +7,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <h2>Create an account</h2>
     <form class="form-horizontal" action="<?php echo base_url(); ?>signup/create_new_user" method="post">
         <fieldset>
-
-            <div id="nameHolder" class="form-group">
-                <label class="col-md-4 control-label" for="name">Name</label>
-                <div class="col-md-4">
-                    <input id="name" name="name" type="text" placeholder="Enter your full name"
-                           class="form-control input-md" required="">
-                </div>
-            </div>
             <div id="usernameHolder" class="form-group">
                 <label class="col-md-4 control-label" for="username">Username</label>
                 <div class="col-md-4">
