@@ -9,6 +9,7 @@ class Fb_login_callback extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user');
+        $this->load->model('register_model');
     }
 
     public function fb_login_callback($uri = '')
@@ -45,9 +46,6 @@ class Fb_login_callback extends CI_Controller
 
             // Now you can redirect to another page and use the
             // access token from $_SESSION['facebook_access_token']
-//            echo "Logged in successfully " . $accessToken;
-//            echo "<br>" . $longLivedAccessToken;
-//            echo "<br>";
 
             // Sets the default fallback access token so we don't have to pass it to each request
             $fb->setDefaultAccessToken($longLivedAccessToken);
@@ -65,12 +63,8 @@ class Fb_login_callback extends CI_Controller
                 exit;
             }
 
-//            echo 'Logged in as ' . $userNode->getName();
-//            echo "<br>";
 //            echo $userNode->asJson();
 
-
-            $this->load->model('Register_model');
             if ($this->user->authenticate_fb_user($userNode->getId(), $userNode->getName(), $userNode->getField("email"))) {
                 if ($uri === '') {
                     redirect('home');

@@ -5,6 +5,7 @@ class Signup extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('logged_in')) {
+            // TODO maybe not redirect for "Veebilehitseja edasi-tagasi nuppude tugi"
             if (isset($_GET['uri'])) {
                 redirect(base_url() . trim($_GET['uri'], "/"));
             } else {

@@ -14,6 +14,7 @@ class Login extends CI_Controller
     function index()
     {
         if ($this->session->userdata('logged_in')) {
+            // TODO maybe not redirect for "Veebilehitseja edasi-tagasi nuppude tugi"
             if (isset($_GET['uri'])) {
                 redirect(base_url() . trim($_GET['uri'], "/"));
             } else {
@@ -43,9 +44,9 @@ class Login extends CI_Controller
                 $helper = $fb->getRedirectLoginHelper();
                 $permissions = ['email']; // optional
                 if (isset($_GET['uri'])) {
-                    $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback/fb_login_callback' . $_GET['uri'].'/', $permissions);
+                    $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback/fb_login_callback/' . $_GET['uri'], $permissions);
                 } else {
-                    $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback/fb_login_callback', $permissions);
+                    $loginUrl = $helper->getLoginUrl(base_url() . '/fb_login_callback/fb_login_callback/', $permissions);
                 }
                 $title['fb_link'] = $loginUrl;
             }
