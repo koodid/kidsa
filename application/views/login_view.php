@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div>
             <a <?php if (isset($fb_link)){echo "href='$fb_link'";} ?>
-                    id="btn-fbsignup" class="btn btn-primary" role="button"><em class="icon-facebook"></em>
+                    id="btn-fbsignup" class="btn btn-social btn-facebook"><span class="fa fa-facebook"></span>
                 <?php echo lang("msg_FBlogin"); ?></a>
         </div>
     </div>
