@@ -18,7 +18,7 @@
            
                 
                 <div class="checkbox">
-                    <label><input id="publicpost" name="publicpost" type="checkbox" value="">Do you want to post it publicly</label>                
+                    <label><input id="publicpost" name="publicpost" type="checkbox" value="">Post as private post</label>                
                 </div>
             </div>    
             <div class="form-group">

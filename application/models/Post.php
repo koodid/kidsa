@@ -14,10 +14,10 @@ class Post extends CI_Model
         $text = $this->input->post("newpost");
 
         if(isset($_POST["publicpost"])) {
-            $public = 'y';
+            $public = 'n';
         }
         else {
-            $public = 'n';
+            $public = 'y';
 
         }
         //atm newPost takes 3 arguments, language not used
