@@ -1,6 +1,11 @@
 # https://docs.expressionengine.com/latest/urls/remove_index.php.html
 <IfModule mod_rewrite.c>
         RewriteEngine On
+        RewriteCond %{SERVER_PORT} 80
+        RewriteRule ^(.*)$ https://www.kidsa.cs.ut.ee/$1 [R,L]
+</IfModule>
+<IfModule mod_rewrite.c>
+        RewriteEngine On
         RewriteBase /
 
         # Removes index.php from ExpressionEngine URLs
