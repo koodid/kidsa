@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<li><a href="login" data-toggle="tooltip" data-placement="auto bottom"
+<li <?php echoActiveClassIfRequestMatches("login") ?>>
+    <a href="login" data-toggle="tooltip" data-placement="auto bottom"
        title="<?php echo lang("msg_login"); ?>"><span class="glyphicon glyphicon-log-in"></span>
         <?php echo lang("msg_login"); ?></a></li>
 <li <?php echoActiveClassIfRequestMatches("signup") ?>>
