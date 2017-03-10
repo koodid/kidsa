@@ -14,3 +14,9 @@ $lang["msg_userhome"] = "My Posts";
 $lang["msg_settings"] = "Settings";
 $lang["msg_addchildren"] = "My Children";
 $lang["msg_account"] = "My Account";
+
+$lang["msg_username"] = "Username";
+$lang["msg_enterusername"] = "Enter username";
+$lang["msg_password"] = "Password";
+$lang["msg_enterpassword"] = "Enter password";
+$lang["msg_FBlogin"] = "Log In with Facebook";

@@ -14,3 +14,9 @@ $lang["msg_userhome"] = "Minu postitused";
 $lang["msg_settings"] = "Seaded";
 $lang["msg_addchildren"] = "Minu lapsed";
 $lang["msg_account"] = "Minu konto";
+
+$lang["msg_username"] = "Kasutajanimi";
+$lang["msg_enterusername"] = "Sisesta kasutajanimi";
+$lang["msg_password"] = "Salasõna";
+$lang["msg_enterpassword"] = "Sisesta salasõna";
+$lang["msg_FBlogin"] = "Logi sisse läbi Facebooki";
