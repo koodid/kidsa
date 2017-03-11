@@ -116,7 +116,8 @@ CREATE TABLE `posts` (
   `User` int(11) NOT NULL,
   `Public` char(1) NOT NULL DEFAULT 'y',
   `Text` varchar(1000) NOT NULL,
-  `Language` varchar(2) NOT NULL
+  `Language` varchar(2) NOT NULL,
+  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
