@@ -148,7 +148,7 @@ CREATE TABLE `users` (
   `Password` varchar(255) DEFAULT NULL,
   `Email` varchar(100) NOT NULL,
   `Regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `Image` varbinary(200) DEFAULT NULL
+  `Image` varbinary(200000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
