@@ -7,14 +7,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <hr>
     <form class="form-horizontal" action="<?php echo base_url(); ?>settings/change_password" method="post">
         <fieldset>
-            <div id="passwordHolder" class="form-group">
+            <div class="form-group">
                 <label class="col-md-4 control-label" for="password"><?php echo lang("msg_newpassword"); ?></label>
                 <div class="col-md-4">
                     <input id="password" name="password" type="password" placeholder="<?php echo lang("msg_enternewpassword"); ?>"
                            class="form-control input-md" required="">
                 </div>
             </div>
-            <div id="confirmpasswordHolder" class="form-group">
+            <div class="form-group">
                 <label class="col-md-4 control-label" for="confirmpassword"><?php echo lang("msg_confirmnewpassword"); ?></label>
                 <div class="col-md-4">
                     <input id="confirmpassword" name="confirmpassword" type="password"
