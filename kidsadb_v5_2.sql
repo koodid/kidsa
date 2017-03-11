@@ -50,6 +50,12 @@ INSERT INTO posts (User, Public, Text)
 VALUES (p_User, p_Public, p_Text);
 END$$
 
+CREATE DEFINER=`kidsacsut_kidsacsut`@`localhost` PROCEDURE `changePassword`(IN `p_Id` INT, IN `p_Password` VARCHAR(255))
+BEGIN
+UPDATE users SET Password = p_Password
+WHERE users.ID = p_Id;
+END$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
