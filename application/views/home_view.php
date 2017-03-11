@@ -10,10 +10,10 @@
             <div class="form-group">
                
                 <label for="select">Select the children who said..</label>
-                <select class="selectpicker" id="select">
+                <select class="selectpicker" id="select" name="child">
                     <!--TODO get all children and create options for each-->
-                    <option>Child 1</option>
-                    <option>Child 2</option>
+                    <option value="1">Child 1</option>
+                    <option value="2">Child 2</option>
                 </select>
            
                 
