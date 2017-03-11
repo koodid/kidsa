@@ -37,7 +37,7 @@ END$$
 
 CREATE DEFINER=`kidsacsut_kidsacsut`@`localhost` PROCEDURE getUserPosts (IN p_Id int(11))
 BEGIN
-SELECT * FROM posts
+SELECT * FROM postview
 WHERE User = p_Id
 ORDER BY Id DESC;
 END$$
@@ -116,6 +116,21 @@ CREATE TABLE `posts` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `postview`
+-- (See below for the actual view)
+--
+CREATE TABLE `postview` (
+  `ID` int(11),
+  `User` int(11),
+  `Public` char(1),
+  `Text` varchar(1000),
+  `Language` varchar(2),
+  `Name` varchar(100),
+  `Birthday` date);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -136,6 +151,15 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`ID`, `Name`, `Username`, `Password`, `Email`, `Regdate`, `Image`) VALUES
 (0, NULL, 'kalle', '$2y$10$F/yVWWuuTN6MyL2WKq8otuhIfQ2rt7WGqtgKKBfSELVSgq7zSe3aa', 'kalle', '2017-03-09 13:57:54', NULL),
 (1, NULL, 'malle', '$2y$10$whl4nAlmUlTPM2CIk1vk6u6hsXT44Tg13sC2lqUakkFjGcKtOQItW', 'malle@', '2017-03-09 13:58:07', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `postview`
+--
+DROP TABLE IF EXISTS `postview`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`kidsacsut_kidsacsut`@`localhost` SQL SECURITY DEFINER VIEW `postview`  AS  select `posts`.`ID` AS `ID`,`posts`.`User` AS `User`,`posts`.`Public` AS `Public`,`posts`.`Text` AS `Text`,`posts`.`Language` AS `Language`,`children`.`Name` AS `Name`,`children`.`Birthday` AS `Birthday` from ((`posts` left join `childrenposts` on((`posts`.`ID` = `childrenposts`.`Post`))) left join `children` on((`childrenposts`.`Child` = `children`.`ID`))) ;
 
 --
 -- Indexes for dumped tables
