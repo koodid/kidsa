@@ -2,15 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<?php echo validation_errors(); ?>
-
-
 <div class="container">
     <?php echo form_open('login'); ?>
 
     <div class="col-md-4 col-lg-offset-4">
         <h2><?php echo lang("msg_login"); ?></h2>
         <hr>
+
+        <?php if(validation_errors() != false): ?>
+            <div class="alert alert-info">
+                <strong><?php echo lang("msg_error"); ?></strong> <?php echo validation_errors();?>
+            </div>
+        <?php endif; ?>
 
         <form role="form">
             <div class="form-group">

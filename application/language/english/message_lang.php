@@ -20,6 +20,7 @@ $lang["msg_enterusername"] = "Enter username";
 $lang["msg_password"] = "Password";
 $lang["msg_enterpassword"] = "Enter password";
 $lang["msg_FBlogin"] = "Log In with Facebook";
+$lang["msg_error"] = "Error!";
 // Settings
 $lang["msg_changepassword"] = "Change your password";
 $lang["msg_newpassword"] = "New password";

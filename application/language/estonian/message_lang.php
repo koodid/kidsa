@@ -20,6 +20,7 @@ $lang["msg_enterusername"] = "Sisesta kasutajanimi";
 $lang["msg_password"] = "Salasõna";
 $lang["msg_enterpassword"] = "Sisesta salasõna";
 $lang["msg_FBlogin"] = "Logi sisse läbi Facebooki";
+$lang["msg_error"] = "Viga!";
 // Settings
 $lang["msg_changepassword"] = "Muuda salasõna";
 $lang["msg_newpassword"] = "Uus salasõna";
