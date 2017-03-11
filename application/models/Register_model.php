@@ -23,4 +23,12 @@ class Register_model extends CI_Model
         $sql = "CALL createNewFBuser(?,?,?)";
         $this->db->query($sql, array('name' => $name, 'username' => $fb_id, 'email' => $email));
     }
+
+    public function change_password($user_id)
+    {
+        $password = password_hash($this->input->post("password"), PASSWORD_DEFAULT);
+
+        $sql = "CALL changePassword(?,?)";
+        $this->db->query($sql, array('user_id' => $user_id, 'password' => $password));
+    }
 }

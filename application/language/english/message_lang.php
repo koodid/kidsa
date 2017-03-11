@@ -14,9 +14,16 @@ $lang["msg_userhome"] = "My Posts";
 $lang["msg_settings"] = "Settings";
 $lang["msg_addchildren"] = "My Children";
 $lang["msg_account"] = "My Account";
-
+// Login
 $lang["msg_username"] = "Username";
 $lang["msg_enterusername"] = "Enter username";
 $lang["msg_password"] = "Password";
 $lang["msg_enterpassword"] = "Enter password";
 $lang["msg_FBlogin"] = "Log In with Facebook";
+// Settings
+$lang["msg_changepassword"] = "Change your password";
+$lang["msg_newpassword"] = "New password";
+$lang["msg_enternewpassword"] = "Enter your new password";
+$lang["msg_confirmnewpassword"] = "Confirm new password";
+$lang["msg_enterconfirmnewpassword"] = "Confirm your new password";
+$lang["msg_savechanges"] = "Save Changes";
