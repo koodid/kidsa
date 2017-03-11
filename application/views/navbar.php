@@ -63,7 +63,7 @@ function echoActiveClassIfRequestMatches($requestUri)
                         <button class="btn btn-default" type="submit"
                                 data-toggle="tooltip" data-placement="auto bottom"
                                 title="<?php echo lang("msg_search_tooltip"); ?>">
-                            <i class="glyphicon glyphicon-search"></i>
+                            <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </div>
                 </div>
