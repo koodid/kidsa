@@ -34,7 +34,7 @@
     <div class="col-md-8">
         <?php foreach ($posts as $post): ?>
             <blockquote class="blockquote">
-                <?php echo $post['Text']; ?>
+                <?php echo html_escape($post['Text']); ?>
                 <!--TODO: add children info when children are set-->
             </blockquote>
         <?php endforeach; ?>
