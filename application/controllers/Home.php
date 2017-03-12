@@ -11,8 +11,12 @@ class Home extends CI_Controller
     function index()
     {
         if ($this->session->userdata('logged_in')) {
-            $this->load->model('Post');
             $session_data = $this->session->userdata('logged_in');
+            $this->load->model('Post');
+            $data['posts'] = $this->Post->get_posts($session_data['id']);
+            $this->db->reconnect();
+            $this->load->model('Children_model');
+            $data['children'] = $this->Children_model->get_children($session_data['id']);
 
             $data['name'] = $session_data['name'];
             $data['id'] = $session_data['id'];

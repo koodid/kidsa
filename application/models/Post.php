@@ -10,9 +10,11 @@ class Post extends CI_Model
     
     public function create_new_post($id)
     {
-        //TODO set children id from selection..
+       
         $text = $this->input->post("newpost");
         $child = $this->input->post("child");
+        //language is constant atm
+        $language = 'ee';
 
         if(isset($_POST["publicpost"])) {
             $public = 'n';
@@ -21,10 +23,10 @@ class Post extends CI_Model
             $public = 'y';
 
         }
-        //atm newPost takes 3 arguments, language not used
-        //also TODO  add childrenposts and language to newPost
-        $sql = "CALL newPost(?,?,?)";
-        $this->db->query($sql, array('user' => $id, 'public' => $public, 'text' => $text));
+
+        $sql = "CALL newPostwLink(?,?,?,?,?)";
+        $this->db->query($sql, array('user' => $id, 'public' => $public, 'text' => $text, 'language' => $language, 'child' => $child));
+
 
     }
     public function get_posts($id)

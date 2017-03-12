@@ -73,7 +73,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-// TODO database password should not be public
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',

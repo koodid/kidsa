@@ -9,12 +9,13 @@
                 </div>
             </div>
             <div class="form-group">
+               
+                <label for="child">Select the children who said..</label>
+                <select class="selectpicker" id="child" name="child">
+                    <?php foreach ($children as $child): ?>
+                        <option value= <?php echo html_escape($child['ID']); ?>><?php echo html_escape($child['Name']); ?></option>
+                    <?php endforeach; ?>
 
-                <label for="select">Select the children who said..</label>
-                <select class="selectpicker" id="select" name="child">
-                    <!--TODO get all children and create options for each-->
-                    <option value="1">Child 1</option>
-                    <option value="2">Child 2</option>
                 </select>
 
                 <div>
