@@ -25,21 +25,21 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `createNewFBuser`(IN `p_Name`     VARCHAR(100),
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `createNewFBuser`(IN `p_Name`     VARCHAR(100),
                                                                               IN `p_Username` VARCHAR(100),
                                                                               IN `p_Email`    VARCHAR(100)) BEGIN
   INSERT INTO users (Name, Username, Email)
   VALUES (p_Name, p_Username, p_Email);
 END$$
 
-CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `createNewUser`(IN `p_Username` VARCHAR(100),
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `createNewUser`(IN `p_Username` VARCHAR(100),
                                                                             IN `p_Password` VARCHAR(255),
                                                                             IN `p_Email`    VARCHAR(100)) BEGIN
   INSERT INTO users (Username, Password, Email)
   VALUES (p_Username, p_Password, p_Email);
 END$$
 
-CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE getUserPosts(IN p_Id INT(11))
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE getUserPosts(IN p_Id INT(11))
   BEGIN
     SELECT *
     FROM postview
@@ -47,7 +47,7 @@ CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE getUserPosts(IN p_Id
     ORDER BY Id DESC;
   END$$
 
-CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE newPost(IN p_User   INT(11),
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE newPost(IN p_User   INT(11),
                                                                     IN p_Public CHAR(1),
                                                                     IN p_Text   VARCHAR(1000))
   BEGIN
@@ -55,7 +55,7 @@ CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE newPost(IN p_User   
     VALUES (p_User, p_Public, p_Text);
   END$$
 
-CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `changePassword`(IN `p_Id`       INT,
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `changePassword`(IN `p_Id`       INT,
                                                                              IN `p_Password` VARCHAR(255))
   BEGIN
     UPDATE users
@@ -63,7 +63,7 @@ CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `changePassword`(IN 
     WHERE users.ID = p_Id;
   END$$
 
-CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `addChild` (IN `p_UserID` INT(11),
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `addChild` (IN `p_UserID` INT(11),
                                                                         IN `p_Name` VARCHAR(100),
                                                                         IN `p_Birthday` DATE)
   BEGIN
@@ -197,7 +197,7 @@ INSERT INTO `users` (`ID`, `Name`, `Username`, `Password`, `Email`, `Regdate`, `
 DROP TABLE IF EXISTS `postview`;
 
 CREATE ALGORITHM = UNDEFINED
-  DEFINER =`kidsacsut_kidsacsut`@`localhost`
+  DEFINER =`kidsacsut`@`localhost`
   SQL SECURITY DEFINER VIEW `postview` AS
   SELECT
     `posts`.`ID`          AS `ID`,
