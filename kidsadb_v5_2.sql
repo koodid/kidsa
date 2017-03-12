@@ -63,6 +63,14 @@ CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `changePassword`(IN 
     WHERE users.ID = p_Id;
   END$$
 
+CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `addChild` (IN `p_Username` VARCHAR(100),
+                                                                        IN `p_Name` VARCHAR(100),
+                                                                        IN `p_Birthday` DATE)
+  BEGIN
+    INSERT INTO children (Parent, Name, Birthday)
+    VALUES (p_Username, p_Name, p_Birthday);
+  END$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
