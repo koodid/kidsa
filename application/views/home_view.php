@@ -10,11 +10,12 @@
             </div>
             <div class="form-group">
                
-                <label for="select">Select the children who said..</label>
-                <select class="selectpicker" id="select" name="child">
-                    <!--TODO get all children and create options for each-->
-                    <option value="1">Child 1</option>
-                    <option value="2">Child 2</option>
+                <label for="child">Select the children who said..</label>
+                <select class="selectpicker" id="child" name="child">
+                    <?php foreach ($children as $child): ?>
+                        <option value= <?php echo html_escape($child['ID']); ?>><?php echo html_escape($child['Name']); ?></option>
+                    <?php endforeach; ?>
+
                 </select>
 
                 <div>
@@ -37,7 +38,7 @@
         <?php foreach ($posts as $post): ?>
             <blockquote class="blockquote">
                 <?php echo html_escape($post['Text']); ?>
-                <!--TODO: add children info when children are set-->
+                
                     <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>, <?php echo html_escape($post['Birthday']); ?></footer>
             </blockquote>
         <?php endforeach; ?>

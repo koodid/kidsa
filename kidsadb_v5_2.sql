@@ -39,6 +39,12 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `createNewUser`(IN `p_Username
   VALUES (p_Username, p_Password, p_Email);
 END$$
 
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildren` (IN `p_Id` INT(11))  BEGIN
+  SELECT * FROM childview
+  WHERE Parent = p_Id
+  ORDER BY Id DESC;
+END$$
+
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE getUserPosts(IN p_Id INT(11))
   BEGIN
     SELECT *
@@ -73,6 +79,17 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `addChild` (IN `p_UserID` INT(
 
 DELIMITER ;
 
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11))  BEGIN
+  START TRANSACTION;
+    INSERT INTO posts (User, Public, Text, Language)
+    VALUES (p_User, p_Public, p_Text, p_Language);
+    INSERT INTO childrenposts (Child, Post)
+    VALUES (p_child, LAST_INSERT_ID());
+  COMMIT;
+END$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +117,19 @@ CREATE TABLE `childrenposts` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `childview`
+-- (See below for the actual view)
+--
+CREATE TABLE `childview` (
+  `ID` int(11),
+  `Parent` int(11),
+  `Name` varchar(100),
+  `Birthday` date
+);
 
 -- --------------------------------------------------------
 
@@ -188,6 +218,23 @@ INSERT INTO `users` (`ID`, `Name`, `Username`, `Password`, `Email`, `Regdate`, `
    NULL),
   (1, NULL, 'malle', '$2y$10$whl4nAlmUlTPM2CIk1vk6u6hsXT44Tg13sC2lqUakkFjGcKtOQItW', 'malle@', '2017-03-09 13:58:07',
    NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `childview`
+--
+DROP TABLE IF EXISTS `childview`;
+
+CREATE ALGORITHM=UNDEFINED
+  DEFINER =`kidsacsut`@`localhost`
+  SQL SECURITY DEFINER VIEW `childview`  AS
+  SELECT
+    `children`.`ID`	  AS `ID`,
+    `children`.`Parent`   AS `Parent`,
+    `children`.`Name` 	  AS `Name`,
+    `children`.`Birthday` AS `Birthday`
+  FROM `children` ;
 
 -- --------------------------------------------------------
 
