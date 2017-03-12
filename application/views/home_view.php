@@ -38,6 +38,7 @@
             <blockquote class="blockquote">
                 <?php echo html_escape($post['Text']); ?>
                 <!--TODO: add children info when children are set-->
+                    <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>, <?php echo html_escape($post['Birthday']); ?></footer>
             </blockquote>
         <?php endforeach; ?>
     </div>
