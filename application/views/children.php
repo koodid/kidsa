@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="form-group col-md-4 col-lg-offset-4">
             <label for="birthday"><?php echo lang("msg_birthday"); ?></label>
-            <input type="date" class="form-control" id="birthday" name="birthday"
+            <input type="text" class="form-control" id="birthday" name="birthday"
                    placeholder="<?php echo lang("msg_dateformat"); ?>">
         </div>
 
