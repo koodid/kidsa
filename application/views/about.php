@@ -26,6 +26,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <footer class="blockquote-footer"> Antoine de Saint-Exupéry, The Little Prince</footer>
             </blockquote>
 
+            <p></p>
+            <div id="googleMap"></div>
         </div>
     </div>
 </div>
