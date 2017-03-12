@@ -11,9 +11,9 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
@@ -25,36 +25,43 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`kidsacsut_kidsacsut`@`localhost` PROCEDURE `createNewFBuser` (IN `p_Name` VARCHAR(100), IN `p_Username` VARCHAR(100), IN `p_Email` VARCHAR(100))  BEGIN
-INSERT INTO users (Name, Username, Email)
-VALUES (p_Name, p_Username, p_Email);
+CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `createNewFBuser`(IN `p_Name`     VARCHAR(100),
+                                                                              IN `p_Username` VARCHAR(100),
+                                                                              IN `p_Email`    VARCHAR(100)) BEGIN
+  INSERT INTO users (Name, Username, Email)
+  VALUES (p_Name, p_Username, p_Email);
 END$$
 
-CREATE DEFINER=`kidsacsut_kidsacsut`@`localhost` PROCEDURE `createNewUser` (IN `p_Username` VARCHAR(100), IN `p_Password` VARCHAR(255), IN `p_Email` VARCHAR(100))  BEGIN
-INSERT INTO users (Username, Password, Email)
-VALUES (p_Username, p_Password, p_Email);
+CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `createNewUser`(IN `p_Username` VARCHAR(100),
+                                                                            IN `p_Password` VARCHAR(255),
+                                                                            IN `p_Email`    VARCHAR(100)) BEGIN
+  INSERT INTO users (Username, Password, Email)
+  VALUES (p_Username, p_Password, p_Email);
 END$$
 
-CREATE DEFINER=`kidsacsut_kidsacsut`@`localhost` PROCEDURE getUserPosts (IN p_Id int(11))
-BEGIN
-SELECT * FROM postview
-WHERE User = p_Id
-ORDER BY Id DESC;
-END$$
+CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE getUserPosts(IN p_Id INT(11))
+  BEGIN
+    SELECT *
+    FROM postview
+    WHERE User = p_Id
+    ORDER BY Id DESC;
+  END$$
 
-CREATE DEFINER=`kidsacsut_kidsacsut`@`localhost` PROCEDURE newPost (IN p_User int(11),
-IN p_Public char(1),
-IN p_Text varchar(1000))
-BEGIN
-INSERT INTO posts (User, Public, Text)
-VALUES (p_User, p_Public, p_Text);
-END$$
+CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE newPost(IN p_User   INT(11),
+                                                                    IN p_Public CHAR(1),
+                                                                    IN p_Text   VARCHAR(1000))
+  BEGIN
+    INSERT INTO posts (User, Public, Text)
+    VALUES (p_User, p_Public, p_Text);
+  END$$
 
-CREATE DEFINER=`kidsacsut_kidsacsut`@`localhost` PROCEDURE `changePassword`(IN `p_Id` INT, IN `p_Password` VARCHAR(255))
-BEGIN
-UPDATE users SET Password = p_Password
-WHERE users.ID = p_Id;
-END$$
+CREATE DEFINER =`kidsacsut_kidsacsut`@`localhost` PROCEDURE `changePassword`(IN `p_Id`       INT,
+                                                                             IN `p_Password` VARCHAR(255))
+  BEGIN
+    UPDATE users
+    SET Password = p_Password
+    WHERE users.ID = p_Id;
+  END$$
 
 DELIMITER ;
 
@@ -65,11 +72,13 @@ DELIMITER ;
 --
 
 CREATE TABLE `children` (
-  `ID` int(11) NOT NULL,
-  `Parent` int(11) NOT NULL,
-  `Name` varchar(100) NOT NULL,
-  `Birthday` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ID`       INT(11)      NOT NULL,
+  `Parent`   INT(11)      NOT NULL,
+  `Name`     VARCHAR(100) NOT NULL,
+  `Birthday` DATE         NOT NULL
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 -- --------------------------------------------------------
 
@@ -78,9 +87,11 @@ CREATE TABLE `children` (
 --
 
 CREATE TABLE `childrenposts` (
-  `Child` int(11) NOT NULL,
-  `Post` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Child` INT(11) NOT NULL,
+  `Post`  INT(11) NOT NULL
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 -- --------------------------------------------------------
 
@@ -89,10 +100,12 @@ CREATE TABLE `childrenposts` (
 --
 
 CREATE TABLE `friends` (
-  `ID` int(11) NOT NULL,
-  `User` int(11) NOT NULL,
-  `Email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ID`    INT(11)      NOT NULL,
+  `User`  INT(11)      NOT NULL,
+  `Email` VARCHAR(100) NOT NULL
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 -- --------------------------------------------------------
 
@@ -101,9 +114,11 @@ CREATE TABLE `friends` (
 --
 
 CREATE TABLE `likedposts` (
-  `User` int(11) NOT NULL,
-  `Post` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `User` INT(11) NOT NULL,
+  `Post` INT(11) NOT NULL
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 -- --------------------------------------------------------
 
@@ -112,13 +127,15 @@ CREATE TABLE `likedposts` (
 --
 
 CREATE TABLE `posts` (
-  `ID` int(11) NOT NULL,
-  `User` int(11) NOT NULL,
-  `Public` char(1) NOT NULL DEFAULT 'y',
-  `Text` varchar(1000) NOT NULL,
-  `Language` varchar(2) NOT NULL,
-  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ID`       INT(11)       NOT NULL,
+  `User`     INT(11)       NOT NULL,
+  `Public`   CHAR(1)       NOT NULL DEFAULT 'y',
+  `Text`     VARCHAR(1000) NOT NULL,
+  `Language` VARCHAR(2)    NOT NULL,
+  `Date`     TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 -- --------------------------------------------------------
 
@@ -127,13 +144,14 @@ CREATE TABLE `posts` (
 -- (See below for the actual view)
 --
 CREATE TABLE `postview` (
-  `ID` int(11),
-  `User` int(11),
-  `Public` char(1),
-  `Text` varchar(1000),
-  `Language` varchar(2),
-  `Name` varchar(100),
-  `Birthday` date);
+  `ID`       INT(11),
+  `User`     INT(11),
+  `Public`   CHAR(1),
+  `Text`     VARCHAR(1000),
+  `Language` VARCHAR(2),
+  `Name`     VARCHAR(100),
+  `Birthday` DATE
+);
 
 -- --------------------------------------------------------
 
@@ -142,22 +160,26 @@ CREATE TABLE `postview` (
 --
 
 CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `Name` varchar(100) DEFAULT NULL,
-  `Username` varchar(100) NOT NULL,
-  `Password` varchar(255) DEFAULT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Regdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `Image` varbinary(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ID`       INT(11)      NOT NULL,
+  `Name`     VARCHAR(100)          DEFAULT NULL,
+  `Username` VARCHAR(100) NOT NULL,
+  `Password` VARCHAR(255)          DEFAULT NULL,
+  `Email`    VARCHAR(100) NOT NULL,
+  `Regdate`  TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Image`    VARBINARY(200000)     DEFAULT NULL
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`ID`, `Name`, `Username`, `Password`, `Email`, `Regdate`, `Image`) VALUES
-(0, NULL, 'kalle', '$2y$10$F/yVWWuuTN6MyL2WKq8otuhIfQ2rt7WGqtgKKBfSELVSgq7zSe3aa', 'kalle', '2017-03-09 13:57:54', NULL),
-(1, NULL, 'malle', '$2y$10$whl4nAlmUlTPM2CIk1vk6u6hsXT44Tg13sC2lqUakkFjGcKtOQItW', 'malle@', '2017-03-09 13:58:07', NULL);
+  (0, NULL, 'kalle', '$2y$10$F/yVWWuuTN6MyL2WKq8otuhIfQ2rt7WGqtgKKBfSELVSgq7zSe3aa', 'kalle', '2017-03-09 13:57:54',
+   NULL),
+  (1, NULL, 'malle', '$2y$10$whl4nAlmUlTPM2CIk1vk6u6hsXT44Tg13sC2lqUakkFjGcKtOQItW', 'malle@', '2017-03-09 13:58:07',
+   NULL);
 
 -- --------------------------------------------------------
 
@@ -166,7 +188,20 @@ INSERT INTO `users` (`ID`, `Name`, `Username`, `Password`, `Email`, `Regdate`, `
 --
 DROP TABLE IF EXISTS `postview`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`kidsacsut_kidsacsut`@`localhost` SQL SECURITY DEFINER VIEW `postview`  AS  select `posts`.`ID` AS `ID`,`posts`.`User` AS `User`,`posts`.`Public` AS `Public`,`posts`.`Text` AS `Text`,`posts`.`Language` AS `Language`,`children`.`Name` AS `Name`,`children`.`Birthday` AS `Birthday` from ((`posts` left join `childrenposts` on((`posts`.`ID` = `childrenposts`.`Post`))) left join `children` on((`childrenposts`.`Child` = `children`.`ID`))) ;
+CREATE ALGORITHM = UNDEFINED
+  DEFINER =`kidsacsut_kidsacsut`@`localhost`
+  SQL SECURITY DEFINER VIEW `postview` AS
+  SELECT
+    `posts`.`ID`          AS `ID`,
+    `posts`.`User`        AS `User`,
+    `posts`.`Public`      AS `Public`,
+    `posts`.`Text`        AS `Text`,
+    `posts`.`Language`    AS `Language`,
+    `children`.`Name`     AS `Name`,
+    `children`.`Birthday` AS `Birthday`
+  FROM ((`posts`
+    LEFT JOIN `childrenposts` ON ((`posts`.`ID` = `childrenposts`.`Post`))) LEFT JOIN `children`
+      ON ((`childrenposts`.`Child` = `children`.`ID`)));
 
 --
 -- Indexes for dumped tables
@@ -223,22 +258,23 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `children`
 --
 ALTER TABLE `children`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` INT(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` INT(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` INT(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 2;
 --
 -- Constraints for dumped tables
 --
@@ -247,34 +283,48 @@ ALTER TABLE `users`
 -- Constraints for table `children`
 --
 ALTER TABLE `children`
-  ADD CONSTRAINT `fk_Children2Users` FOREIGN KEY (`Parent`) REFERENCES `users` (`ID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_Children2Users` FOREIGN KEY (`Parent`) REFERENCES `users` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE CASCADE;
 
 --
 -- Constraints for table `childrenposts`
 --
 ALTER TABLE `childrenposts`
-  ADD CONSTRAINT `fk_ChildrenPosts2Children` FOREIGN KEY (`Child`) REFERENCES `children` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_ChildrenPosts2Posts` FOREIGN KEY (`Post`) REFERENCES `posts` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_ChildrenPosts2Children` FOREIGN KEY (`Child`) REFERENCES `children` (`ID`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_ChildrenPosts2Posts` FOREIGN KEY (`Post`) REFERENCES `posts` (`ID`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
 
 --
 -- Constraints for table `friends`
 --
 ALTER TABLE `friends`
-  ADD CONSTRAINT `fk_Friends2Users` FOREIGN KEY (`User`) REFERENCES `users` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_Friends2Users` FOREIGN KEY (`User`) REFERENCES `users` (`ID`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
 
 --
 -- Constraints for table `likedposts`
 --
 ALTER TABLE `likedposts`
-  ADD CONSTRAINT `fk_LikedPosts2Posts` FOREIGN KEY (`Post`) REFERENCES `posts` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_LikedPosts2Users` FOREIGN KEY (`User`) REFERENCES `users` (`ID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_LikedPosts2Posts` FOREIGN KEY (`Post`) REFERENCES `posts` (`ID`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_LikedPosts2Users` FOREIGN KEY (`User`) REFERENCES `users` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE CASCADE;
 
 --
 -- Constraints for table `posts`
 --
 ALTER TABLE `posts`
-  ADD CONSTRAINT `fk_Posts2Users` FOREIGN KEY (`User`) REFERENCES `users` (`ID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_Posts2Users` FOREIGN KEY (`User`) REFERENCES `users` (`ID`)
+  ON DELETE NO ACTION
+  ON UPDATE CASCADE;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;

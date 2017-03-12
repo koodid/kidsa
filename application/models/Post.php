@@ -12,6 +12,7 @@ class Post extends CI_Model
     {
         //TODO set children id from selection..
         $text = $this->input->post("newpost");
+        $child = $this->input->post("child");
 
         if(isset($_POST["publicpost"])) {
             $public = 'n';
