@@ -77,8 +77,6 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `addChild` (IN `p_UserID` INT(
     VALUES (p_UserID, p_Name, p_Birthday);
   END$$
 
-DELIMITER ;
-
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11))  BEGIN
   START TRANSACTION;
     INSERT INTO posts (User, Public, Text, Language)
@@ -86,6 +84,13 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink` (IN `p_User` IN
     INSERT INTO childrenposts (Child, Post)
     VALUES (p_child, LAST_INSERT_ID());
   COMMIT;
+  END$$
+
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildrenPostsNo` (IN `p_Id` INT(11))
+  BEGIN
+    SELECT v_childrenpostscount.Child, v_childrenpostscount.Posts AS Posts FROM v_childrenpostscount
+    WHERE User = p_Id
+    ORDER BY Posts DESC;
 END$$
 
 DELIMITER ;
@@ -129,6 +134,18 @@ CREATE TABLE `childview` (
   `Parent` int(11),
   `Name` varchar(100),
   `Birthday` date
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_childrenpostscount`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_childrenpostscount` (
+   `Child` varchar(100)
+  ,`User` int(11)
+  ,`Posts` bigint(21)
 );
 
 -- --------------------------------------------------------
@@ -257,6 +274,25 @@ CREATE ALGORITHM = UNDEFINED
   FROM ((`posts`
     LEFT JOIN `childrenposts` ON ((`posts`.`ID` = `childrenposts`.`Post`))) LEFT JOIN `children`
       ON ((`childrenposts`.`Child` = `children`.`ID`)));
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_childrenpostscount`
+--
+DROP TABLE IF EXISTS `v_childrenpostscount`;
+
+CREATE ALGORITHM = UNDEFINED
+  DEFINER=`kidsacsut`@`localhost`
+  SQL SECURITY DEFINER VIEW `v_childrenpostscount`  AS
+  select
+    `children`.`Name`     AS `Child`,
+    `children`.`Parent`   AS `User`,
+    count(0)              AS `Posts`
+  from (`children`
+    join `childrenposts` on((`children`.`ID` = `childrenposts`.`Child`)))
+  group by `children`.`Name` ;
+
 
 --
 -- Indexes for dumped tables
