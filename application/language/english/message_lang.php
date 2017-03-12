@@ -34,3 +34,4 @@ $lang["msg_name"] = "Name";
 $lang["msg_entername"] = "Enter name";
 $lang["msg_birthday"] = "Birthday";
 $lang["msg_dateformat"] = "YYYY-MM-DD";
+$lang["msg_formsuccess"] = "Your data was successfully submitted!";

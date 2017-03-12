@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <h3><?php echo lang("msg_addchild"); ?></h3>
     <hr>
-    <?php echo form_open('Children/add_child'); ?>
+    <?php echo form_open('children'); ?>
     <form role="form">
         <div class="form-group col-md-4 col-lg-offset-4">
             <label for="childname"><?php echo lang("msg_name"); ?></label>
