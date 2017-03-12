@@ -33,4 +33,13 @@ class Post extends CI_Model
         $query = $this->db->query($sql, array('id' => $id));
         return $query->result_array();
     }
+
+    public function get_childrenposts($id)
+    {
+        $this->db->close();
+        $this->db->initialize();
+        $sql = "CALL getUserChildrenPostsNo(?)";
+        $query = $this->db->query($sql, array('id' => $id));
+        return $query->result_array();
+    }
 }

@@ -14,6 +14,7 @@ $lang["msg_userhome"] = "Minu postitused";
 $lang["msg_settings"] = "Seaded";
 $lang["msg_addchildren"] = "Minu lapsed";
 $lang["msg_account"] = "Minu konto";
+$lang["msg_countposts"] = "Postituste arv";
 // Login
 $lang["msg_username"] = "Kasutajanimi";
 $lang["msg_enterusername"] = "Sisesta kasutajanimi";

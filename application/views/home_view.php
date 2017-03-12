@@ -5,11 +5,11 @@
                 <div class="col-md-8">
                     <label for="newpost">New post:</label>
                     <textarea id="newpost" name="newpost" rows="4" placeholder="Write a new post..."
-                           class="form-control" required=""></textarea>
+                              class="form-control" required=""></textarea>
                 </div>
             </div>
             <div class="form-group">
-               
+
                 <label for="select">Select the children who said..</label>
                 <select class="selectpicker" id="select" name="child">
                     <!--TODO get all children and create options for each-->
@@ -22,7 +22,7 @@
                     <label for="publicpost">Post as private post</label>
                 </div>
 
-            </div>    
+            </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="postbutton"></label>
                 <div class="col-md-4">
@@ -32,13 +32,38 @@
         </fieldset>
     </form>
 </div>
+
 <div class="container">
     <div class="col-md-8">
-        <?php foreach ($posts as $post): ?>
-            <blockquote class="blockquote">
-                <?php echo html_escape($post['Text']); ?>
-                <!--TODO: add children info when children are set-->
-            </blockquote>
-        <?php endforeach; ?>
+        <div class="container">
+            <hr>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><?php echo lang("msg_name"); ?></th>
+                    <th><?php echo lang("msg_countposts"); ?></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($countposts as $row): ?>
+                    <tr>
+                        <td class = "text-nowrap"><?php echo($row['Child']); ?></td>
+                        <td class = "text-nowrap"><?php echo ($row['Posts']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+            <hr>
+        </div>
     </div>
-</div>
+
+    <div class="container">
+        <div class="col-md-8">
+            <?php foreach ($posts as $post): ?>
+                <blockquote class="blockquote">
+                    <?php echo html_escape($post['Text']); ?>
+                    <!--TODO: add children info when children are set-->
+                </blockquote>
+            <?php endforeach; ?>
+        </div>
+    </div>

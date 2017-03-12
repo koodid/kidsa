@@ -20,6 +20,8 @@ class Home extends CI_Controller
             $data['title'] = 'Secret Home';
             $data['posts'] = $this->Post->get_posts($session_data['id']);
 
+            $data['countposts'] = $this->Post->get_childrenposts($session_data['id']);
+
 
             $this->load->view('navbar', $data);
             $this->load->view('home_view', $data);

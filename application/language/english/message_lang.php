@@ -14,6 +14,7 @@ $lang["msg_userhome"] = "My Posts";
 $lang["msg_settings"] = "Settings";
 $lang["msg_addchildren"] = "My Children";
 $lang["msg_account"] = "My Account";
+$lang["msg_countposts"] = "Number of Posts";
 // Login
 $lang["msg_username"] = "Username";
 $lang["msg_enterusername"] = "Enter username";
