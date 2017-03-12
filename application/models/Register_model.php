@@ -26,9 +26,9 @@ class Register_model extends CI_Model
 
     public function change_password($user_id)
     {
-        $password = password_hash($this->input->post("password"), PASSWORD_DEFAULT);
+        $newpassword = password_hash($this->input->post("newpassword"), PASSWORD_DEFAULT);
 
         $sql = "CALL changePassword(?,?)";
-        $this->db->query($sql, array('user_id' => $user_id, 'password' => $password));
+        $this->db->query($sql, array('user_id' => $user_id, 'newpassword' => $newpassword));
     }
 }
