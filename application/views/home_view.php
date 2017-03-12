@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="form-group">
-               
+
                 <label for="child">Select the children who said..</label>
                 <select class="selectpicker" id="child" name="child">
                     <?php foreach ($children as $child): ?>
@@ -48,8 +48,8 @@
                 <tbody>
                 <?php foreach ($countposts as $row): ?>
                     <tr>
-                        <td class = "text-nowrap"><?php echo($row['Child']); ?></td>
-                        <td class = "text-nowrap"><?php echo ($row['Posts']); ?></td>
+                        <td class="text-nowrap"><?php echo($row['Child']); ?></td>
+                        <td class="text-nowrap"><?php echo($row['Posts']); ?></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -63,7 +63,8 @@
             <?php foreach ($posts as $post): ?>
                 <blockquote class="blockquote">
                     <?php echo html_escape($post['Text']); ?>
-                    <!--TODO: add children info when children are set-->
+                    <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>
+                        , <?php echo html_escape($post['Birthday']); ?></footer>
                 </blockquote>
             <?php endforeach; ?>
         </div>

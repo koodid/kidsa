@@ -22,7 +22,6 @@ class Home extends CI_Controller
             $data['id'] = $session_data['id'];
             $data['username'] = $session_data['username'];
             $data['title'] = 'Secret Home';
-            $data['posts'] = $this->Post->get_posts($session_data['id']);
 
             $data['countposts'] = $this->Post->get_childrenposts($session_data['id']);
 
