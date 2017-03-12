@@ -14,8 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <strong><?php echo lang("msg_error"); ?></strong> <?php echo validation_errors();?>
             </div>
         <?php endif; ?>
-
-        <form role="form">
             <div class="form-group">
                 <label for="username"><?php echo lang("msg_username"); ?></label>
                 <input type="text" class="form-control" id="username" name="username"
@@ -31,8 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <button type="submit"
                         class="btn btn-md btn-default"><?php echo lang("msg_login"); ?></button>
             </div>
-        </form>
-
         <hr>
 
         <div>

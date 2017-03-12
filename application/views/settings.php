@@ -13,8 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <strong><?php echo lang("msg_error"); ?></strong> <?php echo validation_errors(); ?>
         </div>
     <?php endif; ?>
-
-    <form role="form">
         <div class="form-group col-md-4 col-lg-offset-4">
             <label for="newpassword"><?php echo lang("msg_newpassword"); ?></label>
             <input type="password" class="form-control" id="newpassword" name="newpassword"
@@ -28,7 +26,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-4 col-lg-offset-4">
             <button type="submit" class="btn btn-md btn-default"><?php echo lang("msg_savechanges"); ?></button>
         </div>
-    </form>
     <?php echo form_close(); ?>
 </div>
 
