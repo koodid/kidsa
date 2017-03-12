@@ -3,6 +3,7 @@
         <fieldset>
             <div id="postHolder" class="form-group">
                 <div class="col-md-8">
+                    <label for="newpost">New post:</label>
                     <textarea id="newpost" name="newpost" rows="4" placeholder="Write a new post..."
                            class="form-control" required=""></textarea>
                 </div>
