@@ -21,13 +21,13 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap-social.css">
     <link rel="shortcut icon" href="/images/faviconG.ico"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/js/tooltip.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/tooltip.js"></script>
     <?php
     if (isset($extra_scripts)) {
         foreach ($extra_scripts as $value) {
-            echo "<script src=\"" . $value . "\"></script>";
+            echo "<script type=\"text/javascript\" src=\"" . $value . "\"></script>";
         }
     }
     ?>
