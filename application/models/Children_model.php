@@ -17,11 +17,11 @@ class Children_model extends CI_Model
         $sql = "CALL addChild(?,?,?)";
         $this->db->query($sql, array($user_id, 'childname' => $childname, 'birthday' => $birthday));
     }
-/*
+
     public function get_children($id)
     {
         $sql = "CALL getUserChildren(?)";
         $query = $this->db->query($sql, array('id' => $id));
         return $query->result_array();
-    }*/
+    }
 }
