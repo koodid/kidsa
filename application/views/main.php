@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="col-sm-9">
             <h1>KIDS SAY</h1>
-            <h3><small>RECENT POSTS</small></h3>
+            <h2><small>RECENT POSTS</small></h2>
             <hr>
 
             <blockquote class="blockquote">
