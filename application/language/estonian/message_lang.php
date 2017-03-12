@@ -28,3 +28,9 @@ $lang["msg_enternewpassword"] = "Sisesta uus salasõna";
 $lang["msg_confirmnewpassword"] = "Korda uut salasõna";
 $lang["msg_enterconfirmnewpassword"] = "Sisesta uus salasõna uuesti";
 $lang["msg_savechanges"] = "Salvesta muudatused";
+// Children
+$lang["msg_addchild"] = "Add Child";
+$lang["msg_name"] = "Name";
+$lang["msg_entername"] = "Enter name";
+$lang["msg_birthday"] = "Birthday";
+$lang["msg_dateformat"] = "YYYY-MM-DD";
