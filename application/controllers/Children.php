@@ -15,7 +15,8 @@ class Children extends CI_Controller
 
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
-            $data['children'] = $this->Children_model->get_children($session_data['id']);
+            //$data['children'] = $this->Children_model->get_children($session_data['id']);
+
 
             $this->form_validation->set_rules('childname', 'name', 'required');
 
@@ -23,11 +24,13 @@ class Children extends CI_Controller
             {
                 $title['title'] = 'Children';
                 $this->load->view('navbar', $title);
-                $this->load->view('children', $data);
+                $this->load->view('children');
                 $this->load->view('footer');
             }
             else
             {
+                $data['child'] = $this->Children_model->add_child($session_data['id']);
+
                 $title['title'] = 'Children';
                 $this->load->view('navbar', $title);
                 $this->load->view('formsuccess');
@@ -39,11 +42,11 @@ class Children extends CI_Controller
             redirect('login?uri=' . urlencode($_SERVER['REQUEST_URI']));
         }
     }
-
+/*
     function add_child()
     {
         $session_data = $this->session->userdata('logged_in');
         $data['id'] = $session_data['id'];
-        $this->Children_model->add_child($data['id']);
-    }
+        $this->Children_model->add_child($session_data['id']);
+    }*/
 }
