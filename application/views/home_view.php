@@ -15,11 +15,12 @@
                     <option value="1">Child 1</option>
                     <option value="2">Child 2</option>
                 </select>
-           
-                
-                <div class="checkbox">
-                    <label><input id="publicpost" name="publicpost" type="checkbox" value="">Post as private post</label>                
+
+                <div>
+                    <input type="checkbox" id="publicpost" name="publicpost" value="publicpost">
+                    <label for="publicpost">Post as private post</label>
                 </div>
+
             </div>    
             <div class="form-group">
                 <label class="col-md-4 control-label" for="postbutton"></label>
