@@ -36,3 +36,15 @@ $lang["msg_entername"] = "Enter name";
 $lang["msg_birthday"] = "Birthday";
 $lang["msg_dateformat"] = "YYYY-MM-DD";
 $lang["msg_formsuccess"] = "Your data was successfully submitted!";
+// Signup 
+$lang["msg_confirmpassword"] = "Confirm password";
+$lang["msg_etnerconfirmpassword"] = "Confirm your password";
+$lang["msg_email"] = "Email";
+$lang["msg_enteremail"] = "Enter your email address";
+$lang["msg_register"] = "Register";
+// User home
+$lang["msg_newpost"] = "New post";
+$lang["msg_writenewpost"] = "Write a new post...";
+$lang["msg_selectchild"] = "Select the child who said";
+$lang["msg_postprivately"] = "Post as private post";
+$lang["msg_post"] = "Post";

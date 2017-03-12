@@ -3,14 +3,14 @@
         <fieldset>
             <div id="postHolder" class="form-group">
                 <div class="col-md-8">
-                    <label for="newpost">New post:</label>
-                    <textarea id="newpost" name="newpost" rows="4" placeholder="Write a new post..."
+                    <label for="newpost"><?php echo lang("msg_newpost"); ?></label>
+                    <textarea id="newpost" name="newpost" rows="4" placeholder="<?php echo lang("msg_writenewpost"); ?>"
                               class="form-control" required=""></textarea>
                 </div>
             </div>
             <div class="form-group">
 
-                <label for="child">Select the children who said..</label>
+                <label for="child"><?php echo lang("msg_selectchild"); ?></label>
                 <select class="selectpicker" id="child" name="child">
                     <?php foreach ($children as $child): ?>
                         <option value= <?php echo html_escape($child['ID']); ?>><?php echo html_escape($child['Name']); ?></option>
@@ -20,14 +20,14 @@
 
                 <div>
                     <input type="checkbox" id="publicpost" name="publicpost" value="publicpost">
-                    <label for="publicpost">Post as private post</label>
+                    <label for="publicpost"><?php echo lang("msg_postprivately"); ?></label>
                 </div>
 
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="postbutton"></label>
                 <div class="col-md-4">
-                    <button id="postbutton" name="postbutton" type="submit" class="btn btn-default">Post</button>
+                    <button id="postbutton" name="postbutton" type="submit" class="btn btn-default"><?php echo lang("msg_post"); ?></button>
                 </div>
             </div>
         </fieldset>

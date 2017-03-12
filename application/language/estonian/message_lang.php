@@ -36,3 +36,15 @@ $lang["msg_entername"] = "Sisesta lapse nimi";
 $lang["msg_birthday"] = "Sünnipäev";
 $lang["msg_dateformat"] = "YYYY-MM-DD";
 $lang["msg_formsuccess"] = "Sinu andmed on edukalt salvestatud!";
+// Signup 
+$lang["msg_confirmpassword"] = "Korda salasõna";
+$lang["msg_etnerconfirmpassword"] = "Sisesta salasõna uuesti";
+$lang["msg_email"] = "Email";
+$lang["msg_enteremail"] = "Sisesta oma emaili aadress";
+$lang["msg_register"] = "Registreeri";
+// User home
+$lang["msg_newpost"] = "Uus postitus";
+$lang["msg_writenewpost"] = "Koosta uus postitus...";
+$lang["msg_selectchild"] = "Vali laps, kes ütles";
+$lang["msg_postprivately"] = "Postita privaatselt";
+$lang["msg_post"] = "Postita";
