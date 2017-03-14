@@ -9,8 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <div class="col-sm-9">
-            <h1>KIDS SAY</h1>
-            <h2><small>RECENT POSTS</small></h2>
+            <h1><?php echo lang("msg_kidssay"); ?></h1>
+            <h2><small><?php echo lang("msg_recentposts"); ?></small></h2>
             <hr>
 
             <blockquote class="blockquote">

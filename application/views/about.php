@@ -10,12 +10,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="col-sm-9">
 
-            <h1>About KIDSA</h1>
+            <h1><?php echo lang("msg_aboutkidsa"); ?></h1>
 
-            <p>Has your child ever said to you something really wise or something really hilarious?
-                Or you would like to know how the children understand the world around us?</p>
+            <p><?php echo lang("msg_abouttext1"); ?></p>
 
-            <p>KIDSA is the place to write down, store, share and read all these wise and funny quotes.</p>
+            <p><?php echo lang("msg_abouttext2"); ?></p>
             <br>
             <br>
 
@@ -26,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <footer class="blockquote-footer"> Antoine de Saint-Exupéry, The Little Prince</footer>
             </blockquote>
 
-            <strong>Developers main location</strong>
+            <strong><?php echo lang("msg_aboutlocation"); ?></strong>
             <div id="googleMap"></div>
         </div>
     </div>

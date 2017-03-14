@@ -15,6 +15,15 @@ $lang["msg_settings"] = "Settings";
 $lang["msg_addchildren"] = "My Children";
 $lang["msg_account"] = "My Account";
 $lang["msg_countposts"] = "Number of Posts";
+// Public home
+$lang["msg_kidssay"] = "KIDS SAY ...";
+$lang["msg_recentposts"] = "Recent Posts";
+// About
+$lang["msg_aboutkidsa"] = "About KIDSA";
+$lang["msg_abouttext1"] = "Has your child ever said to you something really wise or something really hilarious?
+                Or you would like to know how the children understand the world around us?";
+$lang["msg_abouttext2"] = "KIDSA is the place to write down, store, share and read all these wise and funny quotes.";
+$lang["msg_aboutlocation"] = "Developers Location";
 // Login
 $lang["msg_username"] = "Username";
 $lang["msg_enterusername"] = "Enter username";

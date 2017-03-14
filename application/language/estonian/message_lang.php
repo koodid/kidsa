@@ -15,6 +15,16 @@ $lang["msg_settings"] = "Seaded";
 $lang["msg_addchildren"] = "Minu lapsed";
 $lang["msg_account"] = "Minu konto";
 $lang["msg_countposts"] = "Postituste arv";
+// Public home
+$lang["msg_kidssay"] = "LAPSED RÄÄGIVAD ...";
+$lang["msg_recentposts"] = "Hiljutised postitused";
+// About
+$lang["msg_aboutkidsa"] = "Mis on KIDSA?";
+$lang["msg_abouttext1"] = "Oled Sa kuulnud lapsi ütlemas midagi eriti nutikat või tõeliselt naljakat? 
+                            Või tahaksid Sa teada, kuidas lapsed näevad ja mõistavad maailma asju?";
+$lang["msg_abouttext2"] = "KIDSA on veebirakendus, kuhu saab kirja panna, koguda, lugeda ja jagada laste ütlemisi. 
+                            See on laste mõtteterade varasalv, mida on tore nii teistega jagada kui ka aastate pärast ise meenutada.";
+$lang["msg_aboutlocation"] = "Veebirakenduse arendajate asukoht";
 // Login
 $lang["msg_username"] = "Kasutajanimi";
 $lang["msg_enterusername"] = "Sisesta kasutajanimi";
