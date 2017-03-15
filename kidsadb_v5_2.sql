@@ -143,9 +143,10 @@ CREATE TABLE `childview` (
 -- (See below for the actual view)
 --
 CREATE TABLE `v_childrenpostscount` (
-   `Child` varchar(100)
-  ,`User` int(11)
-  ,`Posts` bigint(21)
+  `ID` int(11),
+  `Child` varchar(100),
+  `User` int(11),
+  `Posts` bigint(21)
 );
 
 -- --------------------------------------------------------
@@ -283,15 +284,16 @@ CREATE ALGORITHM = UNDEFINED
 DROP TABLE IF EXISTS `v_childrenpostscount`;
 
 CREATE ALGORITHM = UNDEFINED
-  DEFINER=`kidsacsut`@`localhost`
+  DEFINER =`kidsacsut`@`localhost`
   SQL SECURITY DEFINER VIEW `v_childrenpostscount`  AS
   select
+    `children`.`ID`       AS `ID`,
     `children`.`Name`     AS `Child`,
     `children`.`Parent`   AS `User`,
     count(0)              AS `Posts`
   from (`children`
     join `childrenposts` on((`children`.`ID` = `childrenposts`.`Child`)))
-  group by `children`.`Name` ;
+  group by `children`.`ID` ;
 
 
 --
