@@ -13,7 +13,8 @@ class Children_model extends CI_Model
         $childname = $this->input->post("childname");
         $birthday = $this->input->post("birthday");
         // Dates in mySQL are YYYY-MM-DD
-
+        $this->db->close();
+        $this->db->initialize();
         $sql = "CALL addChild(?,?,?)";
         $this->db->query($sql, array($user_id, 'childname' => $childname, 'birthday' => $birthday));
     }

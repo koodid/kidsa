@@ -15,7 +15,7 @@ class Children extends CI_Controller
 
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
-            //$data['children'] = $this->Children_model->get_children($session_data['id']);
+            $data['children'] = $this->Children_model->get_children($session_data['id']);
 
 
             $this->form_validation->set_rules('childname', 'name', 'required');
@@ -24,7 +24,7 @@ class Children extends CI_Controller
             {
                 $title['title'] = 'Children';
                 $this->load->view('navbar', $title);
-                $this->load->view('children');
+                $this->load->view('children', $data);
                 $this->load->view('footer');
             }
             else
