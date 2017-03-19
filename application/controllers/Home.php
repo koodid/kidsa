@@ -21,7 +21,8 @@ class Home extends CI_Controller
             $data['name'] = $session_data['name'];
             $data['id'] = $session_data['id'];
             $data['username'] = $session_data['username'];
-            $data['title'] = 'Secret Home';
+            $data['title'] = 'Secret Home'; // TODO this MUST be translated
+            $data['extra_scripts'] = array('/js/offline.min.js', '/js/postoffline.js');
 
             $data['countposts'] = $this->Post->get_childrenposts($session_data['id']);
 
