@@ -8,13 +8,15 @@ class Post extends CI_Model
         $this->load->database();
     }
     
-    public function create_new_post($id)
+    public function create_new_post()
     {
        
         $text = $this->input->post("newpost");
         $child = $this->input->post("child");
         //language is constant atm
         $language = 'ee';
+        $session_data = $this->session->userdata('logged_in');
+        $id = $session_data['id'];
 
         if(isset($_POST["publicpost"])) {
             $public = 'n';

@@ -46,9 +46,8 @@ class Home extends CI_Controller
 
     function create_new_post()
     {
-        $session_data = $this->session->userdata('logged_in');
         $this->load->model('Post');
-        $this->Post->create_new_post($session_data['id']);
+        $this->Post->create_new_post();
 
         //redirect back to private area..
         redirect('home');
