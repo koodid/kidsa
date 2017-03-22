@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form-horizontal" action="<?php echo base_url(); ?>home/create_new_post" method="post">
+    <form id="new-post-form" class="form-horizontal" action="<?php echo base_url(); ?>home/create_new_post" method="post">
         <fieldset>
             <div id="postHolder" class="form-group">
                 <div class="col-md-8">

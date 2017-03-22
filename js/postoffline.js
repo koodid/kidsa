@@ -1,42 +1,48 @@
 $(document).ready(function () {
-    var offline = false;
 
     $("#postbutton").click(function (e) {
-        // TODO actual offline check
-        if (offline) {
-            e.preventDefault();
-            var post = $("#newpost").val();
-            var childId = $("#childpicker").val();
-            var publicPost = $("#publicpost").is(":checked") === true;
+        e.preventDefault();
 
-            var retrievedString = localStorage.getItem('localPosts');
+        var form = $("#new-post-form");
+        $.ajax({
+            method: "POST",
+            url: "/home/create_new_post",
+            type: 'POST',
+            data: form.serialize(),
 
-            var retrievedObject;
-            if (retrievedString) {
-                retrievedObject = JSON.parse(retrievedString);
-            } else {
-                retrievedObject = {}
+            error: function (response) {
+                console.log("error", response);
+                var post = $("#newpost").val();
+                var childId = $("#childpicker").val();
+                var publicPost = $("#publicpost").is(":checked") === true;
+
+                var retrievedString = localStorage.getItem('localPosts');
+
+                var retrievedObject;
+                if (retrievedString) {
+                    retrievedObject = JSON.parse(retrievedString);
+                } else {
+                    retrievedObject = {}
+                }
+
+                retrievedObject[$.now()] = {
+                    "post": post,
+                    "childId": childId,
+                    "publicPost": publicPost
+                };
+
+                localStorage.setItem('localPosts', JSON.stringify(retrievedObject));
+                console.log("Saved post data to localstorage");
+                return response.status == 0;
+            },
+            success: function () {
+                console.log("success");
+                saveLocalPosts();
+                console.log("saved local");
+                location.reload(true);
+                return true;
             }
-
-            retrievedObject[$.now()] = {
-                "post": post,
-                "childId": childId,
-                "publicPost": publicPost
-            };
-
-            localStorage.setItem('localPosts', JSON.stringify(retrievedObject));
-        }
-    });
-
-    Offline.on("up", function () {
-        offline = false;
-        console.log("now online");
-        saveLocalPosts();
-    });
-
-    Offline.on("down", function () {
-        offline = true;
-        console.log("now offline")
+        });
     });
 
     function saveLocalPosts() {
@@ -55,10 +61,13 @@ $(document).ready(function () {
                         'child': post["childId"],
                         'postbutton': ""
                     }, function (data) {
-                        console.log(data);
+                        // console.log(data);
                     })
                 }
             }
+            console.log(retrievedObject);
+            localStorage.removeItem('localPosts');
+            console.log("cleared localPosts");
             // TODO clear posts from localstorage
         }
     }
