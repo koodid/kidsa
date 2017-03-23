@@ -75,10 +75,21 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `addChild` (IN `p_UserID` INT(
     VALUES (p_UserID, p_Name, p_Birthday);
   END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11))  BEGIN
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11))
+  BEGIN
   START TRANSACTION;
     INSERT INTO posts (User, Public, Text, Language)
     VALUES (p_User, p_Public, p_Text, p_Language);
+    INSERT INTO childrenposts (Child, Post)
+    VALUES (p_child, LAST_INSERT_ID());
+  COMMIT;
+  END$$
+
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLinkTime` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11), IN `p_Date` DATE)
+  BEGIN
+  START TRANSACTION;
+    INSERT INTO posts (User, Public, Text, Language, Date)
+    VALUES (p_User, p_Public, p_Text, p_Language, p_Date);
     INSERT INTO childrenposts (Child, Post)
     VALUES (p_child, LAST_INSERT_ID());
   COMMIT;
