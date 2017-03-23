@@ -44,10 +44,10 @@ class Home extends CI_Controller
         redirect('home');
     }
 
-    function create_new_post()
+    function create_new_post($unixTime = '')
     {
         $this->load->model('Post');
-        $this->Post->create_new_post();
+        $this->Post->create_new_post($unixTime);
 
         //redirect back to private area..
         redirect('home');

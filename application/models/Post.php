@@ -7,10 +7,9 @@ class Post extends CI_Model
         parent::__construct();
         $this->load->database();
     }
-    
-    public function create_new_post()
+
+    public function create_new_post($unixTime)
     {
-       
         $text = $this->input->post("newpost");
         $child = $this->input->post("child");
         //language is constant atm
@@ -18,19 +17,26 @@ class Post extends CI_Model
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
 
-        if(isset($_POST["publicpost"])) {
+        if (isset($_POST["publicpost"])) {
             $public = 'n';
-        }
-        else {
+        } else {
             $public = 'y';
-
         }
 
-        $sql = "CALL newPostwLink(?,?,?,?,?)";
-        $this->db->query($sql, array('user' => $id, 'public' => $public, 'text' => $text, 'language' => $language, 'child' => $child));
-
-
+        if ($unixTime === '') {
+            $sql = "CALL newPostwLink(?,?,?,?,?)";
+            $this->db->query($sql, array('user' => $id, 'public' => $public, 'text' => $text, 'language' => $language, 'child' => $child));
+        } else {
+            $sql = "CALL newPostwLinkTime(?,?,?,?,?,?)";
+            $this->db->query($sql, array('user' => $id,
+                'public' => $public,
+                'text' => $text,
+                'language' => $language,
+                'child' => $child,
+                'time' => $unixTime));
+        }
     }
+
     public function get_posts($id)
     {
         $sql = "CALL getUserPosts(?)";
