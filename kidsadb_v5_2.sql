@@ -85,7 +85,7 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink` (IN `p_User` IN
   COMMIT;
   END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLinkTime` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11), IN `p_Date` DATE)
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLinkTime` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11), IN `p_Date` DATETIME)
   BEGIN
   START TRANSACTION;
     INSERT INTO posts (User, Public, Text, Language, Date)
