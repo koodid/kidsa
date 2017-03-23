@@ -45,13 +45,11 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildren` (IN `p_Id` I
   ORDER BY Id DESC;
 END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE getUserPosts(IN p_Id INT(11))
-  BEGIN
-    SELECT *
-    FROM postview
-    WHERE User = p_Id
-    ORDER BY Id DESC;
-  END$$
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserPosts` (IN `p_Id` INT(11))  BEGIN
+  SELECT * FROM postview
+  WHERE User = p_Id
+  ORDER BY postview.Date DESC;
+END$$
 
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE newPost(IN p_User   INT(11),
                                                                     IN p_Public CHAR(1),
@@ -205,6 +203,7 @@ CREATE TABLE `postview` (
   `Public`   CHAR(1),
   `Text`     VARCHAR(1000),
   `Language` VARCHAR(2),
+  `Date`     timestamp,
   `Name`     VARCHAR(100),
   `Birthday` DATE
 );
@@ -270,6 +269,7 @@ CREATE ALGORITHM = UNDEFINED
     `posts`.`Public`      AS `Public`,
     `posts`.`Text`        AS `Text`,
     `posts`.`Language`    AS `Language`,
+    `posts`.`Date`        AS `Date`,
     `children`.`Name`     AS `Name`,
     `children`.`Birthday` AS `Birthday`
   FROM ((`posts`
