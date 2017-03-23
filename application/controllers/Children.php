@@ -22,7 +22,7 @@ class Children extends CI_Controller
 
             if ($this->form_validation->run() == FALSE)
             {
-                $title['title'] = 'Children';
+                $title['title'] = lang("msg_addchildren");
                 $this->load->view('navbar', $title);
                 $this->load->view('children', $data);
                 $this->load->view('footer');
@@ -31,7 +31,7 @@ class Children extends CI_Controller
             {
                 $data['child'] = $this->Children_model->add_child($session_data['id']);
 
-                $title['title'] = 'Children';
+                $title['title'] = lang("msg_addchildren");
                 $this->load->view('navbar', $title);
                 $this->load->view('formsuccess');
                 $this->load->view('children', $data);

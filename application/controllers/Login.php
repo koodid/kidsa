@@ -30,7 +30,7 @@ class Login extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             //Field validation failed.  User redirected to login page
-            $title['title'] = 'Login';
+            $title['title'] = lang("msg_login");
 
             if (!defined("FACEBOOK_APP_SECRET")) {
                 echo "FACEBOOK_APP_SECRET must be defined to use facebook";

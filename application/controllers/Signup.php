@@ -13,7 +13,7 @@ class Signup extends CI_Controller
             }
         }
 
-        $title['title'] = 'Sign up';
+        $title['title'] = lang("msg_signup");
         $title['extra_scripts'] = array("/js/signup.js");
         $this->load->view('navbar', $title);
         $this->load->view('signup');

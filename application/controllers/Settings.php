@@ -20,7 +20,7 @@ class Settings extends CI_Controller
 
             if ($this->form_validation->run() == FALSE)
             {
-                $title['title'] = 'Settings';
+                $title['title'] = lang("msg_settings");
                 $this->load->view('navbar', $title);
                 $this->load->view('settings');
                 $this->load->view('footer');
@@ -31,7 +31,7 @@ class Settings extends CI_Controller
                 $data['id'] = $session_data['id'];
                 $this->Register_model->change_password($data['id']);
 
-                $title['title'] = 'Settings';
+                $title['title'] = lang("msg_settings");
                 $this->load->view('navbar', $title);
                 $this->load->view('formsuccess');
                 $this->load->view('settings');
