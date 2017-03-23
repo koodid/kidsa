@@ -26,81 +26,91 @@ DELIMITER $$
 -- Procedures
 --
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `createNewFBuser`(IN `p_Name`     VARCHAR(100),
-                                                                              IN `p_Username` VARCHAR(100),
-                                                                              IN `p_Email`    VARCHAR(100)) BEGIN
+                                                                    IN `p_Username` VARCHAR(100),
+                                                                    IN `p_Email`    VARCHAR(100)) BEGIN
   INSERT INTO users (Name, Username, Email)
   VALUES (p_Name, p_Username, p_Email);
 END$$
 
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `createNewUser`(IN `p_Username` VARCHAR(100),
-                                                                            IN `p_Password` VARCHAR(255),
-                                                                            IN `p_Email`    VARCHAR(100)) BEGIN
+                                                                  IN `p_Password` VARCHAR(255),
+                                                                  IN `p_Email`    VARCHAR(100)) BEGIN
   INSERT INTO users (Username, Password, Email)
   VALUES (p_Username, p_Password, p_Email);
 END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildren` (IN `p_Id` INT(11))  BEGIN
-  SELECT * FROM childview
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildren`(IN `p_Id` INT(11)) BEGIN
+  SELECT *
+  FROM childview
   WHERE Parent = p_Id
   ORDER BY Id DESC;
 END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserPosts` (IN `p_Id` INT(11))  BEGIN
-  SELECT * FROM postview
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserPosts`(IN `p_Id` INT(11)) BEGIN
+  SELECT *
+  FROM postview
   WHERE User = p_Id
   ORDER BY postview.Date DESC;
 END$$
 
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE newPost(IN p_User   INT(11),
-                                                                    IN p_Public CHAR(1),
-                                                                    IN p_Text   VARCHAR(1000))
+                                                          IN p_Public CHAR(1),
+                                                          IN p_Text   VARCHAR(1000))
   BEGIN
     INSERT INTO posts (User, Public, Text)
     VALUES (p_User, p_Public, p_Text);
   END$$
 
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `changePassword`(IN `p_Id`       INT,
-                                                                             IN `p_Password` VARCHAR(255))
+                                                                   IN `p_Password` VARCHAR(255))
   BEGIN
     UPDATE users
     SET Password = p_Password
     WHERE users.ID = p_Id;
   END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `addChild` (IN `p_UserID` INT(11),
-                                                                        IN `p_Name` VARCHAR(100),
-                                                                        IN `p_Birthday` DATE)
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `addChild`(IN `p_UserID`   INT(11),
+                                                             IN `p_Name`     VARCHAR(100),
+                                                             IN `p_Birthday` DATE)
   BEGIN
     INSERT INTO children (Parent, Name, Birthday)
     VALUES (p_UserID, p_Name, p_Birthday);
   END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11))
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLink`(IN `p_User`  INT(11), IN `p_Public` CHAR(1),
+                                                                 IN `p_Text`  VARCHAR(1000), IN `p_Language` VARCHAR(2),
+                                                                 IN `p_Child` INT(11))
   BEGIN
-  START TRANSACTION;
+    START TRANSACTION;
     INSERT INTO posts (User, Public, Text, Language)
     VALUES (p_User, p_Public, p_Text, p_Language);
     INSERT INTO childrenposts (Child, Post)
     VALUES (p_child, LAST_INSERT_ID());
-  COMMIT;
+    COMMIT;
   END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLinkTime` (IN `p_User` INT(11), IN `p_Public` CHAR(1), IN `p_Text` VARCHAR(1000), IN `p_Language` VARCHAR(2), IN `p_Child` INT(11), IN `p_Date` INT(11))
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLinkTime`(IN `p_User`     INT(11), IN `p_Public` CHAR(1),
+                                                                     IN `p_Text`     VARCHAR(1000),
+                                                                     IN `p_Language` VARCHAR(2), IN `p_Child` INT(11),
+                                                                     IN `p_Date`     INT(11))
   BEGIN
-  START TRANSACTION;
+    START TRANSACTION;
     INSERT INTO posts (User, Public, Text, Language, Date)
     VALUES (p_User, p_Public, p_Text, p_Language, FROM_UNIXTIME(p_Date));
     INSERT INTO childrenposts (Child, Post)
     VALUES (p_child, LAST_INSERT_ID());
-  COMMIT;
+    COMMIT;
   END$$
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildrenPostsNo` (IN `p_Id` INT(11))
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildrenPostsNo`(IN `p_Id` INT(11))
   BEGIN
-    SELECT v_childrenpostscount.Child, v_childrenpostscount.Posts AS Posts FROM v_childrenpostscount
+    SELECT
+      v_childrenpostscount.Child,
+      v_childrenpostscount.Posts AS Posts
+    FROM v_childrenpostscount
     WHERE User = p_Id
     ORDER BY Posts DESC;
-END$$
+  END$$
 
 DELIMITER ;
 
@@ -139,10 +149,10 @@ CREATE TABLE `childrenposts` (
 -- (See below for the actual view)
 --
 CREATE TABLE `childview` (
-  `ID` int(11),
-  `Parent` int(11),
-  `Name` varchar(100),
-  `Birthday` date
+  `ID`       INT(11),
+  `Parent`   INT(11),
+  `Name`     VARCHAR(100),
+  `Birthday` DATE
 );
 
 -- --------------------------------------------------------
@@ -152,10 +162,10 @@ CREATE TABLE `childview` (
 -- (See below for the actual view)
 --
 CREATE TABLE `v_childrenpostscount` (
-  `ID` int(11),
-  `Child` varchar(100),
-  `User` int(11),
-  `Posts` bigint(21)
+  `ID`    INT(11),
+  `Child` VARCHAR(100),
+  `User`  INT(11),
+  `Posts` BIGINT(21)
 );
 
 -- --------------------------------------------------------
@@ -214,7 +224,7 @@ CREATE TABLE `postview` (
   `Public`   CHAR(1),
   `Text`     VARCHAR(1000),
   `Language` VARCHAR(2),
-  `Date`     timestamp,
+  `Date`     TIMESTAMP,
   `Name`     VARCHAR(100),
   `Birthday` DATE
 );
@@ -254,15 +264,15 @@ INSERT INTO `users` (`ID`, `Name`, `Username`, `Password`, `Email`, `Regdate`, `
 --
 DROP TABLE IF EXISTS `childview`;
 
-CREATE ALGORITHM=UNDEFINED
+CREATE ALGORITHM = UNDEFINED
   DEFINER =`kidsacsut`@`localhost`
-  SQL SECURITY DEFINER VIEW `childview`  AS
+  SQL SECURITY DEFINER VIEW `childview` AS
   SELECT
-    `children`.`ID`	  AS `ID`,
+    `children`.`ID`       AS `ID`,
     `children`.`Parent`   AS `Parent`,
-    `children`.`Name` 	  AS `Name`,
+    `children`.`Name`     AS `Name`,
     `children`.`Birthday` AS `Birthday`
-  FROM `children` ;
+  FROM `children`;
 
 -- --------------------------------------------------------
 
@@ -296,16 +306,15 @@ DROP TABLE IF EXISTS `v_childrenpostscount`;
 
 CREATE ALGORITHM = UNDEFINED
   DEFINER =`kidsacsut`@`localhost`
-  SQL SECURITY DEFINER VIEW `v_childrenpostscount`  AS
-  select
-    `children`.`ID`       AS `ID`,
-    `children`.`Name`     AS `Child`,
-    `children`.`Parent`   AS `User`,
-    count(0)              AS `Posts`
-  from (`children`
-    join `childrenposts` on((`children`.`ID` = `childrenposts`.`Child`)))
-  group by `children`.`ID` ;
-
+  SQL SECURITY DEFINER VIEW `v_childrenpostscount` AS
+  SELECT
+    `children`.`ID`     AS `ID`,
+    `children`.`Name`   AS `Child`,
+    `children`.`Parent` AS `User`,
+    count(0)            AS `Posts`
+  FROM (`children`
+    JOIN `childrenposts` ON ((`children`.`ID` = `childrenposts`.`Child`)))
+  GROUP BY `children`.`ID`;
 
 --
 -- Indexes for dumped tables
