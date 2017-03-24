@@ -21,9 +21,11 @@ class Welcome extends CI_Controller
      */
     public function index()
     {
+        $this->load->model('Post');
+        $data['allposts'] = $this->Post->get_all_posts();
         $title['title'] = 'Kidsa';
         $this->load->view('navbar', $title);
-        $this->load->view('main');
+        $this->load->view('main', $data);
         $this->load->view('footer');
     }
 }

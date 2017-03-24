@@ -36,6 +36,12 @@ class Post extends CI_Model
                 'time' => $unixTime));
         }
     }
+    public function get_all_posts()
+    {
+        $sql = "CALL getPosts()";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 
     public function get_posts($id)
     {

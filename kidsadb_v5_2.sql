@@ -53,6 +53,12 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserPosts`(IN `p_Id` INT(1
   ORDER BY postview.Date DESC;
 END$$
 
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getPosts` ()  BEGIN
+  SELECT * FROM postview
+  WHERE postview.Public = 'y'
+  ORDER BY postview.Date DESC;
+END$$
+
 CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE newPost(IN p_User   INT(11),
                                                           IN p_Public CHAR(1),
                                                           IN p_Text   VARCHAR(1000))

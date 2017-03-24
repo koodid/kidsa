@@ -13,6 +13,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h2><small><?php echo lang("msg_recentposts"); ?></small></h2>
             <hr>
 
+            <div class="container">
+                <div class="col-md-8">
+                    <?php foreach ($allposts as $post): ?>
+                        <blockquote class="blockquote">
+                            <?php echo html_escape($post['Text']); ?>
+                            <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>
+                                , <?php echo html_escape($post['Birthday']); ?></footer>
+                        </blockquote>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <hr>
+            <hr>
+
             <blockquote class="blockquote">
                 <p class="mb-0"
                    title="Allikas: http://www.huffingtonpost.com/2015/05/06/the-funniest-thing-your-kid-said_n_7213254.html">
