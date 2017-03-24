@@ -13,6 +13,12 @@ $(document).ready(function () {
         }, checkOnLoad: !1, interceptRequests: !0, reconnect: !0, deDupBody: !1
     };
 
+    setInterval(Offline.check, 5000);
+
+    Offline.on("up", function () {
+        saveLocalPosts(false);
+    });
+
     var postClickHandler = function (e) {
         e.preventDefault();
 
@@ -21,15 +27,19 @@ $(document).ready(function () {
             Offline.off("confirmed-down", down);
             console.log("is up");
             $("#postbutton").off("click", postClickHandler);
-            saveLocalPosts();
+            saveLocalPosts(true);
         }
 
         function down() {
             Offline.off("confirmed-up", up);
             Offline.off("confirmed-down", down);
             console.log("is down");
+            var $postbutton = $("#postbutton");
+            $postbutton.notify("No connection.", "error");
+
             var form = $("#new-post-form");
-            var post = $("#newpost").val();
+            var $post = $("#newpost");
+            var post = $post.val();
             var childId = $("#childpicker").val();
             var publicPost = $("#publicpost").is(":checked") === true;
             if (!post) {
@@ -54,6 +64,8 @@ $(document).ready(function () {
 
             localStorage.setItem('localPosts', JSON.stringify(retrievedObject));
             console.log("Saved post data to localstorage");
+            $postbutton.notify("Saved post data locally.", "info");
+            $post.val("");
         }
 
         Offline.on("confirmed-up", up);
@@ -62,19 +74,22 @@ $(document).ready(function () {
     };
     $("#postbutton").click(postClickHandler);
 
-    function saveLocalPosts() {
+    function saveLocalPosts(submit) {
         var retrievedString = localStorage.getItem('localPosts');
 
         var retrievedObject;
         var total = 0;
         var saved = 0;
 
-        function submitIfAjaxReady() {
+        function onAjaxReady(f) {
             console.log("checking if ready", total, saved);
             if (total == saved) {
-                $("#postbutton").click();
+                console.log("is ready");
+                f();
             } else {
-                setTimeout(submitIfAjaxReady, 100);
+                setTimeout(function () {
+                    onAjaxReady(f);
+                }, 100);
             }
         }
 
@@ -100,9 +115,23 @@ $(document).ready(function () {
                 }
             }
             console.log(retrievedObject);
-            localStorage.removeItem('localPosts');
-            console.log("cleared localPosts");
+
         }
-        submitIfAjaxReady();
+        if (submit) {
+            onAjaxReady(function () {
+                localStorage.removeItem('localPosts');
+                console.log("cleared localPosts");
+                if (saved > 0)
+                    $("#newpost").notify("Synced " + saved + " posts.", "success");
+                $("#postbutton").click();
+            });
+        } else {
+            onAjaxReady(function () {
+                localStorage.removeItem('localPosts');
+                console.log("cleared localPosts");
+                if (saved > 0)
+                    $("#newpost").notify("Synced " + saved + " posts.", "success");
+            })
+        }
     }
 });
