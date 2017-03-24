@@ -30,6 +30,11 @@ function echoActiveClassIfRequestMatches($requestUri)
             echo "<script type=\"text/javascript\" src=\"" . $value . "\"></script>";
         }
     }
+    if (isset($extra_style)) {
+        foreach ($extra_style as $value) {
+            echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $value . "\"></link>";
+        }
+    }
     ?>
 </head>
 
