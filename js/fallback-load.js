@@ -8,17 +8,7 @@ fallback.load({
         '/bootstrap/js/bootstrap.min.js'
 
     ],
-    bootstrapCSS: [
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-        '/bootstrap/css/bootstrap.css'
-    ],
-
        
-    'font-awesome_css': [
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css',
-        'css/font-awesome.css'
-    ],
-
     'bootstrap-social_css': [
         'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css',
         'css/bootstrap-social.css'
