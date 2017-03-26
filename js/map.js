@@ -1,4 +1,9 @@
 function onMapLoad() {
+    if (typeof jQuery == 'undefined' || typeof $().modal != 'function') {
+        // jQuery is not loaded
+        setTimeout(onMapLoad, 100);
+        return;
+    }
     // Check if document has been loaded
     if ($("#googleMap").length == 0) {
         setTimeout(onMapLoad, 500);
