@@ -72,6 +72,5 @@
 <!--            --><?php //endforeach; ?>
         </div>
     </div>
-</div>
-
     <button class="btn btn-default" id="load_post_button">Load more posts</button>
+</div>
