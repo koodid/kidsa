@@ -21,8 +21,8 @@
                 </select>
 
                 <div>
-                    <input type="checkbox" id="publicpost" name="publicpost" value="publicpost">
                     <label for="publicpost"><?php echo lang("msg_postprivately"); ?></label>
+                    <input type="checkbox" id="publicpost" name="publicpost" value="publicpost">
                 </div>
 
             </div>
