@@ -1,11 +1,13 @@
 <div class="container">
-    <form id="new-post-form" class="form-horizontal" action="<?php echo base_url(); ?>home/create_new_post" method="post">
+    <form id="new-post-form" class="form-horizontal" action="<?php echo base_url(); ?>home/create_new_post"
+          method="post">
         <fieldset>
             <div id="postHolder" class="form-group">
                 <div class="col-md-8">
                     <label for="newpost"><?php echo lang("msg_newpost"); ?></label>
                     <textarea id="newpost" name="newpost" rows="4" placeholder="<?php echo lang("msg_writenewpost"); ?>"
-                              class="form-control" required=""></textarea>
+                              class="form-control" required=""
+                              oninvalid="this.setCustomValidity('<?php echo lang("msg_writenewpost") ?>')"></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -27,7 +29,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="postbutton"></label>
                 <div class="col-md-4">
-                    <button id="postbutton" name="postbutton" type="submit" class="btn btn-default"><?php echo lang("msg_post"); ?></button>
+                    <button id="postbutton" name="postbutton" type="submit"
+                            class="btn btn-default"><?php echo lang("msg_post"); ?></button>
                 </div>
             </div>
         </fieldset>
