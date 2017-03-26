@@ -16,7 +16,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <title><?php echo $title ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!--
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/font-awesome.css">
@@ -31,7 +31,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <link rel="shortcut icon" href="/images/faviconG.ico"/>
     <script type="text/javascript" src="/js/delaycontent.js"></script>
     <script type="text/javascript" src="/js/tooltip.js"></script>
-      
+
     <?php
     if (isset($extra_scripts)) {
         foreach ($extra_scripts as $value) {
@@ -46,7 +46,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     ?>
 </head>
 
-<body>
+<body id="body">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">

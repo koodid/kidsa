@@ -54,6 +54,14 @@ class Post extends CI_Model
         return $query->result_array();
     }
 
+    public function load_some_posts($offset, $limit)
+    {
+        // select from view didn't have to be in procedure
+        $sql = "SELECT * FROM postview LIMIT ? OFFSET ?;";
+        $query = $this->db->query($sql, array('limit' => intval($limit), 'offset' => intval($offset)));
+        return $query->result_array();
+    }
+
     public function get_childrenposts($id)
     {
         $this->db->close();
