@@ -12,8 +12,8 @@
             </div>
             <div class="form-group">
 
-                <label for="child"><?php echo lang("msg_selectchild"); ?></label>
-                <select id="childpicker" class="selectpicker" id="child" name="child">
+                <label for="childpicker"><?php echo lang("msg_selectchild"); ?></label>
+                <select id="childpicker" class="selectpicker" name="child">
                     <?php foreach ($children as $child): ?>
                         <option value= <?php echo html_escape($child['ID']); ?>><?php echo html_escape($child['Name']); ?></option>
                     <?php endforeach; ?>
@@ -72,3 +72,4 @@
             <?php endforeach; ?>
         </div>
     </div>
+</div>
