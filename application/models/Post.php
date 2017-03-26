@@ -11,6 +11,9 @@ class Post extends CI_Model
     public function create_new_post($unixTime)
     {
         $text = $this->input->post("newpost");
+        if (strlen($text) <= 0) {
+            return false;
+        }
         $child = $this->input->post("child");
         //language is constant atm
         $language = 'ee';
@@ -36,6 +39,7 @@ class Post extends CI_Model
                 'time' => $unixTime));
         }
     }
+
     public function get_all_posts()
     {
         $sql = "CALL getPosts()";
