@@ -29,6 +29,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     <script type="text/javascript" src="/js/fallback-load.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/custom.css">
     <link rel="shortcut icon" href="/images/faviconG.ico"/>
+    <script type="text/javascript" src="/js/delaycontent.js"></script>
     <script type="text/javascript" src="/js/tooltip.js"></script>
       
     <?php
