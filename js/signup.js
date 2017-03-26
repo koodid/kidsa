@@ -1,4 +1,9 @@
 (function initFormListeners() {
+    if (typeof jQuery == 'undefined') {
+        // jQuery is not loaded
+        setTimeout(initFormListeners, 100);
+        return;
+    }
     $(document).ready(function () {
         $("#username").on("input", function () {
             console.log("#username changed: ", $(this).val());

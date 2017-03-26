@@ -2,3 +2,4 @@
 .idea
 .git
 secret_config.php
+system/cache/
