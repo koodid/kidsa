@@ -40,7 +40,7 @@ function echoActiveClassIfRequestMatches($requestUri)
     }
     if (isset($extra_style)) {
         foreach ($extra_style as $value) {
-            echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $value . "\"></link>";
+            echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $value . "\">";
         }
     }
     ?>
