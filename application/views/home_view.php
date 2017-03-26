@@ -62,14 +62,16 @@
     </div>
 
     <div class="container">
-        <div class="col-md-8">
-            <?php foreach ($posts as $post): ?>
-                <blockquote class="blockquote">
-                    <?php echo html_escape($post['Text']); ?>
-                    <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>
-                        , <?php echo html_escape($post['Birthday']); ?></footer>
-                </blockquote>
-            <?php endforeach; ?>
+        <div class="col-md-8" id="load-more">
+<!--            --><?php //foreach ($posts as $post): ?>
+<!--                <blockquote class="blockquote">-->
+<!--                    --><?php //echo html_escape($post['Text']); ?>
+<!--                    <footer class="blockquote-footer">--><?php //echo html_escape($post['Name']); ?>
+<!--                        , --><?php //echo html_escape($post['Birthday']); ?><!--</footer>-->
+<!--                </blockquote>-->
+<!--            --><?php //endforeach; ?>
         </div>
     </div>
 </div>
+
+    <button class="btn btn-default" id="load_post_button">Load more posts</button>
