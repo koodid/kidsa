@@ -10,21 +10,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="col-sm-9">
             <h1><?php echo lang("msg_kidssay"); ?></h1>
-            <h2><small><?php echo lang("msg_recentposts"); ?></small></h2>
+            <h2>
+                <small><?php echo lang("msg_recentposts"); ?></small>
+            </h2>
             <hr>
 
             <div class="container">
-                <div class="col-md-8">
-                    <?php foreach ($allposts as $post): ?>
-                        <blockquote class="blockquote">
-                            <?php echo html_escape($post['Text']); ?>
-                            <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>
-                                , <?php echo html_escape($post['Birthday']); ?></footer>
-                        </blockquote>
-                    <?php endforeach; ?>
+                <div id="load-more" class="col-md-8">
+<!--                    --><?php //foreach ($allposts as $post): ?>
+<!--                        <blockquote class="blockquote">-->
+<!--                            --><?php //echo html_escape($post['Text']); ?>
+<!--                            <footer class="blockquote-footer">--><?php //echo html_escape($post['Name']); ?>
+<!--                                , --><?php //echo html_escape($post['Birthday']); ?><!--</footer>-->
+<!--                        </blockquote>-->
+<!--                    --><?php //endforeach; ?>
                 </div>
             </div>
-
+            <button class="btn btn-default" id="load_post_button">Load more posts</button>
             <hr>
             <hr>
 
@@ -51,7 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <blockquote class="blockquote">
                 <p class="mb-0"
                    title="Allikas: http://thoughtcatalog.com/charlie-shaw/2014/04/32-people-share-the-funniest-thing-theyve-heard-a-kid-say/">
-                    While driving on the interstate with my 2.5 year old in the back seat: “Any idiots out today, dad?”</p>
+                    While driving on the interstate with my 2.5 year old in the back seat: “Any idiots out today,
+                    dad?”</p>
                 <footer class="blockquote-footer"> John, 2</footer>
             </blockquote>
             <hr>

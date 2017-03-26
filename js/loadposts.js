@@ -35,7 +35,7 @@
         }).done(function (xlst) {
             $.ajax({
                 method: "GET",
-                url: location.protocol + '//' + location.hostname + "/home/load_some_posts/" + params,
+                url: location.protocol + '//' + location.hostname + "/ajax/load_some_posts/" + params,
                 error: function (xhr, status, error) {
                     // $("#load-button").hide();
                     console.log("error in loadmore")

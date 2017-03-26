@@ -56,8 +56,7 @@ class Post extends CI_Model
 
     public function load_some_posts($offset, $limit)
     {
-        // select from view didn't have to be in procedure
-        $sql = "SELECT * FROM postview LIMIT ? OFFSET ?;";
+        $sql = "SELECT * FROM postview WHERE postview.Public = 'y' ORDER BY Date DESC LIMIT ? OFFSET ?;";
         $query = $this->db->query($sql, array('limit' => intval($limit), 'offset' => intval($offset)));
         return $query->result_array();
     }

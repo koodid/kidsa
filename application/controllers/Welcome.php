@@ -24,6 +24,7 @@ class Welcome extends CI_Controller
         $this->load->model('Post');
         $data['allposts'] = $this->Post->get_all_posts();
         $title['title'] = 'Kidsa';
+        $title['extra_scripts'] = array('/js/loadposts.js');
         $this->load->view('navbar', $title);
         $this->load->view('main', $data);
         $this->load->view('footer');

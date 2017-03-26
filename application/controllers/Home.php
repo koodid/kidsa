@@ -22,7 +22,7 @@ class Home extends CI_Controller
             $data['id'] = $session_data['id'];
             $data['username'] = $session_data['username'];
             $data['title'] = lang('msg_userhome');
-            $data['extra_scripts'] = array('/js/offline.min.js', '/js/postoffline.js', '/js/notify.js', '/js/loadposts.js');
+            $data['extra_scripts'] = array('/js/offline.min.js', '/js/postoffline.js', '/js/notify.js');
             $data['extra_style'] = array('/css/offline.css');
 
             $data['countposts'] = $this->Post->get_childrenposts($session_data['id']);
@@ -52,11 +52,5 @@ class Home extends CI_Controller
 
         //redirect back to private area..
         redirect('home');
-    }
-
-    function load_some_posts($offset, $limit = 3)
-    {
-        $this->load->model('Post');
-        $this->load->view('post_xml', array('posts' => $this->Post->load_some_posts($offset, $limit)));
     }
 }
