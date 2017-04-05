@@ -18,6 +18,8 @@ $lang["msg_countposts"] = "Postituste arv";
 // Public home
 $lang["msg_kidssay"] = "LAPSED RÄÄGIVAD ...";
 $lang["msg_recentposts"] = "Hiljutised postitused";
+$lang["msg_newposts"] = "Värsked jutud:";
+$lang["msg_loadmoreposts"] = "Näita veel postitusi";
 // About
 $lang["msg_aboutkidsa"] = "Mis on KIDSA?";
 $lang["msg_abouttext1"] = "Oled Sa kuulnud lapsi ütlemas midagi eriti nutikat või tõeliselt naljakat? 

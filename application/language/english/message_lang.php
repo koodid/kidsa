@@ -18,6 +18,8 @@ $lang["msg_countposts"] = "Number of Posts";
 // Public home
 $lang["msg_kidssay"] = "KIDS SAY ...";
 $lang["msg_recentposts"] = "Recent Posts";
+$lang["msg_newposts"] = "New Posts:";
+$lang["msg_loadmoreposts"] = "Load more posts";
 // About
 $lang["msg_aboutkidsa"] = "About KIDSA";
 $lang["msg_abouttext1"] = "Has your child ever said to you something really wise or something really hilarious?

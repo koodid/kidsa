@@ -69,4 +69,10 @@ class Post extends CI_Model
         $query = $this->db->query($sql, array('id' => $id));
         return $query->result_array();
     }
+
+    public function getPostsCount(){
+        $sql = "SELECT COUNT(*) AS 'posts' FROM postview WHERE postview.Public = 'y'";
+        $query = $this->db->query($sql);
+        return $query->row()->posts;
+    }
 }
