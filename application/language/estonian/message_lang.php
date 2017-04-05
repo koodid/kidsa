@@ -58,3 +58,13 @@ $lang["msg_writenewpost"] = "Koosta uus postitus...";
 $lang["msg_selectchild"] = "Vali laps, kes ütles";
 $lang["msg_postprivately"] = "Postita privaatselt";
 $lang["msg_post"] = "Postita";
+// Payment
+$lang["msg_supportus"] = "Toeta Kidsa arengut, saates meile 10 eurot!";
+$lang["msg_payname"] = "Maksja nimi:";
+$lang["msg_enterpayname"] = "Sisestage enda nimi";
+$lang["msg_payaccount"] = "Maksja konto:";
+$lang["msg_enterpayaccount"] = "Sisestage oma konto number";
+$lang["msg_donate"] = "Sooritage annetus";
+$lang["msg_paymentcancelled"] = "Teie makse on tühistatud!";
+$lang["msg_paymentsuccess"] = "Täname, et toetate Kidsat!";
+
