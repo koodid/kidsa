@@ -89,7 +89,7 @@
 
             function onAjaxReady(f) {
                 console.log("checking if ready", total, saved);
-                if (total == saved) {
+                if (total === saved) {
                     console.log("is ready");
                     f();
                 } else {
@@ -109,15 +109,25 @@
                         var post = retrievedObject[key];
                         console.log("key", key);
                         console.log(post);
-                        // TODO postbutton - until there is display of that there is no easy way to test
-                        $.post("/home/create_new_post/" + key, {
-                            'newpost': post["post"],
-                            'child': post["childId"],
-                            'postbutton': ""
-                        }, function (data) {
-                            // console.log(data);
-                            saved++;
-                        })
+                        if (post["publicPost"]) {
+                            $.post("/home/create_new_post/" + key, {
+                                'newpost': post["post"],
+                                'child': post["childId"],
+                                'publicpost': post["publicPost"]
+                            }, function (data) {
+                                // console.log(data);
+                                saved++;
+                            })
+                        } else {
+                            $.post("/home/create_new_post/" + key, {
+                                'newpost': post["post"],
+                                'child': post["childId"]
+                            }, function (data) {
+                                // console.log(data);
+                                saved++;
+                            })
+                        }
+
                     }
                 }
                 console.log(retrievedObject);
