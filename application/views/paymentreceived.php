@@ -61,3 +61,8 @@ if (openssl_verify ($data, base64_decode($fields["VK_MAC"]), $public_key) !== 1)
     <strong><?php echo lang("msg_paymentsuccess"); ?></strong>
 </div>
 <?php endif; ?>
+<?php if(! ($fields["VK_SERVICE"] == "1111") or ! $signatureVerified):?>
+<div class="alert alert-success">
+    <strong><?php echo lang("msg_paymentcancelled"); ?></strong>
+</div>
+<?php endif; ?>
