@@ -5,7 +5,7 @@
         return;
     }
     $(document).ready(function () {
-        var lastTimeResponse = "";
+        var lastTimeResponse = 0;
 
         function pollingFunction(container) {
 
@@ -18,8 +18,8 @@
                     if (data != null) {
                         console.log("PollingPosts " + data);
                         $('#postPolling').html(data);
-                        if (lastTimeResponse.length > 0 && lastTimeResponse !== data) {
-                            var range = data - lastTimeResponse;
+                        if (lastTimeResponse > 0 && lastTimeResponse !== parseInt(data)) {
+                            var range = parseInt(data) - lastTimeResponse;
                             $.ajax({
                                 method: "GET",
                                 url: "../Welcome/getNewPosts/" + range,
@@ -30,7 +30,7 @@
                             })
                         }
                         // store the most recent value
-                        lastTimeResponse = data;
+                        lastTimeResponse = parseInt(data);
                     }
                 },
                 complete: function () {
