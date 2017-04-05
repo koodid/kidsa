@@ -67,7 +67,7 @@
                 <blockquote class="blockquote">
                     <?php echo html_escape($post['Text']); ?>
                     <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>
-                        , <?php echo html_escape($post['Birthday']); ?></footer>
+                        , <?php echo html_escape($post['Age']); ?></footer>
                 </blockquote>
             <?php endforeach; ?>
         </div>

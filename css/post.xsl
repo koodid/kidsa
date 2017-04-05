@@ -10,7 +10,7 @@
                         <xsl:value-of select="data"/>
                         <footer class="blockquote-footer">
                             <xsl:value-of select="childname"/>,
-                            <xsl:value-of select="birthday"/>
+                            <xsl:value-of select="age"/>
                         </footer>
                     </blockquote>
                 </div>

@@ -118,6 +118,17 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getUserChildrenPostsNo`(IN `p
     ORDER BY Posts DESC;
   END$$
 
+--
+-- Functions
+--
+CREATE DEFINER =`kidsacsut`@`localhost` FUNCTION `f_calcAge` (`Bday` DATE, `PostDate` TIMESTAMP)
+  RETURNS INT(11)
+  BEGIN
+    DECLARE Age INT;
+    SET Age = YEAR(FROM_DAYS(TO_DAYS(PostDate)- TO_DAYS(Bday)));
+  RETURN Age;
+  END$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -224,15 +235,17 @@ CREATE TABLE `posts` (
 -- Stand-in structure for view `postview`
 -- (See below for the actual view)
 --
+
 CREATE TABLE `postview` (
-  `ID`       INT(11),
-  `User`     INT(11),
-  `Public`   CHAR(1),
-  `Text`     VARCHAR(1000),
+  `ID` INT(11),
+  `User` INT(11),
+  `Public` CHAR(1),
+  `Text` VARCHAR(1000),
   `Language` VARCHAR(2),
-  `Date`     TIMESTAMP,
-  `Name`     VARCHAR(100),
-  `Birthday` DATE
+  `Date` TIMESTAMP,
+  `Name` VARCHAR(100),
+  `Birthday` DATE,
+  `Age` INT(11)
 );
 
 -- --------------------------------------------------------
@@ -298,7 +311,8 @@ CREATE ALGORITHM = UNDEFINED
     `posts`.`Language`    AS `Language`,
     `posts`.`Date`        AS `Date`,
     `children`.`Name`     AS `Name`,
-    `children`.`Birthday` AS `Birthday`
+    `children`.`Birthday` AS `Birthday`,
+    `f_calcAge`(`children`.`Birthday`,`posts`.`Date`) AS `Age`
   FROM ((`posts`
     LEFT JOIN `childrenposts` ON ((`posts`.`ID` = `childrenposts`.`Post`))) LEFT JOIN `children`
       ON ((`childrenposts`.`Child` = `children`.`ID`)));

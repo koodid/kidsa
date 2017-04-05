@@ -43,7 +43,7 @@ class Welcome extends CI_Controller
         $posts = $this->Post->load_some_posts(0, $limit);
         $result = $result."<h2><small>".lang("msg_newposts")."</small></h2>";
         foreach ($posts as $post) {
-            $result = $result."<blockquote class=\"blockquote\">".$post['Text']."<footer class=\"blockquote-footer\">".$post['Name'].", ".$post['Birthday']."</blockquote>";
+            $result = $result."<blockquote class=\"blockquote\">".$post['Text']."<footer class=\"blockquote-footer\">".$post['Name'].", ".$post['Age']."</blockquote>";
         }
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
     }
