@@ -65,7 +65,7 @@ function echoActiveClassIfRequestMatches($requestUri)
                     <a href="/"><?php echo lang("msg_home"); ?></a>
                 </li>
                 <li <?php echoActiveClassIfRequestMatches("about") ?>>
-                    <a href="about"><?php echo lang("msg_about"); ?></a>
+                    <a href="<?php echo base_url(); ?>about"><?php echo lang("msg_about"); ?></a>
                 </li>
             </ul>
             <form class="navbar-form navbar-left">

@@ -59,3 +59,12 @@ $lang["msg_writenewpost"] = "Write a new post...";
 $lang["msg_selectchild"] = "Select the child who said";
 $lang["msg_postprivately"] = "Post as private post";
 $lang["msg_post"] = "Post";
+// Payment
+$lang["msg_supportus"] = "Help Kidsa grow, by sending us 10 EUR!";
+$lang["msg_payname"] = "Payer name:";
+$lang["msg_enterpayname"] = "Enter your full name";
+$lang["msg_payaccount"] = "Payer account:";
+$lang["msg_enterpayaccount"] = "Enter your account number";
+$lang["msg_donate"] = "Donate";
+$lang["msg_paymentcancelled"] = "Your payment was cancelled!";
+$lang["msg_paymentsuccess"] = "Thank you for supporting Kidsa!";
