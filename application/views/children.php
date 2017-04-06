@@ -62,8 +62,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
     <div class="col-sm-4 col-sm-offset-7">
-        <button type="submit" class="btn btn-primary btn-lg gradient"
-                ><?php echo lang("msg_save"); ?></button>
+        <button type="submit"
+                class="btn btn-md btn-default"><?php echo lang("msg_save"); ?></button>
     </div>
     <?php echo form_close(); ?>
 </div>
