@@ -19,6 +19,7 @@ class Children extends CI_Controller
 
 
             $this->form_validation->set_rules('childname', 'name', 'required');
+            $this->form_validation->set_rules('birthday', 'birthday', 'required');
 
             if ($this->form_validation->run() == FALSE)
             {
