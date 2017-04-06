@@ -11,7 +11,10 @@ class Children_model extends CI_Model
     public function add_child($user_id)
     {
         $childname = $this->input->post("childname");
-        $birthday = $this->input->post("birthday");
+        $bday = $this->input->post("cday");
+        $bmonth = $this->input->post("cmonth");
+        $byear = $this->input->post("cyear");
+        $birthday = $byear.'-'.$bmonth.'-'.$bday;
         // Dates in mySQL are YYYY-MM-DD
         $this->db->close();
         $this->db->initialize();

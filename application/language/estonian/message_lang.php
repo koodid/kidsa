@@ -46,7 +46,11 @@ $lang["msg_addchild"] = "Lisa laps";
 $lang["msg_name"] = "Nimi";
 $lang["msg_entername"] = "Sisesta lapse nimi";
 $lang["msg_birthday"] = "Sünnipäev";
-$lang["msg_dateformat"] = "YYYY-MM-DD";
+$lang["msg_dateformat"] = "AAAA-KK-PP";
+$lang["msg_day"] = "Päev:";
+$lang["msg_month"] = "Kuu:";
+$lang["msg_year"] = "Aasta:";
+$lang["msg_save"] = "Salvesta";
 $lang["msg_formsuccess"] = "Sinu andmed on edukalt salvestatud!";
 // Signup 
 $lang["msg_confirmpassword"] = "Korda salasõna";

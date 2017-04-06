@@ -28,20 +28,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     <?php endif; ?>
     <?php echo form_open('children'); ?>
-    <div class="form-group col-md-4 col-sm-offset-4">
+    <div class="form-group col-sm-5 col-sm-offset-3">
         <label for="childname"><?php echo lang("msg_name"); ?></label>
         <input type="text" class="form-control" id="childname" name="childname"
                placeholder="<?php echo lang("msg_entername"); ?>">
     </div>
-    <div class="form-group col-md-4 col-sm-offset-4">
+    <div class="form-group col-sm-9 col-md-9 col-sm-offset-3">
         <label for="birthday"><?php echo lang("msg_birthday"); ?></label>
-        <input type="text" class="form-control" id="birthday" name="birthday"
-               placeholder="<?php echo lang("msg_dateformat"); ?>">
-    </div>
+        <div class="form-inline">
+            <label for="cday"><?php echo lang("msg_day"); ?></label>
+            <select class="form-control" id="cday" name="cday">
+                <option></option>
+                <?php for ($x = 1; $x <= 31; $x++) { ?>
+                    <option><?php echo $x; ?></option>
+                <?php } ?>
+            </select>
 
-    <div class="col-md-4 col-sm-offset-4">
-        <button type="submit"
-                class="btn btn-md btn-default"><?php echo lang("msg_addchild"); ?></button>
+            <label for="cmonth"><?php echo lang("msg_month"); ?></label>
+            <select class="form-control" id="cmonth" name="cmonth">
+                <option></option>
+                <?php for ($x = 1; $x <= 12; $x++) { ?>
+                    <option><?php echo $x; ?></option>
+                <?php } ?>
+            </select>
+
+            <label for="cyear"><?php echo lang("msg_year"); ?></label>
+            <select class="form-control" id="cyear" name="cyear">
+                <option></option>
+                <?php for ($x = (int)date("Y"); $x >= ((int)date("Y") - 20); $x--) { ?>
+                    <option><?php echo $x; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-4 col-sm-offset-7">
+        <button type="submit" class="btn btn-primary btn-lg gradient"
+                ><?php echo lang("msg_save"); ?></button>
     </div>
     <?php echo form_close(); ?>
 </div>

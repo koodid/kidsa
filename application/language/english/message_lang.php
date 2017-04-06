@@ -46,6 +46,10 @@ $lang["msg_name"] = "Name";
 $lang["msg_entername"] = "Enter name";
 $lang["msg_birthday"] = "Birthday";
 $lang["msg_dateformat"] = "YYYY-MM-DD";
+$lang["msg_day"] = "Day:";
+$lang["msg_month"] = "Month:";
+$lang["msg_year"] = "Year:";
+$lang["msg_save"] = "Save";
 $lang["msg_formsuccess"] = "Your data was successfully submitted!";
 // Signup 
 $lang["msg_confirmpassword"] = "Confirm password";
