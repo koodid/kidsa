@@ -36,6 +36,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     id="btn-fbsignup" class="btn btn-social btn-facebook"><span class="fa fa-facebook"></span>
                 <?php echo lang("msg_FBlogin"); ?></a>
         </div>
+        <div>
+            <a href="https://localhost:446/authenticate">
+                <img alt="ID-card button" src="/extra/id-card-et.svg" class="btn-eid">
+            </a>
+        </div>
     </div>
     <?php echo form_close(); ?>
 </div>

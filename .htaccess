@@ -2,7 +2,7 @@
 <IfModule mod_rewrite.c>
         RewriteEngine On
         RewriteBase /
-
+        Header set Access-Control-Allow-Origin "*"
         # Removes index.php from ExpressionEngine URLs
         RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
         RewriteCond %{REQUEST_URI} !/system/.* [NC]
