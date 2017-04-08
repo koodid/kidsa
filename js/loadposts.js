@@ -21,17 +21,17 @@
     }
 
     function addFromXML(data, xlst, selector, fn) {
-        try {
+        if (typeof(XSLTProcessor) === 'undefined') {
+            // Workaround for IE
+            $("#load_post_button").hide();
+            offset = 50;
+            allPosts();
+        } else {
             var parsedXML = jQuery.parseXML(data);
             var xsltProcessor = new XSLTProcessor;
             xsltProcessor.importStylesheet(xlst);
             $(selector)[fn](xsltProcessor.transformToFragment(parsedXML, document));
-        } catch (e) {
-            $("#load_post_button").hide();
-            offset = 50;
-            allPosts();
         }
-
     }
 
     function loadMore() {
