@@ -4,7 +4,7 @@ class Search extends CI_Controller
     public function index()
     {
         $this->load->model('Post');
-        $results = $this->Post->searchPosts($this->input->post('searchField'));
+        $results = $this->Post->searchPosts($this->input->get('q'));
         $data['search_results'] = $results;
         if (empty($results))
         {

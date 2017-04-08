@@ -79,8 +79,8 @@ class Post extends CI_Model
     public function searchPosts($searchQuery)
     {
         
-        $sql = "SELECT * FROM postview WHERE postview.Public = 'y' AND postview.Text LIKE '%" . $searchQuery . "%'";
-        $query = $this->db->query($sql);
+        $sql = "SELECT * FROM postview WHERE postview.Public = 'y' AND postview.Text LIKE ?";
+        $query = $this->db->query($sql, array('searchquery' => "%$searchQuery%"));
         return $query->result_array();
 
     }

@@ -68,9 +68,9 @@ function echoActiveClassIfRequestMatches($requestUri)
                     <a href="<?php echo base_url(); ?>about"><?php echo lang("msg_about"); ?></a>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left" id="search" action="<?php echo base_url(); ?>search" method="post">
+            <form class="navbar-form navbar-left" id="search" action="<?php echo base_url(); ?>search" method="GET">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="searchField" id="searchField" placeholder="<?php echo lang("msg_search"); ?>"
+                    <input type="text" class="form-control" name="q" id="searchField" placeholder="<?php echo lang("msg_search"); ?>"
                         data-toggle="tooltip" data-placement="auto bottom"
                         title="<?php echo lang("msg_search_tooltip_long"); ?>">
                     <div class="input-group-btn">
