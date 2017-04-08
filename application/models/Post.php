@@ -70,9 +70,19 @@ class Post extends CI_Model
         return $query->result_array();
     }
 
-    public function getPostsCount(){
+    public function getPostsCount()
+    {
         $sql = "SELECT COUNT(*) AS 'posts' FROM postview WHERE postview.Public = 'y'";
         $query = $this->db->query($sql);
         return $query->row()->posts;
+    }
+
+    public function searchPosts($searchQuery)
+    {
+
+        $sql = "SELECT * FROM postview WHERE postview.Public = 'y' AND postview.Text LIKE ? ESCAPE '\\\'";
+        $query = $this->db->query($sql, array('searchquery' => "%$searchQuery%"));
+        return $query->result_array();
+
     }
 }

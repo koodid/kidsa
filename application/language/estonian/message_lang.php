@@ -73,4 +73,7 @@ $lang["msg_enterpayaccount"] = "Sisestage oma konto number";
 $lang["msg_donate"] = "Sooritage annetus";
 $lang["msg_paymentcancelled"] = "Teie makse on tühistatud!";
 $lang["msg_paymentsuccess"] = "Täname, et toetate Kidsat!";
+// Search
+$lang['msg_searchpage'] = "Otsing";
+$lang['msg_nosearchresults'] = "Antud otsingule ei leitud ühtegi vastet!";
 
