@@ -16,15 +16,15 @@
                 dataType: "json",
                 success: function (data) {
                     if (data != null) {
-                        console.log("PollingPosts " + data);
+                        //console.log("PollingPosts " + data);
                         $('#postPolling').html(data);
                         if (lastTimeResponse > 0 && lastTimeResponse !== parseInt(data)) {
                             var range = parseInt(data) - lastTimeResponse;
                             $.ajax({
                                 method: "GET",
                                 url: "../Welcome/getNewPosts/" + range,
-                                dataType: "json",
                                 success: function (result) {
+                                    $("#newPostsTitel").removeClass('hidden');
                                     $('#newPosts').html(result);
                                 }
                             })

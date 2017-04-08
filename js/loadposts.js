@@ -21,10 +21,17 @@
     }
 
     function addFromXML(data, xlst, selector, fn) {
-        var parsedXML = jQuery.parseXML(data);
-        var xsltProcessor = new XSLTProcessor;
-        xsltProcessor.importStylesheet(xlst);
-        $(selector)[fn](xsltProcessor.transformToFragment(parsedXML, document));
+        try {
+            var parsedXML = jQuery.parseXML(data);
+            var xsltProcessor = new XSLTProcessor;
+            xsltProcessor.importStylesheet(xlst);
+            $(selector)[fn](xsltProcessor.transformToFragment(parsedXML, document));
+        } catch (e) {
+            $("#load_post_button").hide();
+            offset = 50;
+            allPosts();
+        }
+
     }
 
     function loadMore() {
@@ -37,7 +44,7 @@
                 method: "GET",
                 url: location.protocol + '//' + location.hostname + "/ajax/load_some_posts/" + params,
                 error: function (xhr, status, error) {
-                    // $("#load-button").hide();
+                    // $("#load_post_button").hide();
                     console.log("error in loadmore")
                 }
             }).done(function (result) {
@@ -48,7 +55,23 @@
         });
     }
 
+    function allPosts() {
+        return $.ajax({
+            type: "GET",
+            url: "../Welcome/showAllPublicPosts",
+            success: function (data) {
+                if (data != null) {
+                    $('#load-all').html(data);
+                }
+            }
+        });
+    }
+
     window.onscroll = yHandler;
+
+    $(document).ready(function () {
+        loadMore();
+    });
 
     $("#load_post_button").click(function (e) {
         loadMore();

@@ -22,11 +22,13 @@ class Welcome extends CI_Controller
     public function index()
     {
         $this->load->model('Post');
-        $data['allposts'] = $this->Post->get_all_posts();
+        //$data['allposts'] = $this->Post->get_all_posts();
+        //$data['allposts'] = $this->Post->load_some_posts(0, 10);
         $title['title'] = 'Kidsa';
         $title['extra_scripts'] = array('/js/loadposts.js', '/js/polling.js');
         $this->load->view('navbar', $title);
-        $this->load->view('main', $data);
+        //$this->load->view('main', $data);
+        $this->load->view('main');
         $this->load->view('footer');
     }
 
@@ -38,13 +40,17 @@ class Welcome extends CI_Controller
     }
 
     public function getNewPosts($limit){
-        $result = "";
         $this->load->model('Post');
-        $posts = $this->Post->load_some_posts(0, $limit);
-        $result = $result."<h2><small>".lang("msg_newposts")."</small></h2>";
-        foreach ($posts as $post) {
-            $result = $result."<blockquote class=\"blockquote\">".$post['Text']."<footer class=\"blockquote-footer\">".$post['Name'].", ".$post['Age']."</blockquote>";
-        }
-        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        $data['all_posts'] = $this->Post->load_some_posts(0, $limit);
+        $new_posts = $this->load->view('show_posts', $data, TRUE);
+        echo $new_posts;
+    }
+
+    public function showAllPublicPosts()
+    {
+        $this->load->model('Post');
+        $data['all_posts'] = $this->Post->get_all_posts();
+        $response = $this->load->view('show_posts', $data, TRUE);
+        echo $response;
     }
 }
