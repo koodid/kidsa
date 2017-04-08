@@ -72,3 +72,6 @@ $lang["msg_enterpayaccount"] = "Enter your account number";
 $lang["msg_donate"] = "Donate";
 $lang["msg_paymentcancelled"] = "Your payment was cancelled!";
 $lang["msg_paymentsuccess"] = "Thank you for supporting Kidsa!";
+// Search
+$lang['msg_searchpage'] = "Search";
+$lang['msg_nosearchresults'] = "No results were found for this search query!";
