@@ -16,13 +16,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><h2><a href="<?php echo base_url(); ?>home"><?php echo lang("msg_userhome"); ?></a></h2>
                         </li>
                         <li><h2><?php echo lang("msg_account"); ?></h2></li>
-                        <ul>
-                            <li><h3>
-                                    <a href="<?php echo base_url(); ?>children"><?php echo lang("msg_addchildren"); ?></a>
-                                </h3></li>
-                            <li><h3><a href="<?php echo base_url(); ?>settings"><?php echo lang("msg_settings"); ?></a>
-                                </h3></li>
-                        </ul>
+                        <li>
+                            <ul>
+                                <li><h3>
+                                        <a href="<?php echo base_url(); ?>children"><?php echo lang("msg_addchildren"); ?></a>
+                                    </h3></li>
+                                <li><h3>
+                                        <a href="<?php echo base_url(); ?>settings"><?php echo lang("msg_settings"); ?></a>
+                                    </h3></li>
+                            </ul>
+                        </li>
                         <?php
                     } else { ?>
                         <li><h2><a href="<?php echo base_url(); ?>login"><?php echo lang("msg_login"); ?></a></h2></li>
