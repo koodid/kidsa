@@ -2,6 +2,13 @@
 
 class Signup extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+    }
+
     public function index()
     {
         if ($this->session->userdata('logged_in')) {
@@ -12,15 +19,13 @@ class Signup extends CI_Controller
                 redirect('home');
             }
         }
-
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('set_username', 'username', 'trim|required');
-        $this->form_validation->set_rules('set_password', 'password', 'trim|required');
-        $this->form_validation->set_rules('set_confirmpassword', 'password confirmation', 'trim|required|matches[set_password]');
-        $this->form_validation->set_rules('set_email', 'email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('set_username', lang('val_username'), 'trim|required');
+        $this->form_validation->set_rules('set_password', lang('val_password'), 'trim|required');
+        $this->form_validation->set_rules('set_confirmpassword', lang('val_confirmed_password'), 'trim|required|matches[set_password]');
+        $this->form_validation->set_rules('set_email', lang('val_email'), 'trim|required|valid_email');
 
         if ($this->form_validation->run() == TRUE) {
-            $this->form_validation->set_rules('set_username', 'username', 'callback_check_username_db');
+            $this->form_validation->set_rules('set_username', lang('val_username'), 'callback_check_username_db');
             if ($this->form_validation->run() == TRUE) {
                 $this->load->model('Register_model');
                 $this->Register_model->create_new_user();
@@ -43,7 +48,7 @@ class Signup extends CI_Controller
         $username = $this->input->post('set_username');
         $usercount = $this->Register_model->check_username($username);
         if ($usercount > 0) {
-            $this->form_validation->set_message('check_username_db', 'This username is not available. Please choose new username.');
+            $this->form_validation->set_message('check_username_db', lang('val_username_not_unique'));
             return FALSE;
         } else {
             return TRUE;

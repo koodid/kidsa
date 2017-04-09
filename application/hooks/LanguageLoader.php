@@ -13,5 +13,6 @@ class LanguageLoader
         } else {
             $ci->lang->load('message', 'english');
         }
+        $ci->config->set_item('language', $site_lang);
     }
 }

@@ -1,0 +1,32 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$lang['form_validation_required']		= '{field} on kohustuslik.';
+$lang['form_validation_isset']			= '{field} peab sisaldama väärtust.';
+$lang['form_validation_valid_email']		= '{field} ei sisalda korrektset e-maili aadressit.';
+$lang['form_validation_valid_emails']		= '{field} ei sisalda korrektseid e-maili aadresseid.';
+$lang['form_validation_valid_url']		= '{field} peab sisaldama korrektsed URL-i.';
+$lang['form_validation_valid_ip']		= '{field} peab sisaldama korrektset IP-d.';
+$lang['form_validation_min_length']		= '{field} peab olema vähemalt {param} tähemärki pikk.';
+$lang['form_validation_max_length']		= '{field} ei tohi olla pikem kui {param} tähemärki.';
+$lang['form_validation_exact_length']		= '{field} peab olema täpselt {param} tähemärki pikk.';
+$lang['form_validation_alpha']			= '{field} tohib sisaldada ainult tähti.';
+$lang['form_validation_alpha_numeric']		= '{field} tohib sisaldada ainult tähti ja/või numbreid.';
+$lang['form_validation_alpha_numeric_spaces']	= '{field} tohib sisaldada ainult tähti, numbreid ja tühikuid.';
+$lang['form_validation_alpha_dash']		= '{field} tohib sisaldada ainult tähti, nubreid, alakriipse ja punkte.';
+$lang['form_validation_numeric']		= '{field} tohib sisaldada ainult numbreid.';
+$lang['form_validation_is_numeric']		= '{field} tohib sisaldada ainult numbrilisi tähemärke (numbreid).';
+$lang['form_validation_integer']		= '{field} tohib sisaldada ainult täisarvu.';
+$lang['form_validation_regex_match']		= '{field} ei ole korrektse formaadiga.';
+$lang['form_validation_matches']		= '{field} ja {param} on erinevad.';
+$lang['form_validation_differs']		= '{field} ja {param} peavad olema erinevad .';
+$lang['form_validation_is_unique'] 		= '{field} peab olema unikaalne.';
+$lang['form_validation_is_natural']		= '{field} tohib sisaldada ainult numbreid.';
+$lang['form_validation_is_natural_no_zero']	= '{field} tohib sisaldada ainult numbreid ja peab olema suurem kui 0.';
+$lang['form_validation_decimal']		= '{field} peab sisaldama komakohaga arvu.';
+$lang['form_validation_less_than']		= '{field} peab sisaldama numbrit, mis on väiksem kui {param}.';
+$lang['form_validation_less_than_equal_to']	= '{field} peab sisaldama arvu, mis on võrdne või väiksem kui {param}.';
+$lang['form_validation_greater_than']		= '{field} peab sisaldama arvu, mis on suurem kui {param}.';
+$lang['form_validation_greater_than_equal_to']	= '{field} peab sisaldama arvu, mis on võrdne või suurem kui {param}.';
+$lang['form_validation_error_message_not_set']	= 'Veateade, mis on seotud väljaga {field}, pole kättesaadav.';
+$lang['form_validation_in_list']		= '{field} peab olema üks järgmisest valikust: {param}.';

@@ -75,3 +75,16 @@ $lang["msg_paymentsuccess"] = "Thank you for supporting Kidsa!";
 // Search
 $lang['msg_searchpage'] = "Search";
 $lang['msg_nosearchresults'] = "No results were found for this search query!";
+// Form-validation fields
+$lang['val_username'] = "username";
+$lang['val_password'] = "password";
+$lang['val_new_password'] = "new password";
+$lang['val_confirmed_password'] = "confirmed password";
+$lang['val_email'] = "email";
+$lang['val_name'] = "name";
+$lang['val_day'] = "day";
+$lang['val_month'] = "month";
+$lang['val_year'] = "year";
+$lang['val_invalid_date'] = "Invalid date.";
+$lang['val_invalid_username_password'] = "Invalid username or password.";
+$lang['val_username_not_unique'] = "This username is not available. Please choose new username.";

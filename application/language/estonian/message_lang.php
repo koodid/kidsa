@@ -76,4 +76,18 @@ $lang["msg_paymentsuccess"] = "Täname, et toetate Kidsat!";
 // Search
 $lang['msg_searchpage'] = "Otsing";
 $lang['msg_nosearchresults'] = "Antud otsingule ei leitud ühtegi vastet!";
+// Form-validation fields
+$lang['val_username'] = "Kasutajanimi";
+$lang['val_password'] = "Salasõna";
+$lang['val_new_password'] = "Uus salasõna";
+$lang['val_confirmed_password'] = "Teisena sisestatud salasõna";
+$lang['val_email'] = "E-mail";
+$lang['val_name'] = "Nimi";
+$lang['val_day'] = "Päev";
+$lang['val_month'] = "Kuu";
+$lang['val_year'] = "Aasta";
+$lang['val_invalid_date'] = "Vigane kuupäev.";
+$lang['val_invalid_username_password'] = "Vigane kasutajanimi või salasõna.";
+$lang['val_username_not_unique'] = "See kasutajanimi on juba võetud. Vali uus kasutajanimi.";
+
 

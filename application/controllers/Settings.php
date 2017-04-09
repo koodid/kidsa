@@ -6,6 +6,7 @@ class Settings extends CI_Controller
     {
         parent::__construct();
         $this->load->database();
+        $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('Register_model', '', TRUE);
     }
@@ -15,8 +16,8 @@ class Settings extends CI_Controller
         $this->load->helper(array('form', 'url'));
         if ($this->session->userdata('logged_in')) {
 
-            $this->form_validation->set_rules('newpassword', 'new password', 'required');
-            $this->form_validation->set_rules('confirmnewpassword', 'confirmed password', 'required|matches[newpassword]');
+            $this->form_validation->set_rules('newpassword', lang('val_new_password'), 'required');
+            $this->form_validation->set_rules('confirmnewpassword', lang('val_confirmed_password'), 'required|matches[newpassword]');
 
             if ($this->form_validation->run() == FALSE)
             {
@@ -43,12 +44,4 @@ class Settings extends CI_Controller
             redirect('login?uri=' . urlencode($_SERVER['REQUEST_URI']));
         }
     }
-/*
-        function change_password()
-        {
-            $session_data = $this->session->userdata('logged_in');
-            $data['id'] = $session_data['id'];
-            $this->Register_model->change_password($data['id']);
-        }
-*/
 }

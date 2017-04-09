@@ -9,6 +9,8 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user', '', TRUE);
+        $this->load->helper('form');
+        $this->load->library('form_validation');
     }
 
     function index()
@@ -22,11 +24,8 @@ class Login extends CI_Controller
             }
         }
 
-        //This method will have the credentials validation
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('username', 'Username', 'trim|required');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
+        $this->form_validation->set_rules('username', lang('val_username'), 'trim|required');
+        $this->form_validation->set_rules('password', lang('val_password'), 'trim|required|callback_check_database');
 
         if ($this->form_validation->run() == FALSE) {
             //Field validation failed.  User redirected to login page
@@ -82,7 +81,7 @@ class Login extends CI_Controller
             $this->session->set_userdata('logged_in', $sess_array);
             return TRUE;
         } else {
-            $this->form_validation->set_message('check_database', 'Invalid username or password');
+            $this->form_validation->set_message('check_database', lang('val_invalid_username_password'));
             return false;
         }
     }

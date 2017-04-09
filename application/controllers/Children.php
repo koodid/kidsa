@@ -6,21 +6,22 @@ class Children extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Children_model', '', TRUE);
+        $this->load->helper('form');
         $this->load->library('form_validation');
     }
 
     public function index()
     {
-        $this->load->helper(array('form', 'url'));
+        $this->load->helper('url');
 
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
             $data['children'] = $this->Children_model->get_children($session_data['id']);
 
-            $this->form_validation->set_rules('childname', 'name', 'trim|required');
-            $this->form_validation->set_rules('cday', 'day', 'required');
-            $this->form_validation->set_rules('cmonth', 'month', 'required');
-            $this->form_validation->set_rules('cyear', 'year', 'required');
+            $this->form_validation->set_rules('childname', lang('val_name'), 'trim|required');
+            $this->form_validation->set_rules('cday', lang('val_day'), 'required');
+            $this->form_validation->set_rules('cmonth', lang('val_month'), 'required');
+            $this->form_validation->set_rules('cyear', lang('val_year'), 'required');
 
             if ($this->form_validation->run() == FALSE) {
                 $title['title'] = lang("msg_addchildren");
@@ -28,7 +29,7 @@ class Children extends CI_Controller
                 $this->load->view('children', $data);
                 $this->load->view('footer');
             } else {
-                $this->form_validation->set_rules('cyear', 'year', 'callback_validate_date');
+                $this->form_validation->set_rules('cyear', lang('val_year'), 'callback_validate_date');
 
                 if ($this->form_validation->run() == FALSE) {
                     $title['title'] = lang("msg_addchildren");
@@ -60,7 +61,7 @@ class Children extends CI_Controller
         if (checkdate($bmonth, $bday, $byear)) {
             return TRUE;
         } else {
-            $this->form_validation->set_message('validate_date', 'Invalid date.');
+            $this->form_validation->set_message('validate_date', lang('val_invalid_date'));
             return FALSE;
         }
     }
