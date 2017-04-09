@@ -43,7 +43,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     class="btn btn-md btn-default"><?php echo lang("msg_register"); ?>
             </button>
         </div>
-
-        <?php echo form_close(); ?>
     </div>
+    <?php echo form_close(); ?>
 </div>
