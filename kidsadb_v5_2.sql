@@ -279,6 +279,19 @@ INSERT INTO `users` (`ID`, `Name`, `Username`, `Password`, `Email`, `Regdate`, `
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `v_users`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_users` (
+  `id` INT(11),
+  `name` VARCHAR(100),
+  `username` VARCHAR(100),
+  `password` VARCHAR(255)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `childview`
 --
 DROP TABLE IF EXISTS `childview`;
@@ -335,6 +348,24 @@ CREATE ALGORITHM = UNDEFINED
   FROM (`children`
     JOIN `childrenposts` ON ((`children`.`ID` = `childrenposts`.`Child`)))
   GROUP BY `children`.`ID`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_users`
+--
+DROP TABLE IF EXISTS `v_users`;
+
+CREATE ALGORITHM = UNDEFINED
+  DEFINER =`kidsacsut`@`localhost`
+  SQL SECURITY DEFINER VIEW `v_users`  AS
+  SELECT
+    `users`.`ID`       AS `id`,
+    `users`.`Name`     AS `name`,
+    `users`.`Username` AS `username`,
+    `users`.`Password` AS `password`
+  FROM `users` ;
+
 
 --
 -- Indexes for dumped tables

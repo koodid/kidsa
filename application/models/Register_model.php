@@ -8,11 +8,18 @@ class Register_model extends CI_Model
         $this->load->database();
     }
 
+    public function check_username($username)
+    {
+        $sql = "SELECT COUNT(*) AS 'usercount' FROM v_users WHERE v_users.username = ?";
+        $query = $this->db->query($sql, array('username' => $username));
+        return $query->row()->usercount;
+    }
+
     public function create_new_user()
     {
-        $username = $this->input->post("username");
-        $password = password_hash($this->input->post("password"), PASSWORD_DEFAULT);
-        $email = $this->input->post("email");
+        $username = $this->input->post("set_username");
+        $password = password_hash($this->input->post("set_password"), PASSWORD_DEFAULT);
+        $email = $this->input->post("set_email");
 
         $sql = "CALL createNewUser(?,?,?)";
         $this->db->query($sql, array('username' => $username, 'password' => $password, 'email' => $email));

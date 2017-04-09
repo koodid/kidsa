@@ -54,7 +54,7 @@ $lang["msg_save"] = "Salvesta";
 $lang["msg_formsuccess"] = "Sinu andmed on edukalt salvestatud!";
 // Signup 
 $lang["msg_confirmpassword"] = "Korda salasõna";
-$lang["msg_etnerconfirmpassword"] = "Sisesta salasõna uuesti";
+$lang["msg_enterconfirmpassword"] = "Sisesta salasõna uuesti";
 $lang["msg_email"] = "Email";
 $lang["msg_enteremail"] = "Sisesta oma emaili aadress";
 $lang["msg_register"] = "Registreeri";
