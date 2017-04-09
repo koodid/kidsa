@@ -5,9 +5,10 @@
             <div id="postHolder" class="form-group">
                 <div class="col-md-8">
                     <label for="newpost"><?php echo lang("msg_newpost"); ?></label>
-                    <textarea id="newpost" name="newpost" rows="4" placeholder="<?php echo lang("msg_writenewpost"); ?>"
+                    <textarea id="newpost" name="newpost" rows="4" placeholder="<?php echo lang('msg_writenewpost'); ?>"
                               class="form-control" required=""
-                              oninvalid="this.setCustomValidity('<?php echo lang("msg_writenewpost") ?>')"></textarea>
+                              oninput="this.setCustomValidity('')"
+                              oninvalid="this.setCustomValidity('<?php echo lang("msg_writenewpost"); /*This needs access to php, so not suitable to put to js file*/ ?>')"></textarea>
                 </div>
             </div>
             <div class="form-group">
