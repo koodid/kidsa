@@ -15,6 +15,7 @@ $lang["msg_settings"] = "Settings";
 $lang["msg_addchildren"] = "My Children";
 $lang["msg_account"] = "My Account";
 $lang["msg_countposts"] = "Number of Posts";
+$lang['msg_sitemap'] = "Sitemap";
 // Public home
 $lang["msg_kidssay"] = "KIDS SAY ...";
 $lang["msg_recentposts"] = "Recent Posts";

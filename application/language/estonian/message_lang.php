@@ -15,6 +15,7 @@ $lang["msg_settings"] = "Seaded";
 $lang["msg_addchildren"] = "Minu lapsed";
 $lang["msg_account"] = "Minu konto";
 $lang["msg_countposts"] = "Postituste arv";
+$lang['msg_sitemap'] = "Sisukaart";
 // Public home
 $lang["msg_kidssay"] = "LAPSED RÄÄGIVAD ...";
 $lang["msg_recentposts"] = "Hiljutised postitused";
