@@ -15,8 +15,12 @@ class Post extends CI_Model
             return false;
         }
         $child = $this->input->post("child");
-        //language is constant atm
-        $language = 'ee';
+
+        if ($_SESSION['site_lang'] === 'estonian') {
+            $language = 'ee';
+        } else {
+            $language = 'en';
+        }
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
 
