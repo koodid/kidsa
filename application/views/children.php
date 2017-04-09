@@ -34,11 +34,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                placeholder="<?php echo lang("msg_entername"); ?>">
     </div>
     <div class="form-group col-sm-9 col-md-9 col-sm-offset-3">
-        <label for="birthday"><?php echo lang("msg_birthday"); ?></label>
+        <p><strong><?php echo lang("msg_birthday"); ?></strong></p>
         <div class="form-inline">
             <label for="cday"><?php echo lang("msg_day"); ?></label>
             <select class="form-control" id="cday" name="cday">
-                <option></option>
+                <option>...</option>
                 <?php for ($x = 1; $x <= 31; $x++) { ?>
                     <option><?php echo $x; ?></option>
                 <?php } ?>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <label for="cmonth"><?php echo lang("msg_month"); ?></label>
             <select class="form-control" id="cmonth" name="cmonth">
-                <option></option>
+                <option>...</option>
                 <?php for ($x = 1; $x <= 12; $x++) { ?>
                     <option><?php echo $x; ?></option>
                 <?php } ?>
@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <label for="cyear"><?php echo lang("msg_year"); ?></label>
             <select class="form-control" id="cyear" name="cyear">
-                <option></option>
+                <option>...</option>
                 <?php for ($x = (int)date("Y"); $x >= ((int)date("Y") - 20); $x--) { ?>
                     <option><?php echo $x; ?></option>
                 <?php } ?>

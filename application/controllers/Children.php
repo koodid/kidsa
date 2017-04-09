@@ -19,9 +19,9 @@ class Children extends CI_Controller
             $data['children'] = $this->Children_model->get_children($session_data['id']);
 
             $this->form_validation->set_rules('childname', lang('val_name'), 'trim|required');
-            $this->form_validation->set_rules('cday', lang('val_day'), 'required');
-            $this->form_validation->set_rules('cmonth', lang('val_month'), 'required');
-            $this->form_validation->set_rules('cyear', lang('val_year'), 'required');
+            $this->form_validation->set_rules('cday', lang('val_day'), 'required|numeric');
+            $this->form_validation->set_rules('cmonth', lang('val_month'), 'required|numeric');
+            $this->form_validation->set_rules('cyear', lang('val_year'), 'required|numeric');
 
             if ($this->form_validation->run() == FALSE) {
                 $title['title'] = lang("msg_addchildren");
