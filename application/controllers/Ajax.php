@@ -12,4 +12,10 @@ class Ajax extends CI_Controller
         $this->load->model('Post');
         $this->load->view('post_xml', array('posts' => $this->Post->load_some_posts($offset, $limit)));
     }
+
+    function set_like($post_id)
+    {
+        $this->load->model('Post');
+        echo $this->Post->set_user_like($post_id);
+    }
 }

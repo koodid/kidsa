@@ -81,6 +81,23 @@ class Post extends CI_Model
         return $query->row()->posts;
     }
 
+    public function set_user_like($postID)
+    {
+        $session_data = $this->session->userdata('logged_in');
+        $id = $session_data['id'];
+        $sql = "CALL addUserLike(?,?)";
+        $this->db->query($sql, array('user' => $id, 'post' => $postID));
+
+        return $this->get_likes($postID);
+    }
+
+    public function get_likes($postId)
+    {
+        $sql = "SELECT f_calcLikes(?) as result";
+        $query = $this->db->query($sql, array('id' => $postId));
+        return $query->row()->result;
+    }
+
     public function searchPosts($searchQuery)
     {
 
