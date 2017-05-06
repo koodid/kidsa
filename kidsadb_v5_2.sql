@@ -128,6 +128,23 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `newPostwLinkTime`(IN `p_User`
   COMMIT;
 END$$
 
+DROP PROCEDURE IF EXISTS `deleteChild`$$
+
+
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `deleteChild` (IN `c_ID` INT(11))  BEGIN
+  DELETE FROM children
+  WHERE id = c_ID;
+END$$
+
+DROP PROCEDURE IF EXISTS `getChild`$$
+
+
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `deleteChild` (IN `c_ID` INT(11))  BEGIN
+  SELECT *
+  FROM childview
+  WHERE id = c_ID;
+END$$
+
 --
 -- Functions
 --

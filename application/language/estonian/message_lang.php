@@ -53,6 +53,9 @@ $lang["msg_month"] = "Kuu:";
 $lang["msg_year"] = "Aasta:";
 $lang["msg_save"] = "Salvesta";
 $lang["msg_formsuccess"] = "Sinu andmed on edukalt salvestatud!";
+$lang["msg_edit"] =  "Muuda";
+$lang["msg_delete"] = "Kustuta";
+
 // Signup 
 $lang["msg_confirmpassword"] = "Korda salasõna";
 $lang["msg_enterconfirmpassword"] = "Sisesta salasõna uuesti";

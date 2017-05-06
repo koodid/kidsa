@@ -1,26 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
-<div class="container">
-
-    <h2><?php echo lang("msg_addchildren"); ?></h2>
-    <hr>
-
-    <div class="col-md-12">
-        <div class="container">
-            <?php foreach ($children as $child): ?>
-                <div class="row">
-                    <div class="col-sm-offset-4 col-sm-2 col-xs-12"><?php echo($child['Name']); ?></div>
-                    <div class="col-sm-2 col-xs-12"><?php echo($child['Birthday']); ?></div>
-                    <a href="<?php echo base_url() . "children/edit/" . $child['ID']; ?>"><button class="btn btn-md btn-default"><?php echo lang("msg_edit"); ?></button></a>
-                    <a href="<?php echo base_url() . "children/delete/" . $child['ID']; ?>"><button class="btn btn-md btn-default"><?php echo lang("msg_delete"); ?></button></a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</div>
-
 <div class="container">
     <h3><?php echo lang("msg_addchild"); ?></h3>
     <hr>

@@ -52,6 +52,8 @@ $lang["msg_month"] = "Month:";
 $lang["msg_year"] = "Year:";
 $lang["msg_save"] = "Save";
 $lang["msg_formsuccess"] = "Your data was successfully saved!";
+$lang["msg_edit"] =  "Edit";
+$lang["msg_delete"] = "Delete";
 // Signup 
 $lang["msg_confirmpassword"] = "Confirm password";
 $lang["msg_enterconfirmpassword"] = "Confirm your password";

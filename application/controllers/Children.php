@@ -65,4 +65,22 @@ class Children extends CI_Controller
             return FALSE;
         }
     }
+
+    function delete()
+    {
+        $id = $this->uri->segment(3);
+        $this->Children_model->delete_child($id);
+        redirect('children');
+    }
+
+    function edit()
+    {
+        $id = $this->uri->segment(3);
+        $data['child'] = $this->Children_model->get_child($id);
+        $title['title'] = lang("msg_edit");
+        $this->load->view('navbar', $title);
+        $this->load->view('edit_child', $data);
+        $this->load->view('footer');
+
+    }
 }
