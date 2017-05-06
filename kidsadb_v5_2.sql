@@ -139,7 +139,7 @@ END$$
 DROP PROCEDURE IF EXISTS `getChild`$$
 
 
-CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `deleteChild` (IN `c_ID` INT(11))  BEGIN
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getChild` (IN `c_ID` INT(11))  BEGIN
   SELECT *
   FROM childview
   WHERE id = c_ID;
