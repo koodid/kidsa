@@ -31,12 +31,16 @@ class Children_model extends CI_Model
     
     public function delete_child($id)
     {
+        $this->db->close();
+        $this->db->initialize();
         $sql = "CALL deleteChild(?)";
         $this->db->query($sql, array('id' => $id));
     }
 
     public function get_child($id)
     {
+        $this->db->close();
+        $this->db->initialize();
         $sql = "CALL getChild(?)";
         $query = $this->db->query($sql, array('id' => $id));
         return $query->result_array();
