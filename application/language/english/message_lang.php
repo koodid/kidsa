@@ -41,6 +41,8 @@ $lang["msg_enternewpassword"] = "Enter your new password";
 $lang["msg_confirmnewpassword"] = "Confirm new password";
 $lang["msg_enterconfirmnewpassword"] = "Confirm your new password";
 $lang["msg_savechanges"] = "Save Changes";
+$lang["msg_deleteaccount"] = "Delete your account";
+$lang["msg_deleteaccountbutton"] = "Press to delete your account";
 // Children
 $lang["msg_addchild"] = "Add Child";
 $lang["msg_name"] = "Name";

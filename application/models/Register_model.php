@@ -38,4 +38,10 @@ class Register_model extends CI_Model
         $sql = "CALL changePassword(?,?)";
         $this->db->query($sql, array('user_id' => $user_id, 'newpassword' => $newpassword));
     }
+
+    public function delete_account($id)
+    {
+        $sql = "CALL deleteAccount(?)";
+        $this->db->query($sql, array('id' => $id));
+    }
 }

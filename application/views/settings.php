@@ -28,4 +28,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     <?php echo form_close(); ?>
 </div>
+<div class="container">
+    <h2><?php echo lang("msg_deleteaccount"); ?></h2>
+    <div class="form-group col-md-4 col-lg-offset-4">
+        <a href="<?php echo base_url() . "settings/delete/" . $id; ?>"><button class="btn btn-md btn-default"><?php echo lang("msg_deleteaccountbutton"); ?></button></a>
+    </div>
+</div>
 

@@ -42,6 +42,8 @@ $lang["msg_enternewpassword"] = "Sisesta uus salasõna";
 $lang["msg_confirmnewpassword"] = "Korda uut salasõna";
 $lang["msg_enterconfirmnewpassword"] = "Sisesta uus salasõna uuesti";
 $lang["msg_savechanges"] = "Salvesta muudatused";
+$lang["msg_deleteaccount"] = "Kustuta oma konto";
+$lang["msg_deleteaccountbutton"] = "Vajuta siia, et kustutada oma konto";
 // Children
 $lang["msg_addchild"] = "Lisa laps";
 $lang["msg_name"] = "Nimi";
