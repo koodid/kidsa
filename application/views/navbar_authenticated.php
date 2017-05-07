@@ -10,11 +10,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 class="caret"></span></a>
     <ul class="dropdown-menu">
         <li>
-            <a href="children"
+            <a href="/children"
                data-toggle="tooltip" data-placement="auto bottom"
                title="<?php echo lang("msg_addchildren"); ?>"><?php echo lang("msg_addchildren"); ?></a></li>
         <li>
-            <a href="settings"
+            <a href="/settings"
                data-toggle="tooltip" data-placement="auto bottom"
                title="<?php echo lang("msg_settings"); ?>"><?php echo lang("msg_settings"); ?></a></li>
         <li><a href="home/logout" data-toggle="tooltip" data-placement="auto bottom" title="<?php echo lang("msg_logout"); ?>">
