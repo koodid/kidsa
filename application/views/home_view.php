@@ -66,7 +66,7 @@
         <div class="col-md-8">
             <?php foreach ($posts as $post): ?>
                 <blockquote class="blockquote">
-                    <?php echo html_escape($post['Text']); ?>
+                    <?php echo str_replace("&lt;br&gt;", "<br>", html_escape($post['Text'])); ?>
                     <footer class="blockquote-footer"><?php echo html_escape($post['Name']); ?>
                         , <?php echo html_escape($post['Age']); ?></footer>
                 </blockquote>
