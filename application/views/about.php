@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav">
-            <p data-img-name="children-p.jpg"></p>
+            <p data-img-name="children-p_min.jpg"></p>
         </div>
 
         <div class="col-sm-9">

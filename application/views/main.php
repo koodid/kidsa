@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav">
-            <p data-img-name="girlr.jpg"></p>
+            <p data-img-name="girlr_min.jpg"></p>
 
             <h2 id="newPostsTitel" class="hidden">
                 <small><?php echo lang("msg_newposts"); ?></small>
