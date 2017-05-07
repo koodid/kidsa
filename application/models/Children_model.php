@@ -41,5 +41,18 @@ class Children_model extends CI_Model
         $query = $this->db->query($sql, array('id' => $id));
         return $query->result_array();
     }
+    public function edit_child()
+    {
+        $id = $this->input->post("id");
+        $childname = $this->input->post("childname");
+        $bday = $this->input->post("cday");
+        $bmonth = $this->input->post("cmonth");
+        $byear = $this->input->post("cyear");
+        $birthday = $byear.'-'.$bmonth.'-'.$bday;
+        $this->db->close();
+        $this->db->initialize();
+        $sql = "CALL editChild(?,?,?)";
+        $this->db->query($sql, array('id' => $id, 'childname' => $childname, 'birthday' => $birthday));
+    }
 
 }

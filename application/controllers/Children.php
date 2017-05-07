@@ -76,11 +76,48 @@ class Children extends CI_Controller
     function edit()
     {
         $id = $this->uri->segment(3);
-        $data['child'] = $this->Children_model->get_child($id);
+        $child = $this->Children_model->get_child($id);
+        $birthday = explode('-', $child[0]['Birthday']);
+        $data['id'] = $id;
+        $data['year'] = intval($birthday[0]);
+        $data['month'] = intval($birthday[1]);
+        $data['day'] = intval($birthday[2]);
+        $data['name'] = $child[0]['Name'];
         $title['title'] = lang("msg_edit");
         $this->load->view('navbar', $title);
         $this->load->view('edit_child', $data);
         $this->load->view('footer');
-
     }
+    function editChild()
+    {
+        $session_data = $this->session->userdata('logged_in');
+        $data['children'] = $this->Children_model->get_children($session_data['id']);
+        $id = $this->uri->segment(3);
+        $this->form_validation->set_rules('childname', lang('val_name'), 'trim|required');
+        $this->form_validation->set_rules('cday', lang('val_day'), 'required|numeric');
+        $this->form_validation->set_rules('cmonth', lang('val_month'), 'required|numeric');
+        $this->form_validation->set_rules('cyear', lang('val_year'), 'required|numeric');
+        if ($this->form_validation->run() == FALSE) {
+            $title['title'] = lang("msg_edit");
+            $this->load->view('navbar', $title);
+            $this->load->view('edit_child', $data);
+            $this->load->view('footer');
+        } else {
+            $this->form_validation->set_rules('cyear', lang('val_year'), 'callback_validate_date');
+            if ($this->form_validation->run() == FALSE) {
+                $title['title'] = lang("msg_edit");
+                $this->load->view('navbar', $title);
+                $this->load->view('edit_child', $data);
+                $this->load->view('footer');
+            } else {
+                $this->Children_model->edit_child($id);
+                $title['title'] = lang("msg_addchildren");
+                $this->load->view('navbar', $title);
+                $this->load->view('formsuccess');
+                $this->load->view('children', $data);
+                $this->load->view('footer');
+            }
+        }
+    }    
+
 }

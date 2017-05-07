@@ -145,6 +145,16 @@ CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `getChild` (IN `c_ID` INT(11))
   WHERE id = c_ID;
 END$$
 
+DROP PROCEDURE IF EXISTS `editChild`$$
+
+
+CREATE DEFINER =`kidsacsut`@`localhost` PROCEDURE `editChild` (IN `c_ID` INT(11),
+							       IN `c_name` VARCHAR(100),
+							       IN `c_birthday` DATE)  BEGIN
+  UPDATE children
+  SET Name=c_name, Birthday=c_birthday
+  WHERE id = c_ID;
+END$$
 --
 -- Functions
 --
