@@ -30,9 +30,6 @@
             var parsedXML = jQuery.parseXML(data);
             var xsltProcessor = new XSLTProcessor;
             xsltProcessor.importStylesheet(xlst);
-            var div = document.createElement('div');
-            div.appendChild(xsltProcessor.transformToFragment(parsedXML, document).cloneNode(true));
-            console.log(div.innerHTML);
             $(selector)[fn](xsltProcessor.transformToFragment(parsedXML, document));
             $(selector).html($(selector).html().replace(/&lt;br&gt;/g, "<br>"))
         }
