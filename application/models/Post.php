@@ -91,6 +91,15 @@ class Post extends CI_Model
         return $this->get_likes($postID);
     }
 
+    public function has_my_like($postId)
+    {
+        $session_data = $this->session->userdata('logged_in');
+        $id = $session_data['id'];
+        $sql = "SELECT f_hasMyLike(?,?) as result";
+        $query = $this->db->query($sql, array('user' => $id, 'post' => $postId));
+        return $query->row()->result;
+    }
+
     public function get_likes($postId)
     {
         $sql = "SELECT f_calcLikes(?) as result";

@@ -13,12 +13,24 @@
                             <xsl:value-of select="age"/>
                         </footer>
                     </blockquote>
-                    <button>
-                        <xsl:attribute name="onclick">addLike(<xsl:value-of select="id"/>)</xsl:attribute>
-                        <xsl:attribute name="class">post-<xsl:value-of select="id"/></xsl:attribute>
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"/>
-                        <span class="like-amount"><xsl:value-of select="likes"/></span>
-                    </button>
+                    <xsl:choose>
+                        <xsl:when test="mylike > 0">
+                            <button>
+                                <xsl:attribute name="onclick">addLike(<xsl:value-of select="id"/>)</xsl:attribute>
+                                <xsl:attribute name="class">post-<xsl:value-of select="id"/></xsl:attribute>
+                                <span class="glyphicon glyphicon-star liked" aria-hidden="true"/>
+                                <span class="like-amount"><xsl:value-of select="likes"/></span>
+                            </button>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <button>
+                                <xsl:attribute name="onclick">addLike(<xsl:value-of select="id"/>)</xsl:attribute>
+                                <xsl:attribute name="class">post-<xsl:value-of select="id"/></xsl:attribute>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"/>
+                                <span class="like-amount"><xsl:value-of select="likes"/></span>
+                            </button>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </div>
             </div>
         </xsl:for-each>

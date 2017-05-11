@@ -6,3 +6,7 @@ body {
     height: 400px;
     width: 100%;
 }
+
+.liked {
+    color: #00CC00;
+}
