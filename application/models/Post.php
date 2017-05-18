@@ -16,7 +16,7 @@ class Post extends CI_Model
         }
         $child = $this->input->post("child");
 
-        if ($_SESSION['site_lang'] === 'estonian') {
+        if (isset($_SESSION['site_lang']) && ($_SESSION['site_lang'] === 'estonian')) {
             $language = 'ee';
         } else {
             $language = 'en';
