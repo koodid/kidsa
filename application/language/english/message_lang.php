@@ -69,7 +69,7 @@ $lang["msg_writenewpost"] = "Write a new post...";
 $lang["msg_selectchild"] = "Select the child who said";
 $lang["msg_postprivately"] = "Post as private post";
 $lang["msg_post"] = "Post";
-$lang["msg_addchild_error"] = "At first add child (My Account - My Children)";
+$lang["msg_addchild_error"] = "You need to add child (My Account - My Children)";
 // Payment
 $lang["msg_supportus"] = "Help Kidsa grow, by sending us 10 EUR!";
 $lang["msg_payname"] = "Payer name:";
