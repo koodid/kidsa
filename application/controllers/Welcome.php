@@ -10,7 +10,7 @@ class Welcome extends CI_Controller
         //$data['allposts'] = $this->Post->get_all_posts();
         //$data['allposts'] = $this->Post->load_some_posts(0, 10);
         $title['title'] = 'Kidsa';
-        $title['extra_scripts'] = array('/js/loadposts.js', '/js/polling.js', '/js/likes.js');
+        $title['extra_scripts'] = array('/js/loadposts.js', '/js/polling.js', '/js/likes.js', '/js/notify.js');
         $this->load->view('navbar', $title);
         //$this->load->view('main', $data);
         $this->load->view('main');

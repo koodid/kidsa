@@ -26,7 +26,9 @@ class Home extends CI_Controller
             $data['extra_style'] = array('/css/offline.css');
 
             $data['countposts'] = $this->Post->get_childrenposts($session_data['id']);
-
+            if (isset($_SESSION['create_new_post'])) {
+                $data['create_new_post'] = $_SESSION['create_new_post'];
+            }
 
             $this->load->view('navbar', $data);
             $this->load->view('home_view', $data);
@@ -48,9 +50,13 @@ class Home extends CI_Controller
     function create_new_post($unixTime = '')
     {
         $this->load->model('Post');
-        $this->Post->create_new_post($unixTime);
+        if ($this->Post->create_new_post($unixTime)) {
+            //redirect back to private area..
+            redirect('home');
+        } else {
+            $_SESSION['create_new_post'] = lang("create_new_post_fail");
+            redirect('home');
+        }
 
-        //redirect back to private area..
-        redirect('home');
     }
 }

@@ -15,6 +15,9 @@ class Post extends CI_Model
             return false;
         }
         $child = $this->input->post("child");
+        if (!isset($child)) {
+            return false;
+        }
 
         if ($_SESSION['site_lang'] === 'estonian') {
             $language = 'ee';
@@ -85,6 +88,9 @@ class Post extends CI_Model
     {
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
+        if (!isset($id)) {
+            return -1;
+        }
         $sql = "CALL addUserLike(?,?)";
         $this->db->query($sql, array('user' => $id, 'post' => $postID));
 

@@ -1,4 +1,9 @@
 <div class="container">
+    <?php if (isset($create_new_post)): ?>
+        <div class="alert alert-info">
+            <strong><?php echo htmlspecialchars($create_new_post); ?></strong>
+        </div>
+    <?php endif; ?>
     <form id="new-post-form" class="form-horizontal" action="<?php echo base_url(); ?>home/create_new_post"
           method="post">
         <fieldset>
