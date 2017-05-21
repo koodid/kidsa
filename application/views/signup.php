@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <div id="passwordHolder" class="form-group">
-            <label for="set_password"><?php echo lang("msg_password"); ?></label>
+            <label for="set_password"><?php echo lang("msg_password"); ?> <?php echo lang("msg_min_length"); ?></label>
             <input type="password" class="form-control input-md" id="set_password" name="set_password"
                    placeholder="<?php echo lang("msg_enterpassword"); ?>">
         </div>

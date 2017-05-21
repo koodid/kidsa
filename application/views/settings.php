@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     <?php endif; ?>
         <div class="form-group col-md-4 col-lg-offset-4">
-            <label for="newpassword"><?php echo lang("msg_newpassword"); ?></label>
+            <label for="newpassword"><?php echo lang("msg_newpassword"); ?> <?php echo lang("msg_min_length"); ?></label>
             <input type="password" class="form-control" id="newpassword" name="newpassword"
                    placeholder="<?php echo lang("msg_enternewpassword"); ?>">
         </div>

@@ -20,7 +20,7 @@ class Signup extends CI_Controller
             }
         }
         $this->form_validation->set_rules('set_username', lang('val_username'), 'trim|required');
-        $this->form_validation->set_rules('set_password', lang('val_password'), 'trim|required');
+        $this->form_validation->set_rules('set_password', lang('val_password'), 'trim|required|min_length[5]|max_length[255]');
         $this->form_validation->set_rules('set_confirmpassword', lang('val_confirmed_password'), 'trim|required|matches[set_password]');
         $this->form_validation->set_rules('set_email', lang('val_email'), 'trim|required|valid_email');
 

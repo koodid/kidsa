@@ -16,8 +16,8 @@ class Settings extends CI_Controller
         $this->load->helper(array('form', 'url'));
         if ($this->session->userdata('logged_in')) {
 
-            $this->form_validation->set_rules('newpassword', lang('val_new_password'), 'required');
-            $this->form_validation->set_rules('confirmnewpassword', lang('val_confirmed_password'), 'required|matches[newpassword]');
+            $this->form_validation->set_rules('newpassword', lang('val_new_password'), 'trim|required|min_length[5]|max_length[255]');
+            $this->form_validation->set_rules('confirmnewpassword', lang('val_confirmed_password'), 'trim|required|matches[newpassword]');
             $session_data = $this->session->userdata('logged_in');
             $data['id'] = $session_data['id'];
             if ($this->form_validation->run() == FALSE)

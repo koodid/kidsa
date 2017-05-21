@@ -58,7 +58,8 @@ $lang["msg_formsuccess"] = "Sinu andmed on edukalt salvestatud!";
 $lang["msg_edit"] =  "Muuda";
 $lang["msg_delete"] = "Kustuta";
 
-// Signup 
+// Signup
+$lang["msg_min_length"] = "(min 5 tähemärki)";
 $lang["msg_confirmpassword"] = "Korda salasõna";
 $lang["msg_enterconfirmpassword"] = "Sisesta salasõna uuesti";
 $lang["msg_email"] = "Email";

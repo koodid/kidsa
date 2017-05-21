@@ -57,6 +57,7 @@ $lang["msg_formsuccess"] = "Your data was successfully saved!";
 $lang["msg_edit"] =  "Edit";
 $lang["msg_delete"] = "Delete";
 // Signup 
+$lang["msg_min_length"] = "(minimum length 5 characters)";
 $lang["msg_confirmpassword"] = "Confirm password";
 $lang["msg_enterconfirmpassword"] = "Confirm your password";
 $lang["msg_email"] = "Email";
