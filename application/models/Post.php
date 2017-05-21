@@ -45,6 +45,7 @@ class Post extends CI_Model
                 'child' => $child,
                 'time' => $unixTime));
         }
+        return true;
     }
 
     public function get_all_posts()

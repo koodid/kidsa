@@ -28,6 +28,7 @@ class Home extends CI_Controller
             $data['countposts'] = $this->Post->get_childrenposts($session_data['id']);
             if (isset($_SESSION['create_new_post'])) {
                 $data['create_new_post'] = $_SESSION['create_new_post'];
+                unset($_SESSION['create_new_post']);
             }
 
             $this->load->view('navbar', $data);
