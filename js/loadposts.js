@@ -52,6 +52,14 @@
                 addFromXML(result, xlst, '#load-more', 'append');
                 offset += limit;
                 window.onscroll = yHandler;
+                $.ajax({
+                    method: "GET",
+                    url: location.protocol + '//' + location.hostname + "/ajax/load_some_posts/" + offset + "/1",
+                }).done(function (testresult) {
+                    if (testresult.toString().length < 26) {
+                        $("#load_post_button").hide();
+                    }
+                });
             });
         });
     }
