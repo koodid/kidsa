@@ -178,6 +178,13 @@ CREATE DEFINER =`kidsacsut`@`localhost` FUNCTION `f_calcLikes`(`p_id` INT)
     RETURN result;
   END$$
 
+CREATE DEFINER=`kidsacsut`@`localhost` FUNCTION `f_hasMyLike` (`p_user` INT, `p_post` INT) RETURNS INT(11) NO SQL
+  BEGIN
+    DECLARE result INT;
+    SELECT count(*) into result FROM `likedposts` where post = p_post and user = p_user;
+    RETURN result;
+  END$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------
