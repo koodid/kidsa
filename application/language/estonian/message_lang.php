@@ -71,6 +71,7 @@ $lang["msg_writenewpost"] = "Koosta uus postitus...";
 $lang["msg_selectchild"] = "Vali laps, kes ütles";
 $lang["msg_postprivately"] = "Postita privaatselt";
 $lang["msg_post"] = "Postita";
+$lang["msg_addchild_error"] = "Kõigepealt lisa laps (Minu konto - Minu lapsed)";
 // Payment
 $lang["msg_supportus"] = "Toeta Kidsa arengut, saates meile 10 eurot!";
 $lang["msg_payname"] = "Maksja nimi:";
