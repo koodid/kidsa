@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://kidsa.cs.ut.ee/" />
+<title>emptyFieldsOnSignupTest</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">emptyFieldsOnSignupTest</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Vali keel ...</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=English</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Up</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=registerbutton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>The username field is required.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//body[@id='body']/div/form/div/div/p[2]</td>
+	<td>The password field is required.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//body[@id='body']/div/form/div/div/p[3]</td>
+	<td>The confirmed password field is required.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//body[@id='body']/div/form/div/div/p[4]</td>
+	<td>The email field is required.</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

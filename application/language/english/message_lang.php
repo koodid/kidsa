@@ -54,7 +54,7 @@ $lang["msg_month"] = "Month:";
 $lang["msg_year"] = "Year:";
 $lang["msg_save"] = "Save";
 $lang["msg_formsuccess"] = "Your data was successfully saved!";
-$lang["msg_edit"] =  "Edit";
+$lang["msg_edit"] = "Edit";
 $lang["msg_delete"] = "Delete";
 // Signup 
 $lang["msg_min_length"] = "(minimum length 5 characters)";
@@ -94,3 +94,5 @@ $lang['val_year'] = "year";
 $lang['val_invalid_date'] = "Invalid date.";
 $lang['val_invalid_username_password'] = "Invalid username or password.";
 $lang['val_username_not_unique'] = "This username is not available. Please choose new username.";
+// Passed in Session variables
+$lang['create_new_post_fail'] = "Creating new post failed.";

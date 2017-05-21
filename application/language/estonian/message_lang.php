@@ -55,7 +55,7 @@ $lang["msg_month"] = "Kuu:";
 $lang["msg_year"] = "Aasta:";
 $lang["msg_save"] = "Salvesta";
 $lang["msg_formsuccess"] = "Sinu andmed on edukalt salvestatud!";
-$lang["msg_edit"] =  "Muuda";
+$lang["msg_edit"] = "Muuda";
 $lang["msg_delete"] = "Kustuta";
 
 // Signup
@@ -96,5 +96,5 @@ $lang['val_year'] = "Aasta";
 $lang['val_invalid_date'] = "Vigane kuupäev.";
 $lang['val_invalid_username_password'] = "Vigane kasutajanimi või salasõna.";
 $lang['val_username_not_unique'] = "See kasutajanimi on juba võetud. Vali uus kasutajanimi.";
-
-
+// Passed in Session variables
+$lang['create_new_post_fail'] = "Postitamine ebaõnnestus.";

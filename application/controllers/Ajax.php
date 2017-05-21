@@ -16,6 +16,11 @@ class Ajax extends CI_Controller
     function set_like($post_id)
     {
         $this->load->model('Post');
-        echo $this->Post->set_user_like($post_id);
+        $likes = $this->Post->set_user_like($post_id);
+        if ($likes >= 0) {
+            echo $likes;
+        } else {
+            header("HTTP/1.1 401 Unauthorized");
+        }
     }
 }

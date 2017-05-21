@@ -4,21 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://kidsa.cs.ut.ee/" />
-<title>AddChildTest</title>
+<title>invalidNewChildTest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">AddChildTest</td></tr>
+<tr><td rowspan="1" colspan="3">invalidNewChildTest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Log In</td>
+	<td>/login?uri=%2Fhome</td>
 	<td></td>
 </tr>
 <tr>
@@ -29,7 +24,7 @@
 <tr>
 	<td>type</td>
 	<td>id=password</td>
-	<td>SeleniumTest</td>
+	<td>12345678</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -47,34 +42,29 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=childname</td>
-	<td>Selenium Test</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=cday</td>
-	<td>label=1</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=cmonth</td>
-	<td>label=1</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>id=cyear</td>
-	<td>label=2017</td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
 	<td>xpath=(//button[@type='submit'])[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//body[@id='body']/div[2]/div/div/div/div[2]</td>
-	<td>2017-01-01</td>
+	<td>css=p</td>
+	<td>The name field is required.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//body[@id='body']/div[2]/div/p[2]</td>
+	<td>The day field must contain only numbers.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//body[@id='body']/div[2]/div/p[3]</td>
+	<td>The month field must contain only numbers.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//body[@id='body']/div[2]/div/p[4]</td>
+	<td>The year field must contain only numbers.</td>
 </tr>
 
 </tbody></table>
