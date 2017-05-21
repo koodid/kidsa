@@ -20,9 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </h2>
             <p id="postPolling"></p>
             <hr>
-            <div class="container">
-                <div id="load-all" class="col-sm-9"></div>
-                <div id="load-more" class="col-sm-9"></div>
+            <div class="container no-padding">
+                <div id="load-all" class="col-sm-9 no-padding"></div>
+                <div id="load-more" class="col-sm-9 no-padding"></div>
             </div>
             <button class="btn btn-default" id="load_post_button"><?php echo lang("msg_loadmoreposts"); ?></button>
         </div>

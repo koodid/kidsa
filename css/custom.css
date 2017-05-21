@@ -15,3 +15,7 @@ body {
     background: transparent;
     border: none;
 }
+
+.no-padding {
+    padding: 0;
+}
