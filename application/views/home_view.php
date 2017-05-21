@@ -20,7 +20,8 @@
 
                 <label for="childpicker"><?php echo lang("msg_selectchild"); ?></label>
                 <select id="childpicker" class="selectpicker" name="child" required=""
-                        oninvalid="this.setCustomValidity('<?php echo lang("msg_addchild_error");?>')">
+                        oninvalid="this.setCustomValidity('<?php echo lang("msg_addchild_error"); ?>')">
+                    <option label="<?php echo lang("msg_selectchild"); ?>"></option>
                     <?php foreach ($children as $child): ?>
                         <option value= <?php echo html_escape($child['ID']); ?>><?php echo html_escape($child['Name']); ?></option>
                     <?php endforeach; ?>
