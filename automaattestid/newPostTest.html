@@ -4,57 +4,42 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://kidsa.cs.ut.ee/" />
-<title>RegisterTest</title>
+<title>newPostTest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">RegisterTest</td></tr>
+<tr><td rowspan="1" colspan="3">newPostTest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
+	<td>/children/editChild</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Sign Up</td>
+	<td>link=Home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Posts</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=set_username</td>
-	<td>test</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=set_username</td>
-	<td>SeleniumTest</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=set_password</td>
-	<td>SeleniumTest</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=set_confirmpassword</td>
-	<td>SeleniumTest</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=set_email</td>
-	<td>SeleniumTest@mail.com</td>
+	<td>id=newpost</td>
+	<td>Selenium test post</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>id=registerbutton</td>
+	<td>id=postbutton</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=strong</td>
-	<td>Your data was successfully saved!</td>
+	<td>css=blockquote.blockquote</td>
+	<td>Selenium test post SeleniumTestChild , 2</td>
 </tr>
 
 </tbody></table>

@@ -4,37 +4,42 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://kidsa.cs.ut.ee/" />
-<title>DeleteAccountTest</title>
+<title>invalidLoginTest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DeleteAccountTest</td></tr>
+<tr><td rowspan="1" colspan="3">invalidLoginTest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/settings</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=My Account</td>
+	<td>/signup</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Settings</td>
+	<td>link=Log In</td>
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>SeleniumTest</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>1234</td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
-	<td>//body[@id='body']/div[2]/div/a/button</td>
+	<td>xpath=(//button[@type='submit'])[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=h2</td>
-	<td>Log In</td>
+	<td>css=p</td>
+	<td>Invalid username or password.</td>
 </tr>
 
 </tbody></table>

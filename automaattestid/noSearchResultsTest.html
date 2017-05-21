@@ -4,47 +4,32 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://kidsa.cs.ut.ee/" />
-<title>AddPostTest</title>
+<title>noSearchResultsTest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">AddPostTest</td></tr>
+<tr><td rowspan="1" colspan="3">noSearchResultsTest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/children/editChild</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Home</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=My Posts</td>
+	<td>/search?q=Selenium</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=newpost</td>
-	<td>Test post for Selenium</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=postbutton</td>
-	<td></td>
+	<td>id=searchField</td>
+	<td>nopostfoundtest</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>id=postbutton</td>
+	<td>css=button.btn.btn-default</td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=blockquote.blockquote</td>
-	<td>Test post for Selenium EditedChild , 0</td>
+	<td>css=strong</td>
+	<td>No results were found for this search query!</td>
 </tr>
 
 </tbody></table>

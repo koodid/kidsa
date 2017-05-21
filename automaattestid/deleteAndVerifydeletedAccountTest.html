@@ -4,16 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://kidsa.cs.ut.ee/" />
-<title>EditChildTest</title>
+<title>deleteAndVerifydeletedAccountTest</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">EditChildTest</td></tr>
+<tr><td rowspan="1" colspan="3">deleteAndVerifydeletedAccountTest</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/children</td>
+	<td>/home</td>
 	<td></td>
 </tr>
 <tr>
@@ -23,18 +23,28 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=My Children</td>
+	<td>link=Settings</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//body[@id='body']/div/div/div/div/a/button</td>
+	<td>//body[@id='body']/div[2]/div/a/button</td>
 	<td></td>
 </tr>
 <tr>
+	<td>assertText</td>
+	<td>css=h2</td>
+	<td>Log In</td>
+</tr>
+<tr>
 	<td>type</td>
-	<td>id=childname</td>
-	<td>EditedChild</td>
+	<td>id=username</td>
+	<td>SeleniumTest</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>newpass</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -43,8 +53,8 @@
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>//body[@id='body']/div[2]/div/div/div/div</td>
-	<td>EditedChild</td>
+	<td>css=p</td>
+	<td>Invalid username or password.</td>
 </tr>
 
 </tbody></table>
