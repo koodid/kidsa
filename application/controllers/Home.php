@@ -44,7 +44,11 @@ class Home extends CI_Controller
 
     function logout()
     {
-        $_SESSION = array('site_lang' => $_SESSION['site_lang']);
+        if (isset($_SESSION['site_lang'])) {
+            $_SESSION = array('site_lang' => $_SESSION['site_lang']);
+        } else {
+            $_SESSION = array('site_lang' => 'english');
+        }
         redirect('home');
     }
 
