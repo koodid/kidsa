@@ -14,7 +14,7 @@
                         </footer>
                         <xsl:choose>
                             <xsl:when test="mylike > 0">
-                                <myhiddenbutton>
+                                <button>
                                     <xsl:attribute name="onclick">addLike(<xsl:value-of select="id"/>)
                                     </xsl:attribute>
                                     <xsl:attribute name="class">post-<xsl:value-of select="id"/>
@@ -23,10 +23,10 @@
                                     <span class="like-amount">
                                         <xsl:value-of select="likes"/>
                                     </span>
-                                </myhiddenbutton>
+                                </button>
                             </xsl:when>
                             <xsl:otherwise>
-                                <myhiddenbutton>
+                                <button>
                                     <xsl:attribute name="onclick">addLike(<xsl:value-of select="id"/>)
                                     </xsl:attribute>
                                     <xsl:attribute name="class">post-<xsl:value-of select="id"/>
@@ -35,7 +35,7 @@
                                     <span class="like-amount">
                                         <xsl:value-of select="likes"/>
                                     </span>
-                                </myhiddenbutton>
+                                </button>
                             </xsl:otherwise>
                         </xsl:choose>
                     </blockquote>
