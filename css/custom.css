@@ -10,3 +10,8 @@ body {
 .liked {
     color: #00CC00;
 }
+
+.like-button {
+    background: transparent;
+    border: none;
+}
